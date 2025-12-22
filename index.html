@@ -19,13 +19,13 @@
 
             --main-block-width: 36cm; /* ширина Блок_1_Основная_информация */
             --main-block-height: 5cm; /* высота Блок_1_Основная_информация */
-            --main-block-radius: 12px; /* радиус скругления Блок_1 */
+            --main-block-radius: 30px; /* радиус скругления Блок_1 */
 
             --buttons-gap: 1.5cm; /* расстояние между кнопками */
             --button-height: 1.5cm; /* высота кнопок */
 
             --contacts-height: 15cm; /* высота Блок_3_Контакты_и_ссылки */
-            --contacts-radius: 12px; /* радиус скругления Блок_3 */
+            --contacts-radius: 30px; /* радиус скругления Блок_3 */
         }
 
         body {
@@ -83,7 +83,7 @@
 
         .block-buttons {
             width: var(--main-block-width); /* ширина блока кнопок */
-            margin: calc(2.5cm + var(--main-block-height) + 2.5cm) auto 0 auto; /* отступ от Блок_1 */
+            margin: calc(1.5cm + var(--main-block-height) + 2.5cm) auto 0 auto; /* отступ от Блок_1 */
             display: flex; /* flex-контейнер */
             gap: var(--buttons-gap); /* расстояние между кнопками */
         }
@@ -106,7 +106,7 @@
         .block-contacts {
             width: var(--main-block-width); /* ширина блока */
             height: var(--contacts-height); /* высота блока */
-            margin: 2.5cm auto 0 auto; /* отступ от блока кнопок */
+            margin: 1.5cm auto 0 auto; /* отступ от блока кнопок */
             background-color: #ffffff; /* цвет блока */
             border-radius: var(--contacts-radius); /* скругление */
             box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* тень */
