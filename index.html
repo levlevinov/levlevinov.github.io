@@ -2,143 +2,170 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Пробная главная страница</title>
+    <title>Портфолио — главная страница</title>
 
     <style>
-        /* =====================================================
-           БЛОК 0 — НАСТРОЙКИ ФОНА СТРАНИЦЫ
-           ===================================================== */
+        /* ===================== ГЛОБАЛЬНЫЕ НАСТРОЙКИ ===================== */
 
-        /*
-           Здесь задаются все цвета фона страницы.
-           Можно использовать:
-           - один цвет (оставить только --bg-color-1)
-           - градиент из нескольких цветов
-           Всего предусмотрено до 8 цветов.
-        */
         :root {
-            --bg-color-1: #ffffff; /* основной белый цвет */
-            --bg-color-2: #ffffff;
-            --bg-color-3: #e8e8e8;
-            --bg-color-4: #dddddd;
-            --bg-color-5: #cccccc;
-            --bg-color-6: #bbbbbb;
-            --bg-color-7: #aaaaaa;
-            --bg-color-8: #999999;
+            --bg-color-1: #ffffff; /* цвет 1 фона страницы */
+            --bg-color-2: #f2f2f2; /* цвет 2 фона страницы */
+            --bg-color-3: #e6e6e6; /* цвет 3 фона страницы */
+            --bg-color-4: #dddddd; /* цвет 4 фона страницы */
+            --bg-color-5: #cccccc; /* цвет 5 фона страницы */
+            --bg-color-6: #bbbbbb; /* цвет 6 фона страницы */
+            --bg-color-7: #aaaaaa; /* цвет 7 фона страницы */
+            --bg-color-8: #999999; /* цвет 8 фона страницы */
+
+            --main-block-width: 20cm; /* ширина Блок_1_Основная_информация */
+            --main-block-height: 5cm; /* высота Блок_1_Основная_информация */
+            --main-block-radius: 12px; /* радиус скругления Блок_1 */
+
+            --buttons-gap: 1.5cm; /* расстояние между кнопками */
+            --button-height: 1.5cm; /* высота кнопок */
+
+            --contacts-height: 15cm; /* высота Блок_3_Контакты_и_ссылки */
+            --contacts-radius: 12px; /* радиус скругления Блок_3 */
         }
 
-        /*
-           Стили для всего документа
-        */
         body {
             margin: 0; /* убираем стандартные отступы браузера */
-            padding: 0;
-
-            /* 
-               ФОН СТРАНИЦЫ
-               По умолчанию — градиент.
-               Если нужен чисто белый фон:
-               закомментируй background: linear-gradient(...)
-               и оставь background-color
-            */
-            background-color: var(--bg-color-1);
-
-            background: linear-gradient(
-                180deg,
-                var(--bg-color-1) 0%,
-                var(--bg-color-2) 25%,
-                var(--bg-color-3) 50%,
-                var(--bg-color-4) 100%
-            );
-
             min-height: 100vh; /* высота страницы = высота экрана */
-            font-family: Arial, sans-serif;
+            background-color: var(--bg-color-1); /* белый фон по умолчанию */
+            background: linear-gradient(180deg, var(--bg-color-1) 0%, var(--bg-color-2) 50%, var(--bg-color-3) 100%); /* градиент фона */
+            font-family: Arial, sans-serif; /* базовый шрифт страницы */
         }
 
-        /* =====================================================
-           БЛОК 1 — ОСНОВНОЙ БЛОК С ИНФОРМАЦИЕЙ О СЕБЕ
-           ===================================================== */
+        /* ===================== БЛОК 1 — ОСНОВНАЯ ИНФОРМАЦИЯ ===================== */
 
-        /*
-           Блок_1_Основная_информация
-           Можно:
-           - менять размеры
-           - менять положение
-           - полностью удалить без поломки страницы
-        */
         .block-main-info {
-
-            /* ---------- РАЗМЕРЫ БЛОКА ---------- */
-
-            width: 36cm;  /* фиксированная ширина блока (константа) */
-            height: 5cm;  /* фиксированная высота блока (константа) */
-
-            /* ---------- ПОЗИЦИОНИРОВАНИЕ ---------- */
-
-            position: absolute;
-
-            /*
-               Отступ от верхней части страницы
-               (примерно от поисковой строки браузера)
-            */
-            top: 2.5cm;
-
-            /*
-               Центрирование блока по горизонтали
-            */
-            left: 50%;
-            transform: translateX(-50%);
-
-            /* ---------- ВНЕШНИЙ ВИД ---------- */
-
-            background-color: #ffffff; /* цвет самого блока */
-            border-radius: 30px;        /* скругление углов */
-
-            /*
-               Лёгкий 3D-эффект:
-               можно убрать, закомментировав box-shadow
-            */
-            box-shadow:
-                0 8px 20px rgba(0, 0, 0, 0.12),
-                0 2px 6px rgba(0, 0, 0, 0.08);
-
-            /* ---------- ВНУТРЕННИЕ ОТСТУПЫ ---------- */
-
-            padding: 20px;
-
-            /* ---------- ВРЕМЕННЫЙ КОНТЕНТ ---------- */
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            width: var(--main-block-width); /* фиксированная ширина блока */
+            height: var(--main-block-height); /* фиксированная высота блока */
+            position: absolute; /* абсолютное позиционирование */
+            top: 2.5cm; /* отступ от верхней части страницы */
+            left: 50%; /* позиционирование по центру по горизонтали */
+            transform: translateX(-50%); /* точное центрирование */
+            background-color: #ffffff; /* цвет фона блока */
+            border-radius: var(--main-block-radius); /* скругление углов */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* лёгкий 3D-эффект */
+            display: flex; /* включаем flex-контейнер */
         }
 
-        /*
-           Текст внутри основного блока
-           Временный, для визуального контроля
-        */
-        .block-main-info p {
-            margin: 0;
-            color: #333333;
-            font-size: 16px;
+        .main-text {
+            width: 66.666%; /* 2/3 ширины блока под текст */
+            padding-top: 1.5cm; /* отступ текста от верхней границы блока */
+            padding-left: 1cm; /* отступ текста слева */
+            font-size: 16px; /* размер текста */
+            overflow: hidden; /* скрытие выхода текста за границы */
         }
 
+        .main-photo {
+            width: 33.333%; /* 1/3 ширины блока под фото */
+            padding-top: 1.5cm; /* отступ фото от верхней границы блока */
+            display: flex; /* flex для центрирования фото */
+            justify-content: center; /* центрирование фото по горизонтали */
+        }
+
+        .main-photo img {
+            max-width: 100%; /* фото не выходит за ширину контейнера */
+            max-height: 100%; /* фото не выходит за высоту контейнера */
+        }
+
+        .overflow-warning {
+            width: var(--main-block-width); /* ширина сообщения = ширине блока */
+            margin: calc(2.5cm + var(--main-block-height) + 0.5cm) auto 0 auto; /* позиция под Блок_1 */
+            color: red; /* цвет предупреждающего текста */
+            text-align: center; /* центрирование текста */
+            display: none; /* скрыто по умолчанию */
+        }
+
+        /* ===================== БЛОК 2 — КНОПКИ ===================== */
+
+        .block-buttons {
+            width: var(--main-block-width); /* ширина блока кнопок */
+            margin: calc(2.5cm + var(--main-block-height) + 2.5cm) auto 0 auto; /* отступ от Блок_1 */
+            display: flex; /* flex-контейнер */
+            gap: var(--buttons-gap); /* расстояние между кнопками */
+        }
+
+        .button {
+            flex: 1; /* равная ширина кнопок */
+            height: var(--button-height); /* высота кнопок */
+            background-color: #ffffff; /* цвет кнопки */
+            border-radius: 10px; /* скругление кнопки */
+            display: flex; /* flex для центрирования текста */
+            align-items: center; /* вертикальное центрирование текста */
+            justify-content: center; /* горизонтальное центрирование текста */
+            cursor: pointer; /* курсор при наведении */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* тень кнопки */
+            user-select: none; /* запрет выделения текста */
+        }
+
+        /* ===================== БЛОК 3 — КОНТАКТЫ И ССЫЛКИ ===================== */
+
+        .block-contacts {
+            width: var(--main-block-width); /* ширина блока */
+            height: var(--contacts-height); /* высота блока */
+            margin: 2.5cm auto 0 auto; /* отступ от блока кнопок */
+            background-color: #ffffff; /* цвет блока */
+            border-radius: var(--contacts-radius); /* скругление */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* тень */
+            padding: 1cm; /* внутренний отступ */
+        }
+
+        .hidden {
+            display: none; /* класс для скрытия блоков */
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- =====================================================
-         HTML-БЛОК 1 — ОСНОВНАЯ ИНФОРМАЦИЯ
-         ===================================================== -->
+    <!-- ===================== БЛОК 1 ===================== -->
+    <div class="block-main-info" id="blockMain">
+        <div class="main-text" id="mainText">
+            <p>Краткое описание меня. Текст редактируемый.</p>
+        </div>
 
-    <div class="block-main-info">
-        <p>
-            Блок_1_Основная_информация<br>
-            (временный текст)
-        </p>
+        <div class="main-photo" id="mainPhoto">
+            <img src="photo.jpg" alt="Фото"> <!-- фото редактируемое -->
+        </div>
     </div>
 
+    <div class="overflow-warning" id="overflowWarning">
+        Внимание: текст или изображение вышли за границы основного блока.
+    </div>
+
+    <!-- ===================== БЛОК 2 ===================== -->
+    <div class="block-buttons">
+        <div class="button" onclick="showBlock('contacts')">Контакты</div>
+        <div class="button" onclick="showBlock('blockA')">Опыт</div>
+        <div class="button" onclick="showBlock('blockB')">Обучение</div>
+        <div class="button" onclick="showBlock('blockC')">Компетенции</div>
+    </div>
+
+    <!-- ===================== БЛОК 3 ===================== -->
+    <div class="block-contacts" id="contacts">
+        Контакты и ссылки (отображается по умолчанию)
+    </div>
+
+    <div class="block-contacts hidden" id="blockA">Опыт</div>
+    <div class="block-contacts hidden" id="blockB">Обучение</div>
+    <div class="block-contacts hidden" id="blockC">Компетенции</div>
+
+    <script>
+        function showBlock(id) { /* функция переключения блоков */
+            document.querySelectorAll('.block-contacts').forEach(b => b.classList.add('hidden')); /* скрываем все блоки */
+            document.getElementById(id).classList.remove('hidden'); /* показываем выбранный */
+        }
+
+        function checkOverflow() { /* проверка выхода контента за границы */
+            const block = document.getElementById('blockMain'); /* основной блок */
+            const warning = document.getElementById('overflowWarning'); /* предупреждение */
+            warning.style.display = block.scrollHeight > block.clientHeight ? 'block' : 'none'; /* логика отображения */
+        }
+
+        window.onload = checkOverflow; /* проверка при загрузке */
+    </cript>
 </body>
 </html>
