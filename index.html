@@ -1,224 +1,79 @@
 <!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Профессиональное портфолио: опыт, компетенции, проекты и контакты."
-    />
-    <title>Портфолио | Lev Levinov</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <a class="brand" href="#top" aria-label="Перейти в начало">
-        <span class="brand-mark">LL</span>
-        <span>Lev Levinov</span>
-      </a>
-      <nav class="nav" aria-label="Основная навигация">
-        <a href="#profile">Профиль</a>
-        <a href="#sections">Разделы</a>
-        <a href="#contact">Контакты</a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio: profile, experience, projects, skills and contacts." />
+  <title>Portfolio | Lev Levinov</title>
+  <style>
+    :root{--ink:#17211d;--muted:#64716c;--line:#dce3df;--paper:#f7f6f0;--accent:#12685b;--accent-2:#0b4d44;--gold:#b7904b;--soft:#e7eee9;--shadow:0 24px 60px rgba(22,34,29,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:radial-gradient(circle at top left,rgba(18,104,91,.12),transparent 34rem),linear-gradient(180deg,#fbfaf6 0%,var(--paper) 58%,#eef3ef 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(18px,4vw,56px);border-bottom:1px solid rgba(220,227,223,.78);background:rgba(251,250,246,.88);backdrop-filter:blur(18px)}.brand,.nav,.top-actions,.hero-actions,.contact-actions,footer{display:flex;align-items:center}.brand{gap:10px;font-weight:800}.brand-mark{display:grid;width:38px;height:38px;place-items:center;border-radius:8px;background:var(--ink);color:#f9f6ea;font-size:14px}.top-actions{gap:18px}.nav{gap:20px;color:var(--muted);font-size:14px;font-weight:700}.nav a:hover,footer a:hover{color:var(--accent)}.lang{display:inline-grid;grid-template-columns:1fr 1fr;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.72)}.lang button{height:36px;min-width:44px;border:0;background:transparent;color:var(--muted);cursor:pointer;font:inherit;font-size:13px;font-weight:800}.lang button+button{border-left:1px solid var(--line)}.lang button.active{background:var(--ink);color:#fffef7}main{padding:0 clamp(18px,4vw,56px) 44px}.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.72fr);gap:clamp(28px,5vw,72px);align-items:center;min-height:calc(100vh - 76px);padding:clamp(42px,7vw,86px) 0 32px}.hero-copy{max-width:820px}.eyebrow{margin:0 0 14px;color:var(--accent);font-size:13px;font-weight:800;text-transform:uppercase}h1,h2,h3,p{margin-top:0}h1{max-width:870px;margin-bottom:22px;font-size:clamp(42px,7vw,86px);line-height:.96;letter-spacing:0}.lead{max-width:640px;margin-bottom:30px;color:#4e5c57;font-size:clamp(18px,2vw,22px)}.hero-actions{flex-wrap:wrap;gap:12px}.button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:8px;padding:0 18px;font-weight:800}.button.primary{border-color:var(--accent);background:var(--accent);color:#fffef7}.button.primary:hover{background:var(--accent-2)}.button.ghost{background:rgba(255,255,255,.62)}.profile-card{overflow:hidden;border:1px solid rgba(220,227,223,.92);border-radius:8px;background:rgba(255,255,255,.82);box-shadow:var(--shadow)}.portrait-wrap{aspect-ratio:4/4.2;background:linear-gradient(135deg,#e5ece8,#f7f3e8)}.portrait{display:block;width:100%;height:100%;object-fit:cover}.profile-meta{padding:26px 26px 16px}.status{display:inline-flex;margin-bottom:12px;border-radius:999px;background:var(--soft);color:var(--accent-2);padding:6px 10px;font-size:12px;font-weight:800}.profile-meta h2,.section-heading h2,.contact h2{margin-bottom:12px;font-size:clamp(26px,4vw,42px);line-height:1.06}.profile-meta p:last-child,.overview p,.panel-body p,.contact p{color:var(--muted)}.facts{display:grid;grid-template-columns:1fr 1fr;margin:0;border-top:1px solid var(--line)}.facts div{padding:18px}.facts div+div{border-left:1px solid var(--line)}dt{color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase}dd{margin:6px 0 0;font-weight:800}.overview{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:var(--line)}.overview article{min-height:184px;padding:24px;background:rgba(255,255,255,.72)}.overview span{color:var(--gold);font-weight:800}.overview h2{margin:30px 0 10px;font-size:22px}.content{display:grid;grid-template-columns:minmax(220px,.44fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);padding:clamp(56px,8vw,96px) 0}.section-heading{position:sticky;top:100px;align-self:start}.accordion{display:grid;gap:12px}.panel{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.8);box-shadow:0 10px 30px rgba(22,34,29,.05)}.panel-trigger{display:flex;width:100%;min-height:68px;align-items:center;justify-content:space-between;gap:16px;border:0;background:transparent;color:var(--ink);cursor:pointer;padding:0 22px;font:inherit;font-size:18px;font-weight:800;text-align:left}.trigger-icon{position:relative;flex:0 0 auto;width:18px;height:18px}.trigger-icon:before,.trigger-icon:after{position:absolute;top:8px;left:2px;width:14px;height:2px;border-radius:2px;background:var(--accent);content:""}.trigger-icon:after{transform:rotate(90deg);transition:transform .18s ease}.panel.open .trigger-icon:after{transform:rotate(0)}.panel-body{display:none;padding:0 22px 24px}.panel.open .panel-body{display:block}.tags,.skill-list{display:flex;flex-wrap:wrap;gap:10px}.tags span,.skill-list span{border:1px solid var(--line);border-radius:999px;background:#fbfaf6;padding:8px 12px;color:#31403a;font-size:14px;font-weight:800}.timeline{display:grid;gap:18px}.timeline div{border-left:2px solid var(--accent);padding-left:16px}.timeline time{color:var(--gold);font-size:13px;font-weight:800}.timeline h3{margin:6px 0;font-size:18px}.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.project-card{min-height:130px;border:1px solid var(--line);border-radius:8px;background:#fbfaf6;padding:18px}.project-card strong,.project-card span{display:block}.project-card span{margin-top:10px;color:var(--muted)}.tabs{display:grid;gap:14px}.tab-list{display:flex;flex-wrap:wrap;gap:8px}.tab{min-height:40px;border:1px solid var(--line);border-radius:8px;background:#fbfaf6;color:var(--muted);cursor:pointer;padding:0 14px;font:inherit;font-weight:800}.tab.active{border-color:var(--accent);background:var(--accent);color:#fff}.tab-panel{display:none}.tab-panel.active{display:block}.contact{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:38px 0}.contact-actions{flex-wrap:wrap;justify-content:flex-end;gap:10px}.contact-actions a{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.72);padding:12px 14px;font-weight:800}footer{justify-content:space-between;gap:18px;padding:24px clamp(18px,4vw,56px) 34px;color:var(--muted);font-size:14px;font-weight:800}@media(max-width:880px){.topbar{align-items:flex-start;flex-direction:column}.top-actions{width:100%;align-items:flex-start;justify-content:space-between}.hero,.content,.contact{grid-template-columns:1fr}.hero{min-height:auto}.section-heading{position:static}.overview{grid-template-columns:1fr}.contact-actions{justify-content:flex-start}}@media(max-width:560px){.nav{flex-wrap:wrap;gap:10px}.top-actions{flex-direction:column}h1{font-size:42px}.facts,.project-grid{grid-template-columns:1fr}.facts div+div{border-top:1px solid var(--line);border-left:0}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Go to top"><span class="brand-mark">LL</span><span>Lev Levinov</span></a>
+    <div class="top-actions">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#profile" data-t="navProfile">Profile</a>
+        <a href="#sections" data-t="navSections">Sections</a>
+        <a href="#contact" data-t="navContact">Contact</a>
       </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero" id="profile">
-        <div class="hero-copy">
-          <p class="eyebrow">Профессиональное портфолио</p>
-          <h1>Специалист, который превращает идеи в аккуратные рабочие решения.</h1>
-          <p class="lead">
-            Здесь можно представить ваш текущий пост, профессиональную роль,
-            сильные стороны, ключевые проекты и быстрые способы связи.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#sections">Смотреть разделы</a>
-            <a class="button ghost" href="mailto:your.email@example.com">Написать</a>
-          </div>
+      <div class="lang" role="group" aria-label="Language selector">
+        <button type="button" data-lang="en" class="active" aria-pressed="true">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      </div>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero" id="profile">
+      <div class="hero-copy">
+        <p class="eyebrow" data-t="heroEyebrow">Professional portfolio</p>
+        <h1 data-t="heroTitle">A specialist turning ideas into precise, working solutions.</h1>
+        <p class="lead" data-t="heroLead">This portfolio presents your current role, professional focus, strengths, key projects, and direct ways to connect.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#sections" data-t="heroPrimary">View sections</a>
+          <a class="button ghost" href="mailto:your.email@example.com" data-t="heroSecondary">Contact me</a>
         </div>
-
-        <aside class="profile-card" aria-label="Краткий профиль">
-          <div class="portrait-wrap">
-            <img
-              class="portrait"
-              src="assets/profile-placeholder.svg"
-              alt="Портрет владельца портфолио"
-            />
-          </div>
-          <div class="profile-meta">
-            <p class="status">Актуально</p>
-            <h2>Ваша текущая должность</h2>
-            <p>
-              Кратко опишите область: управление, разработка, дизайн, аналитика,
-              маркетинг или другой профессиональный фокус.
-            </p>
-          </div>
-          <dl class="facts">
-            <div>
-              <dt>Формат</dt>
-              <dd>Проекты / консультации / работа</dd>
-            </div>
-            <div>
-              <dt>Локация</dt>
-              <dd>Европа / удаленно</dd>
-            </div>
-          </dl>
-        </aside>
-      </section>
-
-      <section class="overview" aria-label="Ключевые преимущества">
-        <article>
-          <span>01</span>
-          <h2>Сильная подача</h2>
-          <p>Первый экран сразу показывает роль, статус и профессиональный фокус.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h2>Структура без шума</h2>
-          <p>Информация раскрывается вкладками, поэтому страница не выглядит перегруженной.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h2>Готово к росту</h2>
-          <p>Можно добавлять реальные проекты, ссылки, резюме, кейсы и отзывы.</p>
-        </article>
-      </section>
-
-      <section class="content" id="sections">
-        <div class="section-heading">
-          <p class="eyebrow">Разделы портфолио</p>
-          <h2>Вся важная информация собрана в раскрывающихся блоках.</h2>
+      </div>
+      <aside class="profile-card" aria-label="Short profile">
+        <div class="portrait-wrap"><img class="portrait" src="assets/profile-placeholder.svg" alt="Portfolio owner portrait" /></div>
+        <div class="profile-meta">
+          <p class="status" data-t="status">Current</p>
+          <h2 data-t="currentRole">Your current position</h2>
+          <p data-t="profileSummary">Briefly describe your field: management, development, design, analytics, marketing, or another professional focus.</p>
         </div>
-
-        <div class="accordion" data-accordion>
-          <article class="panel is-open">
-            <button class="panel-trigger" type="button" aria-expanded="true">
-              <span>Обо мне</span>
-              <span class="trigger-icon" aria-hidden="true"></span>
-            </button>
-            <div class="panel-body">
-              <p>
-                Замените этот текст на краткую профессиональную биографию: чем вы
-                занимаетесь, какие задачи решаете и чем ваш подход полезен бизнесу
-                или клиентам.
-              </p>
-              <div class="tags">
-                <span>Стратегия</span>
-                <span>Коммуникация</span>
-                <span>Ответственность</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="panel">
-            <button class="panel-trigger" type="button" aria-expanded="false">
-              <span>Опыт и должности</span>
-              <span class="trigger-icon" aria-hidden="true"></span>
-            </button>
-            <div class="panel-body">
-              <div class="timeline">
-                <div>
-                  <time>2026 - сейчас</time>
-                  <h3>Ваша текущая роль</h3>
-                  <p>Краткое описание обязанностей, зоны ответственности и результата.</p>
-                </div>
-                <div>
-                  <time>2024 - 2026</time>
-                  <h3>Предыдущий опыт</h3>
-                  <p>Добавьте компанию, проект или направление, которое усиливает доверие.</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="panel">
-            <button class="panel-trigger" type="button" aria-expanded="false">
-              <span>Проекты и кейсы</span>
-              <span class="trigger-icon" aria-hidden="true"></span>
-            </button>
-            <div class="panel-body">
-              <div class="project-grid">
-                <a href="#" class="project-card">
-                  <strong>Проект A</strong>
-                  <span>Кейс, где показан результат, роль и примененные навыки.</span>
-                </a>
-                <a href="#" class="project-card">
-                  <strong>Проект B</strong>
-                  <span>Можно добавить ссылку на сайт, документ, GitHub или презентацию.</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="panel">
-            <button class="panel-trigger" type="button" aria-expanded="false">
-              <span>Навыки и инструменты</span>
-              <span class="trigger-icon" aria-hidden="true"></span>
-            </button>
-            <div class="panel-body">
-              <div class="skill-list">
-                <span>Управление проектами</span>
-                <span>Аналитика</span>
-                <span>Презентации</span>
-                <span>Переговоры</span>
-                <span>Веб-технологии</span>
-                <span>AI-инструменты</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="panel">
-            <button class="panel-trigger" type="button" aria-expanded="false">
-              <span>Дополнительные вкладки</span>
-              <span class="trigger-icon" aria-hidden="true"></span>
-            </button>
-            <div class="panel-body">
-              <div class="tabs" data-tabs>
-                <div class="tab-list" role="tablist" aria-label="Дополнительная информация">
-                  <button class="tab is-active" type="button" role="tab" aria-selected="true">Образование</button>
-                  <button class="tab" type="button" role="tab" aria-selected="false">Сертификаты</button>
-                  <button class="tab" type="button" role="tab" aria-selected="false">Языки</button>
-                </div>
-                <div class="tab-panel is-active" role="tabpanel">
-                  <p>Укажите образование, профильные курсы и академическую базу.</p>
-                </div>
-                <div class="tab-panel" role="tabpanel">
-                  <p>Добавьте сертификаты, лицензии, программы и профессиональные достижения.</p>
-                </div>
-                <div class="tab-panel" role="tabpanel">
-                  <p>Например: русский, английский, французский или другие рабочие языки.</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="contact" id="contact">
-        <div>
-          <p class="eyebrow">Контакты</p>
-          <h2>Открыт к профессиональным предложениям и проектам.</h2>
-        </div>
-        <div class="contact-actions">
-          <a href="mailto:your.email@example.com">your.email@example.com</a>
-          <a href="https://github.com/levlevinov" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="#" target="_blank" rel="noreferrer">LinkedIn / Telegram</a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>© 2026 Lev Levinov</span>
-      <a href="#top">Наверх</a>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+        <dl class="facts">
+          <div><dt data-t="factFormatLabel">Format</dt><dd data-t="factFormatValue">Projects / consulting / employment</dd></div>
+          <div><dt data-t="factLocationLabel">Location</dt><dd data-t="factLocationValue">Europe / remote</dd></div>
+        </dl>
+      </aside>
+    </section>
+    <section class="overview" aria-label="Key strengths">
+      <article><span>01</span><h2 data-t="overviewOneTitle">Clear positioning</h2><p data-t="overviewOneText">The first screen immediately communicates role, status, and professional focus.</p></article>
+      <article><span>02</span><h2 data-t="overviewTwoTitle">Structured content</h2><p data-t="overviewTwoText">Expandable sections keep the page focused without overloading the reader.</p></article>
+      <article><span>03</span><h2 data-t="overviewThreeTitle">Ready to grow</h2><p data-t="overviewThreeText">The structure supports real projects, case studies, references, a resume, and testimonials.</p></article>
+    </section>
+    <section class="content" id="sections">
+      <div class="section-heading"><p class="eyebrow" data-t="sectionsEyebrow">Portfolio sections</p><h2 data-t="sectionsTitle">All essential information is organized into expandable blocks.</h2></div>
+      <div class="accordion" data-accordion>
+        <article class="panel open"><button class="panel-trigger" type="button" aria-expanded="true"><span data-t="aboutTitle">About me</span><span class="trigger-icon" aria-hidden="true"></span></button><div class="panel-body"><p data-t="aboutText">Replace this text with a concise professional biography: what you do, which problems you solve, and how your approach creates value for clients or teams.</p><div class="tags"><span data-t="tagStrategy">Strategy</span><span data-t="tagCommunication">Communication</span><span data-t="tagOwnership">Ownership</span></div></div></article>
+        <article class="panel"><button class="panel-trigger" type="button" aria-expanded="false"><span data-t="experienceTitle">Experience and roles</span><span class="trigger-icon" aria-hidden="true"></span></button><div class="panel-body"><div class="timeline"><div><time data-t="timelineCurrentDate">2026 - Present</time><h3 data-t="timelineCurrentTitle">Your current role</h3><p data-t="timelineCurrentText">Briefly describe your responsibilities, scope, and results.</p></div><div><time>2024 - 2026</time><h3 data-t="timelinePreviousTitle">Previous experience</h3><p data-t="timelinePreviousText">Add a company, project, or direction that strengthens credibility.</p></div></div></div></article>
+        <article class="panel"><button class="panel-trigger" type="button" aria-expanded="false"><span data-t="projectsTitle">Projects and case studies</span><span class="trigger-icon" aria-hidden="true"></span></button><div class="panel-body"><div class="project-grid"><a href="#" class="project-card"><strong data-t="projectOneTitle">Project A</strong><span data-t="projectOneText">A case study showing the result, your role, and the skills applied.</span></a><a href="#" class="project-card"><strong data-t="projectTwoTitle">Project B</strong><span data-t="projectTwoText">Add a link to a website, document, GitHub repository, or presentation.</span></a></div></div></article>
+        <article class="panel"><button class="panel-trigger" type="button" aria-expanded="false"><span data-t="skillsTitle">Skills and tools</span><span class="trigger-icon" aria-hidden="true"></span></button><div class="panel-body"><div class="skill-list"><span data-t="skillProject">Project management</span><span data-t="skillAnalytics">Analytics</span><span data-t="skillPresentations">Presentations</span><span data-t="skillNegotiation">Negotiation</span><span data-t="skillWeb">Web technologies</span><span data-t="skillAi">AI tools</span></div></div></article>
+        <article class="panel"><button class="panel-trigger" type="button" aria-expanded="false"><span data-t="extraTitle">Additional details</span><span class="trigger-icon" aria-hidden="true"></span></button><div class="panel-body"><div class="tabs" data-tabs><div class="tab-list" role="tablist" aria-label="Additional information"><button class="tab active" type="button" role="tab" aria-selected="true" data-t="tabEducation">Education</button><button class="tab" type="button" role="tab" aria-selected="false" data-t="tabCertificates">Certificates</button><button class="tab" type="button" role="tab" aria-selected="false" data-t="tabLanguages">Languages</button></div><div class="tab-panel active" role="tabpanel"><p data-t="tabEducationText">Add education, specialized courses, and relevant academic background.</p></div><div class="tab-panel" role="tabpanel"><p data-t="tabCertificatesText">Add certificates, licenses, programs, and professional achievements.</p></div><div class="tab-panel" role="tabpanel"><p data-t="tabLanguagesText">For example: English, French, and any other working languages.</p></div></div></div></article>
+      </div>
+    </section>
+    <section class="contact" id="contact"><div><p class="eyebrow" data-t="contactEyebrow">Contact</p><h2 data-t="contactTitle">Open to professional opportunities and selected projects.</h2></div><div class="contact-actions"><a href="mailto:your.email@example.com">your.email@example.com</a><a href="https://github.com/levlevinov" target="_blank" rel="noreferrer">GitHub</a><a href="#" target="_blank" rel="noreferrer">LinkedIn / Telegram</a></div></section>
+  </main>
+  <footer><span>© 2026 Lev Levinov</span><a href="#top" data-t="backToTop">Back to top</a></footer>
+  <script>
+    const dict={en:{navProfile:"Profile",navSections:"Sections",navContact:"Contact",heroEyebrow:"Professional portfolio",heroTitle:"A specialist turning ideas into precise, working solutions.",heroLead:"This portfolio presents your current role, professional focus, strengths, key projects, and direct ways to connect.",heroPrimary:"View sections",heroSecondary:"Contact me",status:"Current",currentRole:"Your current position",profileSummary:"Briefly describe your field: management, development, design, analytics, marketing, or another professional focus.",factFormatLabel:"Format",factFormatValue:"Projects / consulting / employment",factLocationLabel:"Location",factLocationValue:"Europe / remote",overviewOneTitle:"Clear positioning",overviewOneText:"The first screen immediately communicates role, status, and professional focus.",overviewTwoTitle:"Structured content",overviewTwoText:"Expandable sections keep the page focused without overloading the reader.",overviewThreeTitle:"Ready to grow",overviewThreeText:"The structure supports real projects, case studies, references, a resume, and testimonials.",sectionsEyebrow:"Portfolio sections",sectionsTitle:"All essential information is organized into expandable blocks.",aboutTitle:"About me",aboutText:"Replace this text with a concise professional biography: what you do, which problems you solve, and how your approach creates value for clients or teams.",tagStrategy:"Strategy",tagCommunication:"Communication",tagOwnership:"Ownership",experienceTitle:"Experience and roles",timelineCurrentDate:"2026 - Present",timelineCurrentTitle:"Your current role",timelineCurrentText:"Briefly describe your responsibilities, scope, and results.",timelinePreviousTitle:"Previous experience",timelinePreviousText:"Add a company, project, or direction that strengthens credibility.",projectsTitle:"Projects and case studies",projectOneTitle:"Project A",projectOneText:"A case study showing the result, your role, and the skills applied.",projectTwoTitle:"Project B",projectTwoText:"Add a link to a website, document, GitHub repository, or presentation.",skillsTitle:"Skills and tools",skillProject:"Project management",skillAnalytics:"Analytics",skillPresentations:"Presentations",skillNegotiation:"Negotiation",skillWeb:"Web technologies",skillAi:"AI tools",extraTitle:"Additional details",tabEducation:"Education",tabCertificates:"Certificates",tabLanguages:"Languages",tabEducationText:"Add education, specialized courses, and relevant academic background.",tabCertificatesText:"Add certificates, licenses, programs, and professional achievements.",tabLanguagesText:"For example: English, French, and any other working languages.",contactEyebrow:"Contact",contactTitle:"Open to professional opportunities and selected projects.",backToTop:"Back to top"},fr:{navProfile:"Profil",navSections:"Sections",navContact:"Contact",heroEyebrow:"Portfolio professionnel",heroTitle:"Un spécialiste qui transforme les idées en solutions précises et opérationnelles.",heroLead:"Ce portfolio présente votre poste actuel, votre orientation professionnelle, vos points forts, vos projets clés et les moyens directs de vous contacter.",heroPrimary:"Voir les sections",heroSecondary:"Me contacter",status:"Actuel",currentRole:"Votre poste actuel",profileSummary:"Décrivez brièvement votre domaine : management, développement, design, analyse, marketing ou autre orientation professionnelle.",factFormatLabel:"Format",factFormatValue:"Projets / conseil / emploi",factLocationLabel:"Localisation",factLocationValue:"Europe / à distance",overviewOneTitle:"Positionnement clair",overviewOneText:"Le premier écran communique immédiatement le rôle, le statut et l'orientation professionnelle.",overviewTwoTitle:"Contenu structuré",overviewTwoText:"Les sections déployables gardent la page lisible sans surcharger le lecteur.",overviewThreeTitle:"Prêt à évoluer",overviewThreeText:"La structure peut accueillir des projets réels, des cas clients, des références, un CV et des témoignages.",sectionsEyebrow:"Sections du portfolio",sectionsTitle:"Toutes les informations essentielles sont organisées en blocs déployables.",aboutTitle:"À propos",aboutText:"Remplacez ce texte par une biographie professionnelle concise : ce que vous faites, les problèmes que vous résolvez et la valeur que votre approche apporte aux clients ou aux équipes.",tagStrategy:"Stratégie",tagCommunication:"Communication",tagOwnership:"Responsabilité",experienceTitle:"Expérience et rôles",timelineCurrentDate:"2026 - Aujourd'hui",timelineCurrentTitle:"Votre rôle actuel",timelineCurrentText:"Décrivez brièvement vos responsabilités, votre périmètre et vos résultats.",timelinePreviousTitle:"Expérience précédente",timelinePreviousText:"Ajoutez une entreprise, un projet ou une direction qui renforce votre crédibilité.",projectsTitle:"Projets et cas d'étude",projectOneTitle:"Projet A",projectOneText:"Un cas d'étude montrant le résultat, votre rôle et les compétences appliquées.",projectTwoTitle:"Projet B",projectTwoText:"Ajoutez un lien vers un site, un document, un dépôt GitHub ou une présentation.",skillsTitle:"Compétences et outils",skillProject:"Gestion de projet",skillAnalytics:"Analyse",skillPresentations:"Présentations",skillNegotiation:"Négociation",skillWeb:"Technologies web",skillAi:"Outils d'IA",extraTitle:"Informations complémentaires",tabEducation:"Formation",tabCertificates:"Certificats",tabLanguages:"Langues",tabEducationText:"Ajoutez votre formation, vos cours spécialisés et votre parcours académique pertinent.",tabCertificatesText:"Ajoutez certificats, licences, programmes et réalisations professionnelles.",tabLanguagesText:"Par exemple : anglais, français et autres langues de travail.",contactEyebrow:"Contact",contactTitle:"Ouvert aux opportunités professionnelles et aux projets sélectionnés.",backToTop:"Retour en haut"}};
+    const setLang=lang=>{document.documentElement.lang=lang;document.querySelectorAll('[data-t]').forEach(el=>el.textContent=dict[lang][el.dataset.t]||el.textContent);document.querySelectorAll('[data-lang]').forEach(btn=>{const on=btn.dataset.lang===lang;btn.classList.toggle('active',on);btn.setAttribute('aria-pressed',on)});localStorage.setItem('portfolioLang',lang)};
+    document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>setLang(btn.dataset.lang)));
+    document.querySelector('[data-accordion]').addEventListener('click',e=>{const trigger=e.target.closest('.panel-trigger');if(!trigger)return;const panel=trigger.closest('.panel'),open=panel.classList.contains('open');document.querySelectorAll('.panel').forEach(p=>{p.classList.remove('open');p.querySelector('.panel-trigger').setAttribute('aria-expanded','false')});if(!open){panel.classList.add('open');trigger.setAttribute('aria-expanded','true')}});
+    document.querySelectorAll('[data-tabs]').forEach(tabs=>{const buttons=[...tabs.querySelectorAll('.tab')],panels=[...tabs.querySelectorAll('.tab-panel')];buttons.forEach((btn,i)=>btn.addEventListener('click',()=>{buttons.forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});panels.forEach(p=>p.classList.remove('active'));btn.classList.add('active');btn.setAttribute('aria-selected','true');panels[i].classList.add('active')}))});
+    setLang(localStorage.getItem('portfolioLang')||'en');
+  </script>
+</body>
 </html>
