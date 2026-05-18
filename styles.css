@@ -63,6 +63,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--page);
   color: var(--text-light);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -122,6 +123,7 @@ input {
 
 .header-inner {
   display: flex;
+  min-width: 0;
   min-height: var(--header-height);
   align-items: center;
   justify-content: space-between;
@@ -130,6 +132,7 @@ input {
 
 .brand {
   display: inline-flex;
+  min-width: 0;
   align-items: center;
   gap: 12px;
   color: var(--text-light);
@@ -186,6 +189,7 @@ input {
 
 .menu-toggle {
   display: none;
+  flex: 0 0 auto;
   width: 42px;
   height: 42px;
   align-items: center;
@@ -250,6 +254,10 @@ section,
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.64fr);
   gap: 56px;
   align-items: center;
+}
+
+.hero-grid > * {
+  min-width: 0;
 }
 
 .hero-side {
@@ -343,6 +351,7 @@ h3 {
   margin-bottom: 0;
   color: var(--text-navy-secondary);
   font-size: 19px;
+  overflow-wrap: break-word;
 }
 
 .hero-actions,
