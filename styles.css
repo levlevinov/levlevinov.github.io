@@ -923,6 +923,11 @@ h3 {
     padding: 56px 0;
   }
 
+  .menu-toggle {
+    right: auto;
+    left: clamp(260px, calc(100vw - 62px), 340px);
+  }
+
   h1 {
     font-size: 38px;
   }
