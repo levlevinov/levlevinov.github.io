@@ -112,6 +112,10 @@ function renderNavigation(lang, route) {
 }
 
 function renderHero(content) {
+  const photoMarkup = content.hero.photoSrc
+    ? `<img class="hero-photo" src="${escapeHtml(content.hero.photoSrc)}" alt="${escapeHtml(content.hero.photoAlt)}" />`
+    : `<div class="hero-photo-placeholder" aria-label="${escapeHtml(content.hero.photoAlt)}"><span>LL</span></div>`;
+
   return `
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
@@ -126,22 +130,27 @@ function renderHero(content) {
             <a class="button secondary" href="${escapeHtml(content.hero.cvHref)}">${escapeHtml(content.translations.downloadCv)}</a>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="${escapeHtml(content.translations.current)}">
-          <dl>
-            <div>
-              <dt>${escapeHtml(content.hero.locationLabel)}</dt>
-              <dd>${escapeHtml(content.hero.location)}</dd>
-            </div>
-            <div>
-              <dt>${escapeHtml(content.hero.availabilityLabel)}</dt>
-              <dd>${escapeHtml(content.hero.availability)}</dd>
-            </div>
-            <div>
-              <dt>${escapeHtml(content.translations.current)}</dt>
-              <dd>${escapeHtml(content.currentPosition.status)}</dd>
-            </div>
-          </dl>
-        </aside>
+        <div class="hero-side">
+          <figure class="hero-photo-frame">
+            ${photoMarkup}
+          </figure>
+          <aside class="hero-panel" aria-label="${escapeHtml(content.translations.current)}">
+            <dl>
+              <div>
+                <dt>${escapeHtml(content.hero.locationLabel)}</dt>
+                <dd>${escapeHtml(content.hero.location)}</dd>
+              </div>
+              <div>
+                <dt>${escapeHtml(content.hero.availabilityLabel)}</dt>
+                <dd>${escapeHtml(content.hero.availability)}</dd>
+              </div>
+              <div>
+                <dt>${escapeHtml(content.translations.current)}</dt>
+                <dd>${escapeHtml(content.currentPosition.status)}</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
       </div>
     </section>
   `;

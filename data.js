@@ -49,6 +49,8 @@ window.PORTFOLIO_DATA = {
       availabilityLabel: "Availability",
       availability: "Technical projects, internships, collaborations and professional opportunities",
       cvHref: "#",
+      photoSrc: "",
+      photoAlt: "Professional portrait of Lev Levinov",
     },
     profile: {
       eyebrow: "Profile",
@@ -268,6 +270,8 @@ window.PORTFOLIO_DATA = {
       availabilityLabel: "Disponibilite",
       availability: "Projets techniques, stages, collaborations et opportunites professionnelles",
       cvHref: "#",
+      photoSrc: "",
+      photoAlt: "Portrait professionnel de Lev Levinov",
     },
     profile: {
       eyebrow: "Profil",
