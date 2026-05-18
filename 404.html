@@ -1,16 +1,50 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lev Levinov | Engineering Portfolio</title>
-</head>
-<body>
-  <script>
-    fetch('/index.html')
-      .then(function(response){ return response.text(); })
-      .then(function(html){ document.open(); document.write(html); document.close(); })
-      .catch(function(){ location.replace('/'); });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lev Levinov portfolio: electronics, embedded systems, CAD, prototyping and digital fabrication."
+      id="meta-description"
+    />
+    <title>Lev Levinov | Engineering Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/en/" data-brand-link aria-label="Lev Levinov home">
+          <span class="brand-mark" aria-hidden="true">LL</span>
+          <span>Lev Levinov</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Main navigation" data-site-nav></nav>
+      </div>
+    </header>
+
+    <main id="main"></main>
+
+    <script src="/data.js"></script>
+    <script src="/script.js"></script>
+  </body>
 </html>
