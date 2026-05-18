@@ -693,6 +693,11 @@ h3 {
   padding: 78px 0 96px;
 }
 
+.detail-shell .section {
+  background: var(--navy);
+  color: var(--text-navy);
+}
+
 .detail-header {
   max-width: 860px;
   margin-bottom: 40px;
