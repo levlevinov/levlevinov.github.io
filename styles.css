@@ -928,6 +928,10 @@ h3 {
     left: clamp(260px, calc(100vw - 62px), 340px);
   }
 
+  .hero-grid > div:first-child {
+    width: min(100%, 358px);
+  }
+
   h1 {
     font-size: 38px;
   }
