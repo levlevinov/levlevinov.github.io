@@ -101,11 +101,14 @@ function renderNavigation(lang, route) {
     ["contact", content.navigation.contact],
   ];
 
+  const targetLang = lang === "fr" ? "en" : "fr";
+  const targetRoute = equivalentRoute(targetLang, route);
+
   nav.innerHTML = `
     ${links.map(([id, label]) => `<a href="${home}#${id}">${escapeHtml(label)}</a>`).join("")}
-    <div class="language-group ${lang === "fr" ? "is-fr" : "is-en"}" aria-label="Language selector">
-      <a class="language-link ${lang === "fr" ? "is-current" : ""}" href="${equivalentRoute("fr", route)}">FR</a>
-      <a class="language-link ${lang === "en" ? "is-current" : ""}" href="${equivalentRoute("en", route)}">EN</a>
+    <div class="language-group language-toggle ${lang === "fr" ? "is-fr" : "is-en"}" role="link" tabindex="0" data-language-toggle data-href="${targetRoute}" aria-label="Switch language to ${targetLang.toUpperCase()}">
+      <span class="language-link ${lang === "fr" ? "is-current" : ""}">FR</span>
+      <span class="language-link ${lang === "en" ? "is-current" : ""}">EN</span>
     </div>
   `;
 }
@@ -525,10 +528,23 @@ function bindNavigation() {
   });
 
   nav.addEventListener("click", (event) => {
+    const languageToggle = event.target.closest("[data-language-toggle]");
+    if (languageToggle) {
+      window.location.href = languageToggle.dataset.href;
+      return;
+    }
+
     if (!event.target.closest("a")) return;
     nav.classList.remove("is-open");
     document.body.classList.remove("menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
+  });
+
+  nav.addEventListener("keydown", (event) => {
+    const languageToggle = event.target.closest("[data-language-toggle]");
+    if (!languageToggle || (event.key !== "Enter" && event.key !== " ")) return;
+    event.preventDefault();
+    window.location.href = languageToggle.dataset.href;
   });
 }
 
