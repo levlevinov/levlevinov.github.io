@@ -34,6 +34,8 @@
   --accent: #b88a44;
   --accent-hover: #c99b55;
   --accent-soft: rgba(184, 138, 68, 0.14);
+  --eyebrow-color: #b88a44;
+  --eyebrow-color-soft: #c99b55;
 
   /*
   Palette 2 - Warm professional
@@ -379,13 +381,17 @@ section,
   box-shadow: none;
 }
 
-.eyebrow {
+.section-eyebrow,
+.eyebrow,
+.section-label,
+.section-kicker,
+.pre-title {
   margin: 0 0 16px;
-  color: var(--accent);
+  color: var(--eyebrow-color);
   font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
