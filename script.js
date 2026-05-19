@@ -103,9 +103,8 @@ function renderNavigation(lang, route) {
 
   nav.innerHTML = `
     ${links.map(([id, label]) => `<a href="${home}#${id}">${escapeHtml(label)}</a>`).join("")}
-    <div class="language-group" aria-label="Language selector">
+    <div class="language-group ${lang === "fr" ? "is-fr" : "is-en"}" aria-label="Language selector">
       <a class="language-link ${lang === "fr" ? "is-current" : ""}" href="${equivalentRoute("fr", route)}">FR</a>
-      <span aria-hidden="true">/</span>
       <a class="language-link ${lang === "en" ? "is-current" : ""}" href="${equivalentRoute("en", route)}">EN</a>
     </div>
   `;
