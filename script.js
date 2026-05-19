@@ -134,20 +134,20 @@ function renderHero(content) {
           ${photoMarkup}
         </figure>
         <aside class="hero-panel" aria-label="${escapeHtml(content.translations.current)}">
-          <dl>
-            <div>
-              <dt>${escapeHtml(content.hero.locationLabel)}</dt>
-              <dd>${escapeHtml(content.hero.location)}</dd>
+          <div class="hero-info-card">
+            <div class="hero-info-item">
+              <span class="hero-info-label">${escapeHtml(content.hero.locationLabel)}</span>
+              <strong class="hero-info-value">${escapeHtml(content.hero.location)}</strong>
             </div>
-            <div>
-              <dt>${escapeHtml(content.hero.availabilityLabel)}</dt>
-              <dd>${escapeHtml(content.hero.availability)}</dd>
+            <div class="hero-info-item">
+              <span class="hero-info-label">${escapeHtml(content.hero.availabilityLabel)}</span>
+              <strong class="hero-info-value">${escapeHtml(content.hero.availability)}</strong>
             </div>
-            <div>
-              <dt>${escapeHtml(content.translations.current)}</dt>
-              <dd>${escapeHtml(content.currentPosition.status)}</dd>
+            <div class="hero-info-item">
+              <span class="hero-info-label">${escapeHtml(content.translations.current)}</span>
+              <strong class="hero-info-value">${escapeHtml(content.currentPosition.status)}</strong>
             </div>
-          </dl>
+          </div>
         </aside>
       </div>
     </section>
