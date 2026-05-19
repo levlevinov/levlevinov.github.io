@@ -6,7 +6,12 @@
   --navy: #102a43;
   --navy-surface: #183b56;
   --light-card: #e9eef3;
-  --chip: #dde5ec;
+  --chip-bg-light: #d9e5ee;
+  --chip-text-light: #243b53;
+  --chip-bg-light-hover: #cfe0ea;
+  --chip-bg-dark: #254b66;
+  --chip-text-dark: #eaf2f8;
+  --chip-bg-dark-hover: #2d5673;
   --border: #d3dce6;
   --text-light: #1f2933;
   --text-light-secondary: #5b6775;
@@ -22,7 +27,7 @@
   --navy: #172a3a;
   --navy-surface: #172a3a;
   --light-card: #ede7dd;
-  --chip: #ded6c9;
+  --chip-bg-light: #ded6c9;
   --border: #ded6c9;
   --text-light: #24303a;
   --text-light-secondary: #68727d;
@@ -36,7 +41,7 @@
   --navy: #0f2742;
   --navy-surface: #0f2742;
   --light-card: #e8edf3;
-  --chip: #dce5ee;
+  --chip-bg-light: #dce5ee;
   --border: #dce5ee;
   --text-light: #1e2a36;
   --text-light-secondary: #607080;
@@ -146,10 +151,13 @@ input {
   height: 38px;
   place-items: center;
   border-radius: 18px;
-  background: var(--chip);
-  color: var(--accent);
+  background: var(--chip-bg-light);
+  color: var(--chip-text-light);
   font-family: "Space Grotesk", sans-serif;
   font-size: 14px;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .site-nav {
@@ -198,8 +206,10 @@ input {
   gap: 5px;
   border: 0;
   border-radius: 18px;
-  background: var(--chip);
+  background: var(--chip-bg-light);
   color: var(--text-light);
+  outline: none;
+  box-shadow: none;
   cursor: pointer;
 }
 
@@ -293,11 +303,14 @@ section,
   height: 96px;
   place-items: center;
   border-radius: 28px;
-  background: var(--navy-chip);
-  color: var(--text-navy);
+  background: var(--chip-bg-dark);
+  color: var(--chip-text-dark);
   font-family: "Space Grotesk", Inter, sans-serif;
   font-size: 34px;
   font-weight: 700;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .eyebrow {
@@ -411,19 +424,26 @@ h3 {
 }
 
 .filter-button {
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: transparent;
-  color: var(--text-navy-secondary);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-dark);
+  color: var(--chip-text-dark);
+  padding: 8px 14px;
 }
 
 .filter-button:hover {
-  border-color: transparent;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-navy);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-dark-hover);
+  color: var(--chip-text-dark);
 }
 
 .filter-button.is-active {
-  border-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
   background: var(--accent);
   color: var(--text-navy);
 }
@@ -534,21 +554,42 @@ h3 {
 
 .quality-list li,
 .tag-list li {
-  border: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
   border-radius: 999px;
-  background: var(--chip);
-  color: var(--text-light);
-  padding: 8px 12px;
+  background: var(--chip-bg-light);
+  color: var(--chip-text-light);
+  padding: 8px 14px;
   font-size: 15px;
   line-height: 1.2;
+  transition: background 200ms ease;
+}
+
+.quality-list li:hover,
+.tag-list li:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-light-hover);
 }
 
 #skills .tag-list li,
 #experience .tag-list li,
 #projects .tag-list li,
 .detail-shell .tag-list li {
-  background: var(--navy-chip);
-  color: var(--text-navy-secondary);
+  background: var(--chip-bg-dark);
+  color: var(--chip-text-dark);
+}
+
+#skills .tag-list li:hover,
+#experience .tag-list li:hover,
+#projects .tag-list li:hover,
+.detail-shell .tag-list li:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-dark-hover);
 }
 
 .current-grid,
@@ -631,27 +672,49 @@ h3 {
 .compact-list li,
 .detail-list li {
   position: relative;
-  border-radius: 18px;
-  background: var(--chip);
-  color: var(--text-light);
-  padding: 8px 12px 8px 24px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 20px;
+  background: var(--chip-bg-light);
+  color: var(--chip-text-light);
+  padding: 14px 18px 14px 30px;
   font-size: 15px;
   line-height: 1.55;
+  transition: background 200ms ease;
+}
+
+.compact-list li:hover,
+.detail-list li:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-light-hover);
 }
 
 #skills .compact-list li,
 #experience .compact-list li,
 #projects .compact-list li,
 .detail-shell .detail-list li {
-  background: var(--navy-chip);
-  color: var(--text-navy-secondary);
+  background: var(--chip-bg-dark);
+  color: var(--chip-text-dark);
+}
+
+#skills .compact-list li:hover,
+#experience .compact-list li:hover,
+#projects .compact-list li:hover,
+.detail-shell .detail-list li:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-dark-hover);
 }
 
 .compact-list li::before,
 .detail-list li::before {
   position: absolute;
   top: 1.08em;
-  left: 12px;
+  left: 16px;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -663,21 +726,41 @@ h3 {
 .category-pill {
   display: inline-flex;
   width: fit-content;
-  border: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
   border-radius: 999px;
-  background: var(--chip);
-  color: var(--text-light);
-  padding: 6px 10px;
+  background: var(--chip-bg-light);
+  color: var(--chip-text-light);
+  padding: 8px 14px;
   font-size: 13px;
   font-weight: 600;
   line-height: 1.2;
+  transition: background 200ms ease;
+}
+
+.project-status:hover,
+.category-pill:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-light-hover);
 }
 
 #projects .project-status,
 #projects .category-pill,
 .detail-shell .category-pill {
-  background: var(--navy-chip);
-  color: var(--text-navy);
+  background: var(--chip-bg-dark);
+  color: var(--chip-text-dark);
+}
+
+#projects .project-status:hover,
+#projects .category-pill:hover,
+.detail-shell .category-pill:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-dark-hover);
 }
 
 .category-pill {
@@ -694,10 +777,21 @@ h3 {
 }
 
 .education-item {
-  border-left: 0;
-  border-radius: 18px;
-  background: var(--chip);
-  padding: 16px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 20px;
+  background: var(--chip-bg-light);
+  color: var(--chip-text-light);
+  padding: 14px 18px;
+  transition: background 200ms ease;
+}
+
+.education-item:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-light-hover);
 }
 
 .education-item p {
@@ -712,18 +806,26 @@ h3 {
 .contact-links a,
 .contact-links span {
   display: block;
-  border-bottom: 1px solid rgba(211, 220, 230, 0.82);
-  color: var(--text-light-secondary);
-  padding: 10px 0;
-  transition: color 200ms ease;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 20px;
+  background: var(--chip-bg-light);
+  color: var(--chip-text-light);
+  padding: 14px 18px;
+  transition: background 200ms ease, color 200ms ease;
 }
 
 .contact-links a {
-  color: var(--accent);
+  color: var(--chip-text-light);
 }
 
 .contact-links a:hover {
-  color: var(--accent-hover);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-light-hover);
+  color: var(--chip-text-light);
 }
 
 .site-footer {
@@ -793,11 +895,22 @@ h3 {
   display: grid;
   min-height: 150px;
   place-items: center;
-  border: 0;
-  border-radius: 18px;
-  background: var(--navy-chip);
-  color: var(--text-navy-secondary);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 20px;
+  background: var(--chip-bg-dark);
+  color: var(--chip-text-dark);
+  padding: 14px 18px;
   font-size: 15px;
+  transition: background 200ms ease;
+}
+
+.gallery-item:hover {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--chip-bg-dark-hover);
 }
 
 .not-found {
