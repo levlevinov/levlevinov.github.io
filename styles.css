@@ -3,21 +3,26 @@
 
   /* Active Palette 1 - Premium engineering */
   --page: #f6f7f9;
-  --navy: #102a43;
-  --navy-surface: #183b56;
+  --navy-main: #082a4a;
+  --navy-secondary: #103a5c;
+  --navy-surface: #16466b;
+  --navy-surface-hover: #1b527a;
+  --navy-deep: #061f38;
+  --navy: var(--navy-main);
   --light-card: #e9eef3;
   --chip-bg-light: #d9e5ee;
   --chip-text-light: #243b53;
   --chip-bg-light-hover: #cfe0ea;
-  --chip-bg-dark: #254b66;
+  --chip-bg-dark: #1b527a;
   --chip-text-dark: #eaf2f8;
-  --chip-bg-dark-hover: #2d5673;
+  --chip-bg-dark-hover: #23628f;
   --border: #d3dce6;
   --text-light: #1f2933;
   --text-light-secondary: #5b6775;
   --text-light-muted: #94a3b8;
   --text-navy: #f8fafc;
-  --text-navy-secondary: #cbd5e1;
+  --text-navy-secondary: #d6e2ec;
+  --text-footer-secondary: #cbd5e1;
   --accent: #3a7ca5;
   --accent-hover: #4f91bc;
 
@@ -237,10 +242,14 @@ section,
 #skills,
 #experience,
 #projects,
-.site-footer,
 .detail-shell,
 .not-found {
   background: var(--navy);
+  color: var(--text-navy);
+}
+
+.site-footer {
+  background: var(--navy-deep);
   color: var(--text-navy);
 }
 
@@ -261,8 +270,10 @@ section,
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.64fr);
-  gap: 56px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  grid-template-rows: auto auto;
+  column-gap: 72px;
+  row-gap: 56px;
   align-items: center;
 }
 
@@ -270,13 +281,18 @@ section,
   min-width: 0;
 }
 
-.hero-side {
-  display: grid;
-  justify-items: center;
-  gap: 24px;
+.hero-grid > div:first-child {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  justify-self: start;
 }
 
 .hero-photo-frame {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
   width: min(100%, 340px);
   margin: 0;
 }
@@ -448,6 +464,14 @@ h3 {
   color: var(--text-navy);
 }
 
+.hero-panel {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  width: 100%;
+  max-width: 680px;
+}
+
 .hero-panel,
 #skills .card,
 #experience .card,
@@ -471,7 +495,6 @@ h3 {
 }
 
 .hero-panel {
-  width: min(100%, 340px);
   padding: 28px;
   box-shadow: none;
 }
@@ -831,7 +854,7 @@ h3 {
 .site-footer {
   border-top: 0;
   padding: 32px 0;
-  color: var(--text-navy-secondary);
+  color: var(--text-footer-secondary);
   font-size: 15px;
 }
 
@@ -937,8 +960,29 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .hero-side {
-    justify-items: start;
+  .hero-grid {
+    grid-template-rows: auto auto auto;
+    column-gap: 0;
+  }
+
+  .hero-grid > div:first-child,
+  .hero-photo-frame,
+  .hero-panel {
+    grid-column: 1;
+  }
+
+  .hero-grid > div:first-child {
+    grid-row: 2;
+  }
+
+  .hero-photo-frame {
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .hero-panel {
+    grid-row: 3;
+    max-width: none;
   }
 }
 
@@ -964,14 +1008,10 @@ h3 {
     gap: 36px;
   }
 
-  .hero-side {
-    order: -1;
-    justify-items: center;
-  }
-
   .hero-photo-frame,
   .hero-panel {
     width: min(100%, 320px);
+    justify-self: center;
   }
 
   h1 {

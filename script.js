@@ -130,27 +130,25 @@ function renderHero(content) {
             <a class="button secondary" href="${escapeHtml(content.hero.cvHref)}">${escapeHtml(content.translations.downloadCv)}</a>
           </div>
         </div>
-        <div class="hero-side">
-          <figure class="hero-photo-frame">
-            ${photoMarkup}
-          </figure>
-          <aside class="hero-panel" aria-label="${escapeHtml(content.translations.current)}">
-            <dl>
-              <div>
-                <dt>${escapeHtml(content.hero.locationLabel)}</dt>
-                <dd>${escapeHtml(content.hero.location)}</dd>
-              </div>
-              <div>
-                <dt>${escapeHtml(content.hero.availabilityLabel)}</dt>
-                <dd>${escapeHtml(content.hero.availability)}</dd>
-              </div>
-              <div>
-                <dt>${escapeHtml(content.translations.current)}</dt>
-                <dd>${escapeHtml(content.currentPosition.status)}</dd>
-              </div>
-            </dl>
-          </aside>
-        </div>
+        <figure class="hero-photo-frame">
+          ${photoMarkup}
+        </figure>
+        <aside class="hero-panel" aria-label="${escapeHtml(content.translations.current)}">
+          <dl>
+            <div>
+              <dt>${escapeHtml(content.hero.locationLabel)}</dt>
+              <dd>${escapeHtml(content.hero.location)}</dd>
+            </div>
+            <div>
+              <dt>${escapeHtml(content.hero.availabilityLabel)}</dt>
+              <dd>${escapeHtml(content.hero.availability)}</dd>
+            </div>
+            <div>
+              <dt>${escapeHtml(content.translations.current)}</dt>
+              <dd>${escapeHtml(content.currentPosition.status)}</dd>
+            </div>
+          </dl>
+        </aside>
       </div>
     </section>
   `;
