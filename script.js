@@ -441,7 +441,7 @@ function renderProjectDetail(lang, slug) {
           ${detailSection(content.translations.result, project.details.result)}
           ${detailSection(content.translations.skillsDemonstrated, project.details.skills)}
         </div>
-        <section class="section" aria-labelledby="gallery-title">
+        <section class="detail-gallery-section" aria-labelledby="gallery-title">
           <h2 id="gallery-title">${escapeHtml(content.translations.gallery)}</h2>
           <div class="gallery-grid">
             <div class="gallery-item">${escapeHtml(content.translations.toBeCompleted)}</div>
@@ -481,7 +481,7 @@ function renderExperienceDetail(lang, slug) {
           ${detailSection(content.translations.resultsImpact, item.details.results)}
           ${detailSection(content.translations.skillsDemonstrated, item.skills)}
         </div>
-        <div class="section">
+        <div class="detail-actions">
           <a class="button secondary" href="/${lang}/#experience-${escapeHtml(item.slug)}">${escapeHtml(content.translations.backToExperience)}</a>
         </div>
       </div>

@@ -628,6 +628,24 @@ h3 {
   text-transform: uppercase;
 }
 
+.section-eyebrow,
+.eyebrow,
+.section-label,
+.section-kicker,
+.pre-title,
+.hero-info-label,
+.meta-label,
+#skills .eyebrow,
+#experience .eyebrow,
+#projects .eyebrow,
+#profile .eyebrow,
+#education .eyebrow,
+#contact .eyebrow,
+.detail-shell .eyebrow,
+.detail-shell .meta-label {
+  color: #B88A44 !important;
+}
+
 .hero-info-value {
   display: block;
   max-width: 100%;
@@ -1012,6 +1030,20 @@ h3 {
 .detail-shell .section {
   background: var(--navy);
   color: var(--text-navy);
+}
+
+.detail-gallery-section,
+.detail-actions {
+  background: transparent;
+  color: var(--text-navy);
+}
+
+.detail-gallery-section {
+  padding: 40px 0 28px;
+}
+
+.detail-actions {
+  padding-top: 28px;
 }
 
 .detail-header {
