@@ -34,8 +34,8 @@
   --accent: #b88a44;
   --accent-hover: #c99b55;
   --accent-soft: rgba(184, 138, 68, 0.14);
-  --eyebrow-color: #b88a44;
-  --eyebrow-color-soft: #c99b55;
+  --eyebrow-color: #B88A44;
+  --eyebrow-color-soft: #C99B55;
 
   /*
   Palette 2 - Warm professional
@@ -387,10 +387,18 @@ section,
 .section-kicker,
 .pre-title {
   margin: 0 0 16px;
-  color: var(--eyebrow-color);
+  color: #B88A44;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-info-label,
+.meta-label {
+  color: #B88A44;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -602,18 +610,18 @@ h3 {
 #experience .meta-label,
 #projects .meta-label,
 .detail-shell .meta-label {
-  color: var(--text-muted);
+  color: #B88A44;
 }
 
 .hero-info-label {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.35;
-  opacity: 0.75;
+  opacity: 1;
 }
 
 .meta-label {
-  color: var(--text-light-muted);
+  color: #B88A44;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.4;
