@@ -115,7 +115,7 @@ function renderNavigation(lang, route) {
 
 function renderHero(content) {
   const photoMarkup = content.hero.photoSrc
-    ? `<img class="hero-photo" src="${escapeHtml(content.hero.photoSrc)}" alt="${escapeHtml(content.hero.photoAlt)}" />`
+    ? `<div class="hero-photo"><img class="hero-photo-image" src="${escapeHtml(content.hero.photoSrc)}" alt="${escapeHtml(content.hero.photoAlt)}" /></div>`
     : `<div class="hero-photo-placeholder" aria-label="${escapeHtml(content.hero.photoAlt)}"><span>LL</span></div>`;
 
   return `
