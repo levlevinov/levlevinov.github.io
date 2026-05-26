@@ -106,9 +106,9 @@ function renderNavigation(lang, route) {
 
   nav.innerHTML = `
     ${links.map(([id, label]) => `<a href="${home}#${id}">${escapeHtml(label)}</a>`).join("")}
-    <div class="language-group language-toggle ${lang === "fr" ? "is-fr" : "is-en"}" role="link" tabindex="0" data-language-toggle data-href="${targetRoute}" aria-label="Switch language to ${targetLang.toUpperCase()}">
-      <span class="language-link ${lang === "fr" ? "is-current" : ""}">FR</span>
-      <span class="language-link ${lang === "en" ? "is-current" : ""}">EN</span>
+    <div class="language-group language-toggle ${lang === "fr" ? "is-fr" : "is-en"}" role="link" tabindex="0" data-language-toggle data-href="${targetRoute}" data-lang="${lang}" aria-label="Switch language to ${targetLang.toUpperCase()}">
+      <span class="language-link language-toggle-option ${lang === "fr" ? "is-current active" : "inactive"}">FR</span>
+      <span class="language-link language-toggle-option ${lang === "en" ? "is-current active" : "inactive"}">EN</span>
     </div>
   `;
 }
