@@ -1803,7 +1803,7 @@ h3 {
   }
 
   .mission-detail-shell .container {
-    width: min(calc(100% - 48px), var(--container));
+    width: min(calc(100% - 64px), var(--container));
   }
 
   .section {
