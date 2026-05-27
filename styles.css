@@ -1140,6 +1140,192 @@ h3 {
   padding: 78px 0 96px;
 }
 
+.mission-detail-shell {
+  background: var(--page);
+  color: var(--text-light);
+}
+
+.mission-hero {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-main) 48%, var(--navy-rich) 100%);
+  color: var(--text-navy);
+  padding: 82px 0 72px;
+}
+
+.mission-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.8fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.mission-hero-grid > * {
+  min-width: 0;
+}
+
+.mission-hero .detail-lead,
+.mission-hero p {
+  color: var(--text-navy-secondary);
+}
+
+.mission-meta {
+  margin: 24px 0;
+}
+
+.mission-meta .category-pill {
+  display: inline-grid;
+  gap: 4px;
+  background: var(--chip-bg-dark);
+  color: var(--chip-text-dark);
+}
+
+.mission-meta .category-pill span {
+  color: #B88A44;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.mission-hero-image {
+  margin: 0;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--photo-shadow);
+}
+
+.mission-hero-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.mission-section {
+  background: var(--page);
+  color: var(--text-light);
+}
+
+.mission-section-navy {
+  background: var(--navy-main);
+  color: var(--text-navy);
+}
+
+.mission-section-navy .section-header p,
+.mission-section-navy .section-header h2 {
+  color: var(--text-navy);
+}
+
+.mission-contribution-grid,
+.mission-final-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.mission-contribution-card p,
+.mission-final-grid p {
+  color: var(--text-muted);
+}
+
+.project-gallery {
+  display: grid;
+  gap: 44px;
+}
+
+.project-gallery-group {
+  display: grid;
+  gap: 18px;
+}
+
+.project-gallery-group h3 {
+  margin-bottom: 0;
+}
+
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.project-image-card {
+  min-width: 0;
+  margin: 0;
+}
+
+.project-image-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.project-image-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.project-image-card.is-wide {
+  grid-column: span 2;
+}
+
+.project-image-card.is-wide img {
+  aspect-ratio: 16 / 9;
+}
+
+.project-image-card.is-standard img {
+  aspect-ratio: 4 / 3;
+}
+
+.project-image-card.is-portrait img {
+  aspect-ratio: 3 / 4;
+}
+
+.project-image-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  border-radius: 999px;
+  background: rgba(6, 43, 73, 0.82);
+  color: #F8FAFC;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.project-image-caption {
+  display: grid;
+  gap: 4px;
+  padding: 12px 4px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.project-image-caption span {
+  color: #B88A44;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-image-caption strong {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.mission-detail-actions {
+  background: var(--navy-main);
+  padding: 0 0 72px;
+}
+
 .detail-shell .section {
   background: var(--navy);
   color: var(--text-navy);
@@ -1230,6 +1416,7 @@ h3 {
   }
 
   .hero-grid,
+  .mission-hero-grid,
   .profile-layout,
   .current-grid,
   .contact-grid {
@@ -1239,6 +1426,10 @@ h3 {
   .hero-grid {
     grid-template-rows: auto auto auto;
     column-gap: 0;
+  }
+
+  .mission-hero-grid {
+    gap: 36px;
   }
 
   .hero-grid > div:first-child,
@@ -1286,8 +1477,16 @@ h3 {
     padding: 72px 0 56px;
   }
 
+  .mission-hero {
+    padding: 72px 0 56px;
+  }
+
   .hero-grid {
     gap: 36px;
+  }
+
+  .mission-hero-grid {
+    gap: 32px;
   }
 
   .hero-photo-frame,
@@ -1342,6 +1541,8 @@ h3 {
 
   .experience-grid,
   .projects-grid,
+  .mission-contribution-grid,
+  .mission-final-grid,
   .detail-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -1421,6 +1622,14 @@ h3 {
   .skills-grid,
   .education-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image-card.is-wide {
+    grid-column: span 1;
   }
 
   .card,

@@ -658,3 +658,487 @@ window.PORTFOLIO_DATA = {
     },
   },
 };
+
+(() => {
+  const base = "/public/images/mission-sophie/";
+  const imageSrc = (file) => `${base}${file}`;
+
+  const images = {
+    p01: imageSrc("mission-sophie-01-antenna-test-setup.jpg"),
+    p02: imageSrc("mission-sophie-02-final-mast.jpg"),
+    p03: imageSrc("mission-sophie-03-rotor-before-fixation.jpg"),
+    p04: imageSrc("mission-sophie-04-rotor-fixation-installed.jpg"),
+    p05: imageSrc("mission-sophie-05-printed-fixation-parts.jpg"),
+    p06: imageSrc("mission-sophie-06-cable-routing.jpg"),
+    p07: imageSrc("mission-sophie-07-antenna-assembly-indoor.jpg"),
+    p08: imageSrc("mission-sophie-08-workshop-preparation.jpg"),
+    p09: imageSrc("mission-sophie-09-outdoor-antenna-setup.jpg"),
+    p10: imageSrc("mission-sophie-10-mast-installation.jpg"),
+    p11: imageSrc("mission-sophie-11-ptt-microphone-stands.jpg"),
+    p12: imageSrc("mission-sophie-12-audio-router-exterior.jpg"),
+    p13: imageSrc("mission-sophie-13-audio-router-interior.jpg"),
+  };
+
+  window.PORTFOLIO_DATA.en.experience.items[0].detailHref = "/en/projects/mission-sophie";
+  window.PORTFOLIO_DATA.fr.experience.items[0].detailHref = "/fr/projects/mission-sophie";
+
+  window.PORTFOLIO_DATA.en.projects.items[0] = {
+    slug: "mission-sophie",
+    title: "Mission Sophie",
+    category: "Electronics / Radio / Prototyping",
+    filter: "electronics",
+    summary:
+      "Technical contribution to the preparation of a radio setup and several mechanical prototypes as part of the Mission Sophie project.",
+    tools: ["Fusion 360", "3D printing", "Cabling", "Technical assembly"],
+    status: "Completed",
+    subtitle: "Technical contribution to an educational and scientific project around a radio contact with the ISS.",
+    detailType: "mission-sophie",
+    details: {
+      context:
+        "Mission Sophie is an educational and scientific project led by the GEII department of IUT de Bordeaux and the University of Bordeaux.",
+      objective:
+        "Contribute to the preparation of the radio setup, mechanical assembly and functional prototyping tasks.",
+      approach:
+        "CAD design, 3D printed parts, cabling preparation, antenna assembly and technical teamwork.",
+      result:
+        "The contributions were integrated into the technical preparation of the project.",
+      skills: [
+        "Fusion 360",
+        "FDM 3D printing",
+        "Mechanical design",
+        "Functional prototyping",
+        "Technical assembly",
+      ],
+    },
+    missionDetail: {
+      eyebrow: "TECHNICAL PROJECT",
+      summary:
+        "Mission Sophie is an educational and scientific project led by the GEII department of IUT de Bordeaux and the University of Bordeaux. The project aims to introduce students to science, electronics, radio communications and space exploration, including a radio contact component within the ARISS program.",
+      meta: [
+        { label: "Role", value: "Technical team member" },
+        { label: "Period", value: "January 2026 — April 2026" },
+        { label: "Location", value: "Bordeaux, France" },
+        { label: "Context", value: "GEII Department, IUT de Bordeaux" },
+      ],
+      heroImage: {
+        src: images.p01,
+        alt: "Antenna test setup used during Mission Sophie preparation",
+      },
+      overview: {
+        eyebrow: "PROJECT OVERVIEW",
+        title: "Project context",
+        paragraphs: [
+          "As a first-year GEII student, I joined the project’s technical team to contribute to several practical tasks related to the preparation of the radio setup, mechanical assembly and functional prototyping.",
+          "My role was not to lead the project, but to provide a technical contribution on specific elements: antenna rotor fixation, preparation of 3D printed supports, participation in cabling, antenna assembly and the design of small equipment intended for radio operators.",
+        ],
+      },
+      contributionsEyebrow: "TECHNICAL CONTRIBUTION",
+      contributionsTitle: "Contribution summary",
+      contributions: [
+        {
+          title: "Antenna rotor fixation",
+          paragraphs: [
+            "The first contribution focused on the design of a fixation system for the antenna rotor. The rotor did not have a sufficiently rigid connection with its support, which could create a mechanical stability issue.",
+            "After taking measurements, I designed a fixation part in Fusion 360 and produced a first prototype using 3D printing. After adjustments, the part was installed on the setup to improve the mechanical stability of the assembly.",
+          ],
+          images: ["Photo 03", "Photo 04", "Photo 05"],
+        },
+        {
+          title: "Antenna and cable preparation",
+          paragraphs: [
+            "After this first task, I took part in the hardware preparation of the setup with the technical team: assembly of antenna elements, preparation of the working area, cable routing and participation in the outdoor installation.",
+          ],
+          images: ["Photo 06", "Photo 07", "Photo 08", "Photo 09", "Photo 10"],
+        },
+        {
+          title: "PTT microphone stands",
+          paragraphs: [
+            "I also designed PTT microphone stands to help organize the operator workstation and make the equipment easier to use during the radio contact. These parts were modeled in Fusion 360 and produced using 3D printing.",
+          ],
+          images: ["Photo 11"],
+        },
+        {
+          title: "Audio channel router enclosure",
+          paragraphs: [
+            "Another element developed for the project was an enclosure for audio channel routing. The goal was to provide a cleaner integration of the connections and improve the organization of the audio wiring.",
+          ],
+          images: ["Photo 12", "Photo 13"],
+        },
+      ],
+      galleryTitle: "Structured image gallery",
+      galleryGroups: [
+        {
+          title: "Radio setup and antennas",
+          images: [
+            {
+              number: "Photo 01",
+              caption: "Antenna test setup",
+              phase: "Radio setup",
+              src: images.p01,
+              alt: "Antenna test setup with Mission Sophie team members",
+              layout: "is-wide",
+            },
+            {
+              number: "Photo 02",
+              caption: "Final mast with antennas",
+              phase: "Radio setup",
+              src: images.p02,
+              alt: "Final mast with antenna setup",
+              layout: "is-portrait",
+            },
+            {
+              number: "Photo 09",
+              caption: "Outdoor antenna setup",
+              phase: "Installation",
+              src: images.p09,
+              alt: "Outdoor antenna setup on the IUT site",
+              layout: "is-standard",
+            },
+            {
+              number: "Photo 10",
+              caption: "Mast installation",
+              phase: "Installation",
+              src: images.p10,
+              alt: "Mast and antenna installation",
+              layout: "is-portrait",
+            },
+          ],
+        },
+        {
+          title: "Rotor fixation",
+          images: [
+            {
+              number: "Photo 03",
+              caption: "Rotor before rigid fixation",
+              phase: "Mechanical fixation",
+              src: images.p03,
+              alt: "Rotor before rigid fixation",
+              layout: "is-portrait",
+            },
+            {
+              number: "Photo 04",
+              caption: "Installed fixation",
+              phase: "Mechanical fixation",
+              src: images.p04,
+              alt: "Installed orange rotor fixation",
+              layout: "is-wide",
+            },
+            {
+              number: "Photo 05",
+              caption: "3D printed fixation parts",
+              phase: "Prototype parts",
+              src: images.p05,
+              alt: "3D printed orange fixation parts",
+              layout: "is-standard",
+            },
+          ],
+        },
+        {
+          title: "Preparation, cabling and assembly",
+          images: [
+            {
+              number: "Photo 06",
+              caption: "Cable routing",
+              phase: "Cabling",
+              src: images.p06,
+              alt: "Cable routing and preparation",
+              layout: "is-portrait",
+            },
+            {
+              number: "Photo 07",
+              caption: "Antenna element assembly",
+              phase: "Assembly",
+              src: images.p07,
+              alt: "Antenna assembly preparation indoors",
+              layout: "is-wide",
+            },
+            {
+              number: "Photo 08",
+              caption: "Indoor preparation",
+              phase: "Workshop",
+              src: images.p08,
+              alt: "Preparation room and workshop environment",
+              layout: "is-wide",
+            },
+          ],
+        },
+        {
+          title: "Operator equipment",
+          images: [
+            {
+              number: "Photo 11",
+              caption: "PTT microphone stands",
+              phase: "Operator equipment",
+              src: images.p11,
+              alt: "PTT microphone stands",
+              layout: "is-wide",
+            },
+            {
+              number: "Photo 12",
+              caption: "Audio router, exterior view",
+              phase: "Audio routing",
+              src: images.p12,
+              alt: "Exterior view of the audio channel router",
+              layout: "is-standard",
+            },
+            {
+              number: "Photo 13",
+              caption: "Audio router, interior view",
+              phase: "Audio routing",
+              src: images.p13,
+              alt: "Interior view of the audio channel router",
+              layout: "is-standard",
+            },
+          ],
+        },
+      ],
+      skillsTitle: "Tools and skills used",
+      skills: [
+        "Fusion 360",
+        "FDM 3D printing",
+        "Mechanical design",
+        "Functional prototyping",
+        "Technical assembly",
+        "Cable preparation",
+        "Technical teamwork",
+        "Project documentation",
+      ],
+      resultTitle: "Result",
+      resultParagraphs: [
+        "These contributions were integrated into the technical preparation of the project. The radio contact was completed through coordinated teamwork, with hardware preparation combining electronics, radio, mechanics, cabling and prototyping.",
+      ],
+      backLabel: "Back to portfolio",
+      backHref: "/en/#experience",
+    },
+  };
+
+  window.PORTFOLIO_DATA.fr.projects.items[0] = {
+    slug: "mission-sophie",
+    title: "Mission Sophie",
+    category: "Électronique / Radio / Prototypage",
+    filter: "electronics",
+    summary:
+      "Contribution technique à la préparation d’un dispositif radio et de plusieurs prototypes mécaniques dans le cadre du projet Mission Sophie.",
+    tools: ["Fusion 360", "Impression 3D", "Câblage", "Assemblage technique"],
+    status: "Réalisé",
+    subtitle: "Contribution technique à un projet pédagogique et scientifique autour d’un contact radio avec l’ISS.",
+    detailType: "mission-sophie",
+    details: {
+      context:
+        "Mission Sophie est un projet pédagogique et scientifique porté par le département GEII de l’IUT de Bordeaux et l’Université de Bordeaux.",
+      objective:
+        "Contribuer à la préparation du dispositif radio, à l’assemblage mécanique et au prototypage de pièces fonctionnelles.",
+      approach:
+        "Conception CAO, pièces imprimées en 3D, préparation de câblage, assemblage d’antennes et travail en équipe technique.",
+      result:
+        "Les contributions ont été intégrées à la préparation technique du projet.",
+      skills: [
+        "Fusion 360",
+        "Impression 3D FDM",
+        "Conception mécanique",
+        "Prototypage fonctionnel",
+        "Assemblage technique",
+      ],
+    },
+    missionDetail: {
+      eyebrow: "PROJET TECHNIQUE",
+      summary:
+        "Mission Sophie est un projet pédagogique et scientifique porté par le département GEII de l’IUT de Bordeaux et l’Université de Bordeaux. Le projet s’inscrit dans une démarche de découverte des sciences, de l’électronique, des communications radio et de l’exploration spatiale, avec un volet de contact radio dans le cadre du programme ARISS.",
+      meta: [
+        { label: "Rôle", value: "Membre de l’équipe technique" },
+        { label: "Période", value: "Janvier 2026 — Avril 2026" },
+        { label: "Lieu", value: "Bordeaux, France" },
+        { label: "Contexte", value: "Département GEII, IUT de Bordeaux" },
+      ],
+      heroImage: {
+        src: images.p01,
+        alt: "Installation d’essai avec antennes pour la préparation de Mission Sophie",
+      },
+      overview: {
+        eyebrow: "CONTEXTE",
+        title: "Contexte du projet",
+        paragraphs: [
+          "En tant qu’étudiant en première année de GEII, j’ai rejoint l’équipe technique du projet pour contribuer à plusieurs tâches concrètes liées à la préparation du dispositif radio, à l’assemblage mécanique et au prototypage de pièces fonctionnelles.",
+          "Mon rôle n’était pas de diriger le projet, mais d’apporter une contribution technique sur des éléments précis : fixation du rotor d’antenne, préparation de supports imprimés en 3D, participation au câblage, assemblage d’éléments d’antenne et conception de petits équipements destinés aux opérateurs radio.",
+        ],
+      },
+      contributionsEyebrow: "CONTRIBUTION TECHNIQUE",
+      contributionsTitle: "Synthèse des contributions",
+      contributions: [
+        {
+          title: "Fixation du rotor d’antenne",
+          paragraphs: [
+            "La première contribution a porté sur la conception d’un système de fixation pour le rotor d’antenne. Le rotor ne disposait pas d’une fixation suffisamment rigide avec son support, ce qui pouvait poser un problème de stabilité mécanique.",
+            "Après prise de mesures, j’ai conçu une pièce de fixation sous Fusion 360, puis réalisé un premier prototype en impression 3D. Après ajustements, la pièce a été installée sur le dispositif afin d’améliorer la tenue mécanique de l’ensemble.",
+          ],
+          images: ["Photo 03", "Photo 04", "Photo 05"],
+        },
+        {
+          title: "Préparation des antennes et du câblage",
+          paragraphs: [
+            "Après cette première réalisation, j’ai participé à la préparation matérielle du dispositif avec l’équipe technique : assemblage d’éléments d’antenne, préparation de la zone de travail, cheminement des câbles et participation à l’installation extérieure.",
+          ],
+          images: ["Photo 06", "Photo 07", "Photo 08", "Photo 09", "Photo 10"],
+        },
+        {
+          title: "Supports pour microphones PTT",
+          paragraphs: [
+            "J’ai également conçu des supports pour microphones PTT afin de faciliter l’organisation du poste opérateur et l’utilisation du matériel pendant le contact radio. Ces pièces ont été modélisées sous Fusion 360 puis fabriquées par impression 3D.",
+          ],
+          images: ["Photo 11"],
+        },
+        {
+          title: "Boîtier pour routeur de canaux audio",
+          paragraphs: [
+            "Un autre élément réalisé dans le cadre du projet est un boîtier pour le routage des canaux audio. L’objectif était de proposer une intégration plus propre des connexions et de faciliter l’organisation du câblage audio.",
+          ],
+          images: ["Photo 12", "Photo 13"],
+        },
+      ],
+      galleryTitle: "Galerie structurée",
+      galleryGroups: [
+        {
+          title: "Dispositif radio et antennes",
+          images: [
+            {
+              number: "Photo 01",
+              caption: "Installation d’essai avec antennes",
+              phase: "Dispositif radio",
+              src: images.p01,
+              alt: "Installation d’essai avec antennes et membres de l’équipe Mission Sophie",
+              layout: "is-wide",
+            },
+            {
+              number: "Photo 02",
+              caption: "Mât final avec antennes",
+              phase: "Dispositif radio",
+              src: images.p02,
+              alt: "Mât final avec antennes",
+              layout: "is-portrait",
+            },
+            {
+              number: "Photo 09",
+              caption: "Installation extérieure",
+              phase: "Installation",
+              src: images.p09,
+              alt: "Installation extérieure des antennes sur le site de l’IUT",
+              layout: "is-standard",
+            },
+            {
+              number: "Photo 10",
+              caption: "Installation du mât",
+              phase: "Installation",
+              src: images.p10,
+              alt: "Installation du mât et des antennes",
+              layout: "is-portrait",
+            },
+          ],
+        },
+        {
+          title: "Fixation du rotor",
+          images: [
+            {
+              number: "Photo 03",
+              caption: "Rotor avant fixation rigide",
+              phase: "Fixation mécanique",
+              src: images.p03,
+              alt: "Rotor avant fixation rigide",
+              layout: "is-portrait",
+            },
+            {
+              number: "Photo 04",
+              caption: "Fixation installée",
+              phase: "Fixation mécanique",
+              src: images.p04,
+              alt: "Fixation orange installée sur le rotor",
+              layout: "is-wide",
+            },
+            {
+              number: "Photo 05",
+              caption: "Pièces imprimées en 3D",
+              phase: "Pièces prototype",
+              src: images.p05,
+              alt: "Pièces de fixation imprimées en 3D",
+              layout: "is-standard",
+            },
+          ],
+        },
+        {
+          title: "Préparation, câblage et assemblage",
+          images: [
+            {
+              number: "Photo 06",
+              caption: "Cheminement des câbles",
+              phase: "Câblage",
+              src: images.p06,
+              alt: "Cheminement des câbles",
+              layout: "is-portrait",
+            },
+            {
+              number: "Photo 07",
+              caption: "Assemblage d’éléments d’antenne",
+              phase: "Assemblage",
+              src: images.p07,
+              alt: "Préparation de l’assemblage d’éléments d’antenne en salle",
+              layout: "is-wide",
+            },
+            {
+              number: "Photo 08",
+              caption: "Préparation en salle",
+              phase: "Atelier",
+              src: images.p08,
+              alt: "Salle de préparation et environnement de travail",
+              layout: "is-wide",
+            },
+          ],
+        },
+        {
+          title: "Équipements opérateur",
+          images: [
+            {
+              number: "Photo 11",
+              caption: "Supports pour microphones PTT",
+              phase: "Équipement opérateur",
+              src: images.p11,
+              alt: "Supports pour microphones PTT",
+              layout: "is-wide",
+            },
+            {
+              number: "Photo 12",
+              caption: "Boîtier audio, vue extérieure",
+              phase: "Routage audio",
+              src: images.p12,
+              alt: "Boîtier de routeur audio en vue extérieure",
+              layout: "is-standard",
+            },
+            {
+              number: "Photo 13",
+              caption: "Boîtier audio, vue intérieure",
+              phase: "Routage audio",
+              src: images.p13,
+              alt: "Boîtier de routeur audio en vue intérieure",
+              layout: "is-standard",
+            },
+          ],
+        },
+      ],
+      skillsTitle: "Outils et compétences mobilisés",
+      skills: [
+        "Fusion 360",
+        "Impression 3D FDM",
+        "Conception mécanique",
+        "Prototypage fonctionnel",
+        "Assemblage technique",
+        "Préparation de câblage",
+        "Travail en équipe technique",
+        "Documentation de projet",
+      ],
+      resultTitle: "Résultat",
+      resultParagraphs: [
+        "Ces contributions ont été intégrées à la préparation technique du projet. Le radiocontact a été mené à terme grâce au travail coordonné de l’équipe, avec une préparation matérielle combinant électronique, radio, mécanique, câblage et prototypage.",
+      ],
+      backLabel: "Retour au portfolio",
+      backHref: "/fr/#experience",
+    },
+  };
+})();

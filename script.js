@@ -42,6 +42,10 @@ function tags(items, className = "tag-list") {
   return `<ul class="${className}">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
 }
 
+function paragraphs(items) {
+  return items.map((item) => `<p>${escapeHtml(item)}</p>`).join("");
+}
+
 function educationValue(value) {
   return String(value || "").replace(/^(Institution|Location|Period|Date|Status|Skills|Description|Établissement|Localisation|Période|Statut|Compétences|Date|Description)\s*:\s*/i, "");
 }
@@ -254,7 +258,7 @@ function renderExperience(content, lang) {
                   <p class="meta-label">${escapeHtml(content.translations.skillsUsed)}</p>
                   ${tags(item.skills)}
                   <div class="button-row">
-                    <a class="button secondary" href="${routeFor(lang, `experience/${item.slug}`)}" target="_blank" rel="noopener noreferrer">
+                    <a class="button secondary" href="${escapeHtml(item.detailHref || routeFor(lang, `experience/${item.slug}`))}" target="_blank" rel="noopener noreferrer">
                       ${escapeHtml(content.translations.viewDetails)}
                     </a>
                   </div>
@@ -446,10 +450,126 @@ function detailSection(title, body) {
   `;
 }
 
+function projectImageCard(image) {
+  return `
+    <figure class="project-image-card ${escapeHtml(image.layout || "is-standard")}">
+      <div class="project-image-media">
+        <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" />
+        <span class="project-image-number">${escapeHtml(image.number)}</span>
+      </div>
+      <figcaption class="project-image-caption">
+        ${image.phase ? `<span>${escapeHtml(image.phase)}</span>` : ""}
+        <strong>${escapeHtml(image.caption)}</strong>
+      </figcaption>
+    </figure>
+  `;
+}
+
+function renderMissionSophieProjectDetail(content, lang, project) {
+  const detail = project.missionDetail;
+
+  main.innerHTML = `
+    <article class="mission-detail-shell">
+      <section class="mission-hero">
+        <div class="container mission-hero-grid">
+          <div>
+            <p class="eyebrow">${escapeHtml(detail.eyebrow)}</p>
+            <h1>${escapeHtml(project.title)}</h1>
+            <p class="detail-lead">${escapeHtml(project.subtitle)}</p>
+            <div class="detail-meta mission-meta">
+              ${detail.meta.map((item) => `<span class="category-pill"><span>${escapeHtml(item.label)}</span>${escapeHtml(item.value)}</span>`).join("")}
+            </div>
+            <p>${escapeHtml(detail.summary)}</p>
+          </div>
+          <figure class="mission-hero-image">
+            <img src="${escapeHtml(detail.heroImage.src)}" alt="${escapeHtml(detail.heroImage.alt)}" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section mission-section">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">${escapeHtml(detail.overview.eyebrow)}</p>
+            <h2>${escapeHtml(detail.overview.title)}</h2>
+            ${paragraphs(detail.overview.paragraphs)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section mission-section mission-section-navy">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">${escapeHtml(detail.contributionsEyebrow)}</p>
+            <h2>${escapeHtml(detail.contributionsTitle)}</h2>
+          </div>
+          <div class="mission-contribution-grid">
+            ${detail.contributions
+              .map(
+                (item) => `
+                  <article class="detail-card mission-contribution-card">
+                    <h3>${escapeHtml(item.title)}</h3>
+                    ${paragraphs(item.paragraphs)}
+                    ${tags(item.images, "tag-list")}
+                  </article>
+                `,
+              )
+              .join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section mission-section">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">${escapeHtml(content.translations.gallery)}</p>
+            <h2>${escapeHtml(detail.galleryTitle)}</h2>
+          </div>
+          <div class="project-gallery">
+            ${detail.galleryGroups
+              .map(
+                (group) => `
+                  <section class="project-gallery-group" aria-label="${escapeHtml(group.title)}">
+                    <h3>${escapeHtml(group.title)}</h3>
+                    <div class="project-gallery-grid">
+                      ${group.images.map(projectImageCard).join("")}
+                    </div>
+                  </section>
+                `,
+              )
+              .join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section mission-section mission-section-navy">
+        <div class="container mission-final-grid">
+          <article class="detail-card">
+            <h2>${escapeHtml(detail.skillsTitle)}</h2>
+            ${tags(detail.skills)}
+          </article>
+          <article class="detail-card">
+            <h2>${escapeHtml(detail.resultTitle)}</h2>
+            ${paragraphs(detail.resultParagraphs)}
+          </article>
+        </div>
+      </section>
+
+      <section class="mission-detail-actions">
+        <div class="container">
+          <a class="button secondary" href="${escapeHtml(detail.backHref)}">${escapeHtml(detail.backLabel)}</a>
+        </div>
+      </section>
+    </article>
+    ${renderFooter(content, lang)}
+  `;
+}
+
 function renderProjectDetail(lang, slug) {
   const content = DATA[lang];
   const project = content.projects.items.find((item) => item.slug === slug);
   if (!project) return renderNotFound(lang);
+  if (project.detailType === "mission-sophie") return renderMissionSophieProjectDetail(content, lang, project);
 
   main.innerHTML = `
     <article class="detail-shell">
