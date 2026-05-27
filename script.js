@@ -42,6 +42,15 @@ function tags(items, className = "tag-list") {
   return `<ul class="${className}">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
 }
 
+function educationValue(value) {
+  return String(value || "").replace(/^(Institution|Location|Period|Date|Status|Skills|Description|Établissement|Localisation|Période|Statut|Compétences|Date|Description)\s*:\s*/i, "");
+}
+
+function hasEducationValue(value, content) {
+  const cleaned = educationValue(value).trim();
+  return cleaned && cleaned !== content.translations.toBeCompleted;
+}
+
 function routeFor(lang, suffix = "") {
   return `/${lang}/${suffix}`.replace(/\/{2,}/g, "/");
 }
@@ -234,10 +243,10 @@ function renderExperience(content, lang) {
               (item) => `
                 <article class="card" id="experience-${escapeHtml(item.slug)}">
                   <h3>${escapeHtml(item.title)}</h3>
-                  <div class="card-meta">
-                    <span>${escapeHtml(item.company)}</span>
-                    <span>${escapeHtml(item.period)}</span>
-                    <span>${escapeHtml(item.location)}</span>
+                  <div class="card-meta experience-meta">
+                    <span><span class="meta-label">${escapeHtml(content.translations.contextLabel)}</span>${escapeHtml(item.company)}</span>
+                    <span><span class="meta-label">${escapeHtml(content.translations.periodLabel)}</span>${escapeHtml(item.period)}</span>
+                    <span><span class="meta-label">${escapeHtml(content.translations.locationLabel)}</span>${escapeHtml(item.location)}</span>
                   </div>
                   <p class="card-summary">${escapeHtml(item.summary)}</p>
                   <p class="meta-label">${escapeHtml(content.translations.responsibilities)}</p>
@@ -307,6 +316,16 @@ function renderProjects(content, lang) {
 }
 
 function renderEducation(content) {
+  const labels = content.education.labels || {};
+  const educationRow = (label, value) =>
+    hasEducationValue(value, content)
+      ? `
+        <div>
+          <dt>${escapeHtml(label)}</dt>
+          <dd>${escapeHtml(educationValue(value))}</dd>
+        </div>
+      `
+      : "";
   return `
     <section class="section" id="education" aria-labelledby="education-title">
       <div class="container">
@@ -324,11 +343,15 @@ function renderEducation(content) {
                     .map(
                       (item) => `
                         <div class="education-item">
-                          <p><strong>${escapeHtml(item.name)}</strong></p>
-                          <p>${escapeHtml(item.organization)}</p>
-                          <p>${escapeHtml(item.year)}</p>
-                          <p>${escapeHtml(item.location)}</p>
-                          <p>${escapeHtml(item.competencies)}</p>
+                          <h4>${escapeHtml(item.name)}</h4>
+                          ${item.description ? `<p class="education-description">${escapeHtml(item.description)}</p>` : ""}
+                          <dl class="education-details">
+                            ${educationRow(labels.organization || "Organization", item.organization)}
+                            ${educationRow(item.year.trim().toLowerCase().startsWith("date") ? labels.date || "Date" : labels.period || "Period", item.year)}
+                            ${educationRow(labels.location || "Location", item.location)}
+                            ${educationRow(labels.status || "Status", item.status)}
+                            ${educationRow(labels.competencies || "Skills", item.competencies)}
+                          </dl>
                         </div>
                       `,
                     )

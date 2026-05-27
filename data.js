@@ -33,6 +33,9 @@ window.PORTFOLIO_DATA = {
       contextCompany: "Context and company",
       technicalTasks: "Technical tasks",
       resultsImpact: "Results and impact",
+      contextLabel: "Context",
+      periodLabel: "Period",
+      locationLabel: "Location",
       all: "All",
       backToProjects: "Back to projects",
       backToExperience: "Back to experience",
@@ -155,10 +158,10 @@ window.PORTFOLIO_DATA = {
         {
           slug: "cad-mechanical-prototyping-du-tss",
           title: "CAD & mechanical prototyping lead",
-          company: "DU TSS — university project focused on technology and health",
+          company: "DU TSS — university project",
           period: "March 2026 — June 2026",
           location: "Bordeaux, France",
-          summary: "3D design and preparation of a prototype related to a sensor-based monitoring system.",
+          summary: "3D design and mechanical prototyping contribution within a DU TSS university project.",
           responsibilities: [
             "Development of the 3D design",
             "Preparation of the model for 3D printing",
@@ -167,7 +170,8 @@ window.PORTFOLIO_DATA = {
           ],
           skills: ["Fusion 360", "3D printing", "Prototyping"],
           details: {
-            context: "DU TSS is a university project focused on technology and health.",
+            context:
+              "DU TSS is a university project context. Lev contributed to CAD design and mechanical prototyping for a prototype involving sensor-based monitoring.",
             technicalTasks: [
               "Development of the 3D design",
               "Preparation of the model for 3D printing",
@@ -232,25 +236,35 @@ window.PORTFOLIO_DATA = {
     education: {
       eyebrow: "EDUCATION",
       title: "Education, certifications and attestations",
+      labels: {
+        organization: "Organization",
+        period: "Period",
+        date: "Date",
+        location: "Location",
+        status: "Status",
+        competencies: "Key skills",
+      },
       groups: [
         {
           title: "Education",
           items: [
             {
               name: "GEII student — Electrical Engineering and Industrial Computing",
-              organization: "Institution: IUT de Bordeaux",
-              year: "Period: 2026",
-              location: "Location: Bordeaux, France",
+              organization: "IUT de Bordeaux",
+              year: "2026",
+              location: "Bordeaux, France",
+              status: "In progress",
               competencies:
-                "Status: In progress. Skills: Electronics, embedded systems, industrial computing, measurements and automation.",
+                "Electronics, embedded systems, industrial computing, measurements and automation.",
             },
             {
               name: "ENIC-NARIC comparability statement",
-              organization:
-                "Description: Level comparable to the French general baccalaureate, based on Ukrainian secondary education.",
-              year: "Period: 2010 — 2022",
-              location: "Location: To be completed",
-              competencies: "Skills: General secondary education.",
+              description:
+                "Level comparable to the French general baccalaureate, based on Ukrainian secondary education.",
+              organization: "",
+              year: "2010 — 2022",
+              location: "",
+              competencies: "General secondary education.",
             },
           ],
         },
@@ -259,17 +273,17 @@ window.PORTFOLIO_DATA = {
           items: [
             {
               name: "DELF B2",
-              organization: "Institution: Official French language certification",
+              organization: "Official French language certification",
               year: "Date: 26/11/2024",
-              location: "Location: To be completed",
-              competencies: "Skills: B2 level in French.",
+              location: "",
+              competencies: "B2 level in French.",
             },
             {
               name: "Remote pilot certificate — Open categories A1/A3",
-              organization: "Institution: To be completed",
+              organization: "",
               year: "Date: 17/01/2026",
-              location: "Location: To be completed",
-              competencies: "Skills: Regulatory fundamentals for drone operations in open categories A1/A3.",
+              location: "",
+              competencies: "Regulatory fundamentals for drone operations in open categories A1/A3.",
             },
           ],
         },
@@ -278,10 +292,10 @@ window.PORTFOLIO_DATA = {
           items: [
             {
               name: "Amateur radio operator certificate",
-              organization: "Institution: To be completed",
+              organization: "",
               year: "Date: 06/05/2026",
-              location: "Location: To be completed",
-              competencies: "Skills: Regulatory and technical fundamentals of amateur radio communications.",
+              location: "",
+              competencies: "Regulatory and technical fundamentals of amateur radio communications.",
             },
           ],
         },
@@ -345,6 +359,9 @@ window.PORTFOLIO_DATA = {
       contextCompany: "Contexte et entreprise",
       technicalTasks: "Tâches techniques",
       resultsImpact: "Résultats et impact",
+      contextLabel: "Contexte",
+      periodLabel: "Période",
+      locationLabel: "Localisation",
       all: "Tous",
       backToProjects: "Retour aux projets",
       backToExperience: "Retour à l’expérience",
@@ -467,10 +484,10 @@ window.PORTFOLIO_DATA = {
         {
           slug: "cad-mechanical-prototyping-du-tss",
           title: "Responsable CAO & prototypage mécanique",
-          company: "DU TSS — projet universitaire orienté technologies et santé",
+          company: "DU TSS — projet universitaire",
           period: "Mars 2026 — Juin 2026",
           location: "Bordeaux, France",
-          summary: "Conception 3D et préparation d’un prototype lié à un système de monitoring basé sur des capteurs.",
+          summary: "Contribution en conception 3D et prototypage mécanique dans le cadre d’un projet universitaire DU TSS.",
           responsibilities: [
             "Développement de la conception 3D",
             "Préparation du modèle pour impression 3D",
@@ -479,7 +496,8 @@ window.PORTFOLIO_DATA = {
           ],
           skills: ["Fusion 360", "Impression 3D", "Prototypage"],
           details: {
-            context: "DU TSS est un projet universitaire orienté technologies et santé.",
+            context:
+              "DU TSS est un contexte de projet universitaire. Lev y contribue à la conception CAO et au prototypage mécanique d’un prototype impliquant un monitoring basé sur des capteurs.",
             technicalTasks: [
               "Développement de la conception 3D",
               "Préparation du modèle pour impression 3D",
@@ -548,25 +566,35 @@ window.PORTFOLIO_DATA = {
     education: {
       eyebrow: "FORMATION",
       title: "Formation, certifications et attestations",
+      labels: {
+        organization: "Organisation",
+        period: "Période",
+        date: "Date",
+        location: "Localisation",
+        status: "Statut",
+        competencies: "Compétences clés",
+      },
       groups: [
         {
           title: "Formation",
           items: [
             {
               name: "Étudiant en GEII — Génie électrique et informatique industrielle",
-              organization: "Établissement : IUT de Bordeaux",
-              year: "Période : 2026",
-              location: "Localisation : Bordeaux, France",
+              organization: "IUT de Bordeaux",
+              year: "2026",
+              location: "Bordeaux, France",
+              status: "En cours",
               competencies:
-                "Statut : En cours. Compétences : électronique, systèmes embarqués, informatique industrielle, mesures et automatisation.",
+                "Électronique, systèmes embarqués, informatique industrielle, mesures et automatisation.",
             },
             {
               name: "Attestation de comparabilité ENIC-NARIC",
-              organization:
-                "Description : niveau comparable au baccalauréat général français, basé sur le parcours d’enseignement secondaire ukrainien.",
-              year: "Période : 2010 — 2022",
-              location: "Localisation : À compléter",
-              competencies: "Compétences : formation générale secondaire.",
+              description:
+                "Niveau comparable au baccalauréat général français, basé sur le parcours d’enseignement secondaire ukrainien.",
+              organization: "",
+              year: "2010 — 2022",
+              location: "",
+              competencies: "Formation générale secondaire.",
             },
           ],
         },
@@ -575,18 +603,18 @@ window.PORTFOLIO_DATA = {
           items: [
             {
               name: "DELF B2",
-              organization: "Institution : certification officielle de langue française",
+              organization: "Certification officielle de langue française",
               year: "Date : 26/11/2024",
-              location: "Localisation : À compléter",
-              competencies: "Compétences : niveau B2 en français.",
+              location: "",
+              competencies: "Niveau B2 en français.",
             },
             {
               name: "Attestation de télépilote — catégories ouvertes A1/A3",
-              organization: "Institution : À compléter",
+              organization: "",
               year: "Date : 17/01/2026",
-              location: "Localisation : À compléter",
+              location: "",
               competencies:
-                "Compétences : bases réglementaires pour l’exploitation de drones en catégorie ouverte A1/A3.",
+                "Bases réglementaires pour l’exploitation de drones en catégorie ouverte A1/A3.",
             },
           ],
         },
@@ -595,11 +623,11 @@ window.PORTFOLIO_DATA = {
           items: [
             {
               name: "Certificat d’opérateur des services d’amateur",
-              organization: "Institution : À compléter",
+              organization: "",
               year: "Date : 06/05/2026",
-              location: "Localisation : À compléter",
+              location: "",
               competencies:
-                "Compétences : bases réglementaires et techniques des communications radioamateur.",
+                "Bases réglementaires et techniques des communications radioamateur.",
             },
           ],
         },
