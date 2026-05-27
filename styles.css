@@ -1203,11 +1203,15 @@ h3 {
 
 .mission-meta {
   margin: 24px 0;
+  max-width: 100%;
 }
 
 .mission-meta .category-pill {
   display: inline-grid;
+  width: auto;
+  max-width: 100%;
   min-height: 0;
+  min-width: 0;
   justify-content: start;
   gap: 4px;
   background: var(--chip-bg-dark);
@@ -1713,6 +1717,16 @@ h3 {
     gap: 32px;
   }
 
+  .mission-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .mission-meta .category-pill {
+    width: 100%;
+  }
+
   .hero-photo-frame,
   .hero-panel {
     width: 100%;
@@ -1811,6 +1825,8 @@ h3 {
   }
 
   p {
+    text-align: left;
+    text-align-last: left;
     hyphens: auto;
   }
 
