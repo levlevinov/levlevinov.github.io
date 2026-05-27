@@ -465,6 +465,125 @@ function projectImageCard(image) {
   `;
 }
 
+function missionCarouselCaption(lang, image) {
+  const captions = {
+    fr: {
+      "Photo 01": "Installation d’essai avec antennes",
+      "Photo 02": "Mât final avec antennes",
+      "Photo 03": "Rotor avant fixation rigide",
+      "Photo 04": "Fixation installée",
+      "Photo 05": "Pièces de fixation imprimées en 3D",
+      "Photo 06": "Cheminement des câbles",
+      "Photo 07": "Préparation des éléments d’antenne",
+      "Photo 08": "Préparation en salle",
+      "Photo 09": "Installation extérieure des antennes",
+      "Photo 10": "Installation du mât",
+      "Photo 11": "Supports pour microphones PTT",
+      "Photo 12": "Boîtier audio, vue extérieure",
+      "Photo 13": "Boîtier audio, vue intérieure",
+    },
+    en: {
+      "Photo 01": "Antenna test setup",
+      "Photo 02": "Final mast with antennas",
+      "Photo 03": "Rotor before rigid fixation",
+      "Photo 04": "Installed fixation",
+      "Photo 05": "3D printed fixation parts",
+      "Photo 06": "Cable routing",
+      "Photo 07": "Antenna element preparation",
+      "Photo 08": "Indoor preparation",
+      "Photo 09": "Outdoor antenna setup",
+      "Photo 10": "Mast installation",
+      "Photo 11": "PTT microphone stands",
+      "Photo 12": "Audio router, exterior view",
+      "Photo 13": "Audio router, interior view",
+    },
+  };
+
+  return captions[lang]?.[image.number] || image.caption;
+}
+
+function missionCarouselImages(detail, lang) {
+  return detail.galleryGroups
+    .flatMap((group) => group.images)
+    .sort((a, b) => Number(a.number.replace(/\D/g, "")) - Number(b.number.replace(/\D/g, "")))
+    .map((image) => ({ ...image, caption: missionCarouselCaption(lang, image) }));
+}
+
+function renderMissionCarousel(content, lang, detail) {
+  const images = missionCarouselImages(detail, lang);
+  const previousLabel = lang === "fr" ? "Photo précédente" : "Previous photo";
+  const nextLabel = lang === "fr" ? "Photo suivante" : "Next photo";
+
+  return `
+    <section class="section mission-section mission-carousel-section" aria-labelledby="mission-gallery-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">${escapeHtml(content.translations.gallery)}</p>
+          <h2 id="mission-gallery-title">${escapeHtml(detail.galleryTitle)}</h2>
+        </div>
+        <div class="mission-carousel" data-mission-carousel tabindex="0" aria-label="${escapeHtml(detail.galleryTitle)}">
+          <div class="mission-carousel-viewport">
+            ${images
+              .map(
+                (image, index) => `
+                  <figure class="mission-carousel-slide ${index === 0 ? "is-active" : ""}" data-carousel-slide data-photo-number="${escapeHtml(image.number)}">
+                    <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="${index === 0 ? "eager" : "lazy"}" />
+                    <figcaption class="mission-carousel-caption">
+                      <span>${escapeHtml(image.number)}</span>
+                      <strong>${escapeHtml(image.caption)}</strong>
+                    </figcaption>
+                  </figure>
+                `,
+              )
+              .join("")}
+            <button class="mission-carousel-control is-prev" type="button" data-carousel-prev aria-label="${escapeHtml(previousLabel)}">‹</button>
+            <button class="mission-carousel-control is-next" type="button" data-carousel-next aria-label="${escapeHtml(nextLabel)}">›</button>
+          </div>
+          <div class="mission-carousel-footer">
+            <span class="mission-carousel-counter" data-carousel-counter>Photo 01 / 13</span>
+            <div class="mission-carousel-dots" aria-label="${escapeHtml(detail.galleryTitle)}">
+              ${images
+                .map(
+                  (image, index) => `
+                    <button class="mission-carousel-dot ${index === 0 ? "is-active" : ""}" type="button" data-carousel-dot="${index}" aria-label="${escapeHtml(image.number)}"></button>
+                  `,
+                )
+                .join("")}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function bindMissionCarousel() {
+  const carousel = main.querySelector("[data-mission-carousel]");
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+  const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+  const counter = carousel.querySelector("[data-carousel-counter]");
+  const total = String(slides.length).padStart(2, "0");
+  let activeIndex = 0;
+
+  const setActive = (nextIndex) => {
+    activeIndex = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, index) => slide.classList.toggle("is-active", index === activeIndex));
+    dots.forEach((dot, index) => dot.classList.toggle("is-active", index === activeIndex));
+    const number = slides[activeIndex].dataset.photoNumber || `Photo ${String(activeIndex + 1).padStart(2, "0")}`;
+    counter.textContent = `${number} / ${total}`;
+  };
+
+  carousel.querySelector("[data-carousel-prev]").addEventListener("click", () => setActive(activeIndex - 1));
+  carousel.querySelector("[data-carousel-next]").addEventListener("click", () => setActive(activeIndex + 1));
+  dots.forEach((dot, index) => dot.addEventListener("click", () => setActive(index)));
+  carousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") setActive(activeIndex - 1);
+    if (event.key === "ArrowRight") setActive(activeIndex + 1);
+  });
+}
+
 function renderMissionSophieProjectDetail(content, lang, project) {
   const detail = project.missionDetail;
 
@@ -497,6 +616,8 @@ function renderMissionSophieProjectDetail(content, lang, project) {
         </div>
       </section>
 
+      ${renderMissionCarousel(content, lang, detail)}
+
       <section class="section mission-section mission-section-navy">
         <div class="container">
           <div class="section-header">
@@ -512,29 +633,6 @@ function renderMissionSophieProjectDetail(content, lang, project) {
                     ${paragraphs(item.paragraphs)}
                     ${tags(item.images, "tag-list")}
                   </article>
-                `,
-              )
-              .join("")}
-          </div>
-        </div>
-      </section>
-
-      <section class="section mission-section">
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">${escapeHtml(content.translations.gallery)}</p>
-            <h2>${escapeHtml(detail.galleryTitle)}</h2>
-          </div>
-          <div class="project-gallery">
-            ${detail.galleryGroups
-              .map(
-                (group) => `
-                  <section class="project-gallery-group" aria-label="${escapeHtml(group.title)}">
-                    <h3>${escapeHtml(group.title)}</h3>
-                    <div class="project-gallery-grid">
-                      ${group.images.map(projectImageCard).join("")}
-                    </div>
-                  </section>
                 `,
               )
               .join("")}
@@ -563,6 +661,8 @@ function renderMissionSophieProjectDetail(content, lang, project) {
     </article>
     ${renderFooter(content, lang)}
   `;
+
+  bindMissionCarousel();
 }
 
 function renderProjectDetail(lang, slug) {
