@@ -126,6 +126,7 @@ function renderHero(content) {
           <h1 id="hero-title">${escapeHtml(content.hero.title)}</h1>
           <p class="lead">${escapeHtml(content.hero.subtitle)}</p>
           <p class="lead">${escapeHtml(content.hero.positioning)}</p>
+          ${content.hero.description ? `<p class="lead">${escapeHtml(content.hero.description)}</p>` : ""}
           <div class="hero-actions">
             <a class="button primary" href="#projects">${escapeHtml(content.translations.viewProjects)}</a>
             <a class="button secondary" href="#contact">${escapeHtml(content.translations.contact)}</a>
@@ -183,6 +184,7 @@ function renderCurrent(content) {
         <div class="section-header">
           <p class="eyebrow">${escapeHtml(content.currentPosition.eyebrow)}</p>
           <h2 id="current-title">${escapeHtml(content.currentPosition.title)}</h2>
+          ${content.currentPosition.description ? `<p>${escapeHtml(content.currentPosition.description)}</p>` : ""}
           <p>${escapeHtml(content.currentPosition.status)}</p>
         </div>
         <div class="card">
@@ -264,6 +266,7 @@ function renderProjects(content, lang) {
         <div class="section-header">
           <p class="eyebrow">${escapeHtml(content.projects.eyebrow)}</p>
           <h2 id="projects-title">${escapeHtml(content.projects.title)}</h2>
+          ${content.projects.note ? `<p>${escapeHtml(content.projects.note)}</p>` : ""}
         </div>
         <div class="filter-row" role="group" aria-label="Project filters">
           ${content.projects.filters
@@ -343,13 +346,15 @@ function renderEducation(content) {
 function renderContact(content) {
   const isEmail = content.contact.email.includes("@");
   const isPhone = /\d/.test(content.contact.phone);
+  const labels = content.contact.labels || {};
   const links = [
-    ["Location", content.contact.location, null],
-    ["Email", content.contact.email, isEmail ? `mailto:${content.contact.email}` : null],
-    ["Phone", content.contact.phone, isPhone ? `tel:${content.contact.phone.replace(/\s/g, "")}` : null],
-    ["LinkedIn", content.contact.linkedin, content.contact.linkedin.startsWith("http") ? content.contact.linkedin : null],
-    ["GitHub", content.contact.github, content.contact.github],
-  ];
+    [labels.location || "Location", content.contact.location, null],
+    [labels.email || "Email", content.contact.email, isEmail ? `mailto:${content.contact.email}` : null],
+    [labels.phone || "Phone", content.contact.phone, isPhone ? `tel:${content.contact.phone.replace(/\s/g, "")}` : null],
+    [labels.linkedin || "LinkedIn", content.contact.linkedin, content.contact.linkedin.startsWith("http") ? content.contact.linkedin : null],
+    [labels.github || "GitHub", content.contact.github, content.contact.github],
+  ].filter(([, value]) => value);
+  const websiteLabel = labels.website || "Website";
 
   return `
     <section class="section" id="contact" aria-labelledby="contact-title">
@@ -357,6 +362,7 @@ function renderContact(content) {
         <div>
           <p class="eyebrow">${escapeHtml(content.contact.eyebrow)}</p>
           <h2 id="contact-title">${escapeHtml(content.contact.title)}</h2>
+          ${content.contact.availability ? `<p>${escapeHtml(content.contact.availability)}</p>` : ""}
         </div>
         <address class="card contact-links">
           ${links
@@ -366,7 +372,7 @@ function renderContact(content) {
                 : `<span><span class="meta-label">${escapeHtml(label)}</span>${escapeHtml(value)}</span>`,
             )
             .join("")}
-          ${content.contact.websites.map((site) => `<span><span class="meta-label">Website</span>${escapeHtml(site)}</span>`).join("")}
+          ${content.contact.websites.map((site) => `<span><span class="meta-label">${escapeHtml(websiteLabel)}</span>${escapeHtml(site)}</span>`).join("")}
         </address>
       </div>
     </section>

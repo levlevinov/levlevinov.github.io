@@ -440,7 +440,15 @@ h2,
 h3 {
   font-family: "Space Grotesk", Inter, sans-serif;
   letter-spacing: 0;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+p,
+li {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
 }
 
 h1 {
@@ -470,7 +478,9 @@ h3 {
   margin-bottom: 0;
   color: var(--text-navy-secondary);
   font-size: 19px;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
 }
 
 .hero-actions,
@@ -678,9 +688,10 @@ h3 {
   font-size: 17px;
   font-weight: 600;
   line-height: 1.45;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   white-space: normal;
-  word-break: break-word;
+  word-break: normal;
+  hyphens: auto;
 }
 
 .section-header {
@@ -1285,7 +1296,7 @@ h3 {
   h2 {
     font-size: 30px;
     max-width: min(100%, 342px);
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
   }
 
   p,
@@ -1293,7 +1304,9 @@ h3 {
   .profile-copy,
   .section-header {
     max-width: 100%;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: auto;
   }
 
   h3 {
