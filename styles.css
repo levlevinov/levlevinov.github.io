@@ -768,6 +768,7 @@ h3 {
 
 .quality-list li,
 .tag-list li {
+  flex: 0 0 auto;
   max-width: 100%;
   border: none;
   outline: none;
@@ -1408,7 +1409,7 @@ h3 {
 
   .quality-list li,
   .tag-list li {
-    min-width: 0;
+    flex: 0 0 auto;
   }
 
   .skills-grid,
