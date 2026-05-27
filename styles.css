@@ -1802,6 +1802,10 @@ h3 {
     width: min(calc(100% - 32px), var(--container));
   }
 
+  .mission-detail-shell .container {
+    width: min(calc(100% - 48px), var(--container));
+  }
+
   .section {
     padding: 56px 0;
   }
