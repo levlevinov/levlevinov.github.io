@@ -768,6 +768,7 @@ h3 {
 
 .quality-list li,
 .tag-list li {
+  max-width: 100%;
   border: none;
   outline: none;
   box-shadow: none;
@@ -777,6 +778,7 @@ h3 {
   padding: 8px 14px;
   font-size: 15px;
   line-height: 1.2;
+  white-space: normal;
   transition: background 200ms ease;
 }
 
@@ -1395,6 +1397,18 @@ h3 {
   .button,
   .filter-button {
     width: 100%;
+  }
+
+  .quality-list,
+  .tag-list {
+    display: flex;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .quality-list li,
+  .tag-list li {
+    min-width: 0;
   }
 
   .skills-grid,
