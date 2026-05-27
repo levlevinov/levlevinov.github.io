@@ -1788,6 +1788,16 @@ h3 {
 }
 
 @media (max-width: 560px) {
+  html,
+  body,
+  main,
+  .mission-detail-shell,
+  .mission-hero,
+  .mission-section {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
   .container {
     width: min(100% - 32px, var(--container));
   }
@@ -1828,6 +1838,22 @@ h3 {
     text-align: left;
     text-align-last: left;
     hyphens: auto;
+  }
+
+  .mission-detail-shell p,
+  .mission-detail-shell .detail-lead,
+  .mission-detail-shell .section-header,
+  .mission-hero-grid > *,
+  .mission-carousel,
+  .mission-carousel-viewport {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .mission-detail-shell p,
+  .mission-detail-shell .detail-lead {
+    overflow-wrap: break-word;
   }
 
   h3 {
