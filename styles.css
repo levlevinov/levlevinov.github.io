@@ -130,7 +130,7 @@ input {
 }
 
 .container {
-  width: min(100% - 48px, var(--container));
+  width: min(calc(100% - 48px), var(--container));
   min-width: 0;
   margin: 0 auto;
 }
@@ -1693,7 +1693,7 @@ h3 {
   }
 
   .container {
-    width: min(100% - 40px, var(--container));
+    width: min(calc(100% - 40px), var(--container));
   }
 
   .section {
@@ -1799,7 +1799,7 @@ h3 {
   }
 
   .container {
-    width: min(100% - 32px, var(--container));
+    width: min(calc(100% - 32px), var(--container));
   }
 
   .section {
