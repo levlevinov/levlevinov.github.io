@@ -903,7 +903,7 @@ window.PORTFOLIO_DATA = {
         "Technical teamwork",
         "Project documentation",
       ],
-      resultTitle: "Result",
+      resultTitle: "Conclusion",
       resultParagraphs: [
         "These contributions were integrated into the technical preparation of the project. The radio contact was completed through coordinated teamwork, with hardware preparation combining electronics, radio, mechanics, cabling and prototyping.",
       ],
@@ -1133,7 +1133,7 @@ window.PORTFOLIO_DATA = {
         "Travail en équipe technique",
         "Documentation de projet",
       ],
-      resultTitle: "Résultat",
+      resultTitle: "Conclusion",
       resultParagraphs: [
         "Ces contributions ont été intégrées à la préparation technique du projet. Le radiocontact a été mené à terme grâce au travail coordonné de l’équipe, avec une préparation matérielle combinant électronique, radio, mécanique, câblage et prototypage.",
       ],
