@@ -1504,7 +1504,7 @@ h3 {
   border-radius: 0;
   background: transparent;
   color: var(--text-dark);
-  padding: 12px 0 0;
+  padding: 12px 12px 0;
   backdrop-filter: none;
 }
 
@@ -1563,7 +1563,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 14px 0 0;
+  padding: 14px 12px 0;
 }
 
 .mission-carousel-counter {
@@ -1857,7 +1857,8 @@ h3 {
   }
 
   .mission-detail-shell .container {
-    width: min(calc(100% - 64px), var(--container));
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
   }
 
   .section {
@@ -1901,12 +1902,24 @@ h3 {
   .mission-detail-shell p,
   .mission-detail-shell .detail-lead,
   .mission-detail-shell .section-header,
+  .mission-hero-grid,
   .mission-hero-grid > *,
+  .mission-hero-image,
+  .project-contribution-section,
+  .project-contribution-row,
+  .project-contribution-row > *,
+  .mission-contribution-card,
+  .mission-carousel-card,
   .mission-carousel,
   .mission-carousel-viewport {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+  }
+
+  .mission-meta .category-pill,
+  .mission-meta .category-pill strong {
+    white-space: normal;
   }
 
   .mission-detail-shell p,
@@ -1974,6 +1987,8 @@ h3 {
   .mission-carousel-caption {
     max-width: 100%;
     border-radius: 0;
+    padding-right: 8px;
+    padding-left: 8px;
   }
 
   .mission-carousel-control {
