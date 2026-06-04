@@ -502,86 +502,135 @@ function missionCarouselCaption(lang, image) {
   return captions[lang]?.[image.number] || image.caption;
 }
 
-function missionCarouselImages(detail, lang) {
+function missionAllCarouselImages(detail, lang) {
   return detail.galleryGroups
     .flatMap((group) => group.images)
     .sort((a, b) => Number(a.number.replace(/\D/g, "")) - Number(b.number.replace(/\D/g, "")))
     .map((image) => ({ ...image, caption: missionCarouselCaption(lang, image) }));
 }
 
-function renderMissionCarousel(content, lang, detail) {
-  const images = missionCarouselImages(detail, lang);
+function missionImagesByNumber(detail, lang, numbers) {
+  const imagesByNumber = new Map(missionAllCarouselImages(detail, lang).map((image) => [image.number, image]));
+  return numbers.map((number) => imagesByNumber.get(number)).filter(Boolean);
+}
+
+function missionContributionRows(detail, lang) {
+  const orderedContributionIndexes = [1, 0, 2, 3];
+  const rowImages = [
+    ["Photo 01", "Photo 02", "Photo 06", "Photo 07", "Photo 08", "Photo 09", "Photo 10"],
+    ["Photo 03", "Photo 04", "Photo 05"],
+    ["Photo 11"],
+    ["Photo 12", "Photo 13"],
+  ];
+
+  return orderedContributionIndexes.map((contributionIndex, rowIndex) => ({
+    contribution: detail.contributions[contributionIndex],
+    images: missionImagesByNumber(detail, lang, rowImages[rowIndex]),
+  }));
+}
+
+function renderMissionCarousel(lang, title, images, carouselIndex) {
   const previousLabel = lang === "fr" ? "Photo précédente" : "Previous photo";
   const nextLabel = lang === "fr" ? "Photo suivante" : "Next photo";
+  const total = String(images.length).padStart(2, "0");
+  const carouselLabel = `${title} ${lang === "fr" ? "photos" : "photos"}`;
 
   return `
-    <section class="section mission-section mission-carousel-section" aria-labelledby="mission-gallery-title">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">${escapeHtml(content.translations.gallery)}</p>
-          <h2 id="mission-gallery-title">${escapeHtml(detail.galleryTitle)}</h2>
-        </div>
-        <div class="mission-carousel" data-mission-carousel tabindex="0" aria-label="${escapeHtml(detail.galleryTitle)}">
-          <div class="mission-carousel-viewport">
-            ${images
-              .map(
-                (image, index) => `
-                  <figure class="mission-carousel-slide ${index === 0 ? "is-active" : ""}" data-carousel-slide data-photo-number="${escapeHtml(image.number)}">
-                    <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="${index === 0 ? "eager" : "lazy"}" />
-                    <figcaption class="mission-carousel-caption">
-                      <span>${escapeHtml(image.number)}</span>
-                      <strong>${escapeHtml(image.caption)}</strong>
-                    </figcaption>
-                  </figure>
-                `,
-              )
-              .join("")}
-            <button class="mission-carousel-control is-prev" type="button" data-carousel-prev aria-label="${escapeHtml(previousLabel)}">‹</button>
-            <button class="mission-carousel-control is-next" type="button" data-carousel-next aria-label="${escapeHtml(nextLabel)}">›</button>
-          </div>
-          <div class="mission-carousel-footer">
-            <span class="mission-carousel-counter" data-carousel-counter>Photo 01 / 13</span>
-            <div class="mission-carousel-dots" aria-label="${escapeHtml(detail.galleryTitle)}">
-              ${images
-                .map(
-                  (image, index) => `
-                    <button class="mission-carousel-dot ${index === 0 ? "is-active" : ""}" type="button" data-carousel-dot="${index}" aria-label="${escapeHtml(image.number)}"></button>
-                  `,
-                )
-                .join("")}
-            </div>
-          </div>
+    <div class="mission-carousel" data-mission-carousel tabindex="0" aria-label="${escapeHtml(carouselLabel)}" data-carousel-index="${carouselIndex}">
+      <div class="mission-carousel-viewport">
+        ${images
+          .map(
+            (image, index) => `
+              <figure class="mission-carousel-slide ${index === 0 ? "is-active" : ""}" data-carousel-slide data-photo-number="${escapeHtml(image.number)}">
+                <div class="project-carousel-stage">
+                  <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="${index === 0 ? "eager" : "lazy"}" />
+                </div>
+                <figcaption class="mission-carousel-caption">
+                  <span>${escapeHtml(image.number)}</span>
+                  <strong>${escapeHtml(image.caption)}</strong>
+                </figcaption>
+              </figure>
+            `,
+          )
+          .join("")}
+        <button class="mission-carousel-control is-prev" type="button" data-carousel-prev aria-label="${escapeHtml(previousLabel)}">‹</button>
+        <button class="mission-carousel-control is-next" type="button" data-carousel-next aria-label="${escapeHtml(nextLabel)}">›</button>
+      </div>
+      <div class="mission-carousel-footer">
+        <span class="mission-carousel-counter" data-carousel-counter>Photo 01 / ${total}</span>
+        <div class="mission-carousel-dots" aria-label="${escapeHtml(carouselLabel)}">
+          ${images
+            .map(
+              (image, index) => `
+                <button class="mission-carousel-dot ${index === 0 ? "is-active" : ""}" type="button" data-carousel-dot="${index}" aria-label="${escapeHtml(image.number)}"></button>
+              `,
+            )
+            .join("")}
         </div>
       </div>
-    </section>
+    </div>
   `;
 }
 
 function bindMissionCarousel() {
-  const carousel = main.querySelector("[data-mission-carousel]");
-  if (!carousel) return;
+  const carousels = main.querySelectorAll("[data-mission-carousel]");
 
-  const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
-  const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
-  const counter = carousel.querySelector("[data-carousel-counter]");
-  const total = String(slides.length).padStart(2, "0");
-  let activeIndex = 0;
+  carousels.forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+    const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+    const counter = carousel.querySelector("[data-carousel-counter]");
+    const total = String(slides.length).padStart(2, "0");
+    let activeIndex = 0;
 
-  const setActive = (nextIndex) => {
-    activeIndex = (nextIndex + slides.length) % slides.length;
-    slides.forEach((slide, index) => slide.classList.toggle("is-active", index === activeIndex));
-    dots.forEach((dot, index) => dot.classList.toggle("is-active", index === activeIndex));
-    const number = slides[activeIndex].dataset.photoNumber || `Photo ${String(activeIndex + 1).padStart(2, "0")}`;
-    counter.textContent = `${number} / ${total}`;
-  };
+    const setActive = (nextIndex) => {
+      activeIndex = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, index) => slide.classList.toggle("is-active", index === activeIndex));
+      dots.forEach((dot, index) => dot.classList.toggle("is-active", index === activeIndex));
+      counter.textContent = `Photo ${String(activeIndex + 1).padStart(2, "0")} / ${total}`;
+    };
 
-  carousel.querySelector("[data-carousel-prev]").addEventListener("click", () => setActive(activeIndex - 1));
-  carousel.querySelector("[data-carousel-next]").addEventListener("click", () => setActive(activeIndex + 1));
-  dots.forEach((dot, index) => dot.addEventListener("click", () => setActive(index)));
-  carousel.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") setActive(activeIndex - 1);
-    if (event.key === "ArrowRight") setActive(activeIndex + 1);
+    carousel.querySelector("[data-carousel-prev]").addEventListener("click", () => setActive(activeIndex - 1));
+    carousel.querySelector("[data-carousel-next]").addEventListener("click", () => setActive(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener("click", () => setActive(index)));
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") setActive(activeIndex - 1);
+      if (event.key === "ArrowRight") setActive(activeIndex + 1);
+    });
   });
+}
+
+function renderMissionContributionRows(lang, detail) {
+  const sectionTitle = lang === "fr" ? "Contributions structurées" : "Structured contributions";
+  const rows = missionContributionRows(detail, lang);
+
+  return `
+    <section class="section mission-section mission-section-navy mission-structured-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">${escapeHtml(detail.contributionsEyebrow)}</p>
+          <h2>${escapeHtml(sectionTitle)}</h2>
+        </div>
+        <div class="project-contribution-section">
+          ${rows
+            .map(
+              (row, index) => `
+                <article class="project-contribution-row">
+                  <div class="detail-card mission-contribution-card">
+                    <h3>${escapeHtml(row.contribution.title)}</h3>
+                    ${paragraphs(row.contribution.paragraphs)}
+                    ${tags(row.contribution.images, "tag-list")}
+                  </div>
+                  <div class="detail-card mission-carousel-card">
+                    ${renderMissionCarousel(lang, row.contribution.title, row.images, index)}
+                  </div>
+                </article>
+              `,
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+  `;
 }
 
 function renderMissionSophieProjectDetail(content, lang, project) {
@@ -616,29 +665,7 @@ function renderMissionSophieProjectDetail(content, lang, project) {
         </div>
       </section>
 
-      ${renderMissionCarousel(content, lang, detail)}
-
-      <section class="section mission-section mission-section-navy">
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">${escapeHtml(detail.contributionsEyebrow)}</p>
-            <h2>${escapeHtml(detail.contributionsTitle)}</h2>
-          </div>
-          <div class="mission-contribution-grid">
-            ${detail.contributions
-              .map(
-                (item) => `
-                  <article class="detail-card mission-contribution-card">
-                    <h3>${escapeHtml(item.title)}</h3>
-                    ${paragraphs(item.paragraphs)}
-                    ${tags(item.images, "tag-list")}
-                  </article>
-                `,
-              )
-              .join("")}
-          </div>
-        </div>
-      </section>
+      ${renderMissionContributionRows(lang, detail)}
 
       <section class="section mission-section mission-section-navy">
         <div class="container mission-final-grid">
