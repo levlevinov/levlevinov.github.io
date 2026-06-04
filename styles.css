@@ -1314,6 +1314,15 @@ h3 {
   height: 100%;
 }
 
+.project-carousel-card {
+  overflow: hidden;
+  border-radius: 28px;
+  background: rgba(248, 250, 252, 0.96);
+  color: var(--text-dark);
+  padding: 24px;
+  box-shadow: 0 18px 44px rgba(6, 43, 73, 0.12);
+}
+
 .mission-contribution-card p {
   max-width: 100%;
   text-align: left;
@@ -1458,23 +1467,23 @@ h3 {
 
 .mission-carousel {
   width: 100%;
-  overflow: hidden;
-  border-radius: 28px;
-  background: var(--white-soft);
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
   color: var(--text-dark);
-  box-shadow: var(--card-shadow-light);
+  box-shadow: none;
   outline: none;
 }
 
 .mission-carousel:focus-visible {
-  box-shadow: 0 0 0 3px rgba(184, 138, 68, 0.34), var(--card-shadow-light);
+  box-shadow: 0 0 0 3px rgba(184, 138, 68, 0.34);
 }
 
 .mission-carousel-viewport {
   position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  background: rgba(6, 43, 73, 0.06);
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
 }
 
 .mission-carousel-slide {
@@ -1486,18 +1495,21 @@ h3 {
   display: block;
 }
 
-.project-carousel-stage {
+.project-carousel-stage,
+.carousel-image-wrap {
   width: 100%;
   height: 320px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  border-radius: 24px;
-  background: rgba(6, 43, 73, 0.06);
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
 }
 
-.project-carousel-stage img {
+.project-carousel-stage img,
+.carousel-image {
   display: block;
   width: auto;
   height: auto;
@@ -1505,53 +1517,32 @@ h3 {
   max-height: 100%;
   object-fit: contain;
   object-position: center center;
+  border-radius: 18px;
 }
 
 .mission-carousel-caption {
-  position: static;
-  display: flex;
-  width: 100%;
-  max-width: 100%;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-  align-items: center;
-  border-radius: 0;
-  background: transparent;
-  color: var(--text-dark);
-  padding: 12px 12px 0;
-  backdrop-filter: none;
+  flex: 1 1 220px;
+  justify-content: flex-start;
+  color: #062B49;
+  text-align: left;
+  text-align-last: left;
 }
 
-.mission-carousel-caption span {
-  color: var(--eyebrow-color);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.mission-carousel-caption strong {
-  color: var(--text-dark);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.mission-carousel-control {
+.mission-carousel-control,
+.carousel-nav-button {
   position: absolute;
   top: 50%;
   z-index: 2;
-  display: inline-flex;
-  width: 44px;
-  height: 44px;
+  display: flex;
+  width: 42px;
+  height: 42px;
   align-items: center;
   justify-content: center;
   border: 0;
   border-radius: 999px;
-  background: rgba(248, 250, 252, 0.86);
+  background: rgba(6, 43, 73, 0.1);
   color: var(--navy-main);
-  box-shadow: 0 8px 18px rgba(4, 31, 53, 0.18);
+  box-shadow: 0 8px 20px rgba(6, 43, 73, 0.12);
   cursor: pointer;
   font-size: 28px;
   line-height: 1;
@@ -1559,59 +1550,77 @@ h3 {
   transition: background 180ms ease, transform 180ms ease;
 }
 
-.mission-carousel-control:hover {
-  background: var(--white-soft);
+.mission-carousel-control:hover,
+.carousel-nav-button:hover {
+  background: rgba(6, 43, 73, 0.16);
   transform: translateY(calc(-50% - 1px));
 }
 
 .mission-carousel-control.is-prev {
-  left: 18px;
+  left: 12px;
 }
 
 .mission-carousel-control.is-next {
-  right: 18px;
+  right: 12px;
 }
 
-.mission-carousel-footer {
+.mission-carousel-footer,
+.carousel-meta-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 14px 12px 0;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 0;
+  flex-wrap: wrap;
 }
 
 .mission-carousel-counter {
-  color: var(--text-muted);
+  color: #062B49;
   font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
-.mission-carousel-dots {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
+.carousel-meta-pill {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  background: rgba(6, 43, 73, 0.08);
+  color: #062B49;
+  box-shadow: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-.mission-carousel-dot {
-  width: 9px;
-  height: 9px;
+.carousel-dots,
+.mission-carousel-dots {
+  gap: 6px;
+}
+
+.mission-carousel-dot,
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  display: inline-flex;
   border: 0;
   border-radius: 999px;
-  background: rgba(6, 43, 73, 0.18);
+  background: rgba(6, 43, 73, 0.22);
   box-shadow: none;
-  cursor: pointer;
   padding: 0;
-  transition: background 180ms ease, transform 180ms ease;
 }
 
 .mission-carousel-dot.is-active,
-.mission-carousel-dot:hover {
+.mission-carousel-dot.active,
+.carousel-dot.active {
   background: var(--accent);
-  transform: scale(1.12);
 }
 
 .detail-shell .section {
@@ -1996,13 +2005,11 @@ h3 {
 
   .project-carousel-stage {
     height: 260px;
+    min-height: 260px;
   }
 
   .mission-carousel-caption {
     max-width: 100%;
-    border-radius: 0;
-    padding-right: 8px;
-    padding-left: 8px;
   }
 
   .mission-carousel-control {
@@ -2020,12 +2027,12 @@ h3 {
   }
 
   .mission-carousel-footer {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
   }
 
   .mission-carousel-dots {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .project-image-card.is-wide {
