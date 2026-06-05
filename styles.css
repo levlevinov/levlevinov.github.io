@@ -1388,7 +1388,13 @@ h3 {
 }
 
 .mission-structured-section {
+  background: var(--section-bg-light);
+  color: var(--text-dark);
   padding-top: 72px;
+}
+
+.mission-structured-section .section-header h2 {
+  color: var(--text-dark);
 }
 
 .project-contribution-section {
