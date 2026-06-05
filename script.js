@@ -170,39 +170,36 @@ function renderHero(content) {
   `;
 }
 
-function renderProfile(content) {
+function renderProfileCurrent(content, lang) {
+  const qualitiesText =
+    lang === "fr"
+      ? "Qualités principales : autonome, rigoureux, orienté solution."
+      : "Main qualities: autonomous, rigorous, solution-oriented.";
+  const orientationText =
+    lang === "fr"
+      ? "Orientation principale : électronique, systèmes embarqués, CAO, prototypage et fabrication numérique."
+      : "Main orientation: electronics, embedded systems, CAD, prototyping and digital fabrication.";
+
   return `
-    <section class="section" id="profile" aria-labelledby="profile-title">
-      <div class="container profile-layout">
-        <div>
+    <section class="section profile-current-section" id="profile" aria-labelledby="profile-title">
+      <div class="container profile-current-wrapper">
+        <article class="text-section-block">
           <p class="eyebrow">${escapeHtml(content.profile.eyebrow)}</p>
           <h2 id="profile-title">${escapeHtml(content.profile.title)}</h2>
           <div class="profile-copy">
             ${content.profile.description.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+            <p>${escapeHtml(qualitiesText)}</p>
           </div>
-        </div>
-        <div class="card">
-          <h3>${escapeHtml(content.navigation.profile)}</h3>
-          ${tags(content.profile.qualities, "quality-list")}
-        </div>
-      </div>
-    </section>
-  `;
-}
-
-function renderCurrent(content) {
-  return `
-    <section class="section" aria-labelledby="current-title">
-      <div class="container current-grid">
-        <div class="section-header">
+        </article>
+        <article class="text-section-block" aria-labelledby="current-title">
           <p class="eyebrow">${escapeHtml(content.currentPosition.eyebrow)}</p>
           <h2 id="current-title">${escapeHtml(content.currentPosition.title)}</h2>
-          ${content.currentPosition.description ? `<p>${escapeHtml(content.currentPosition.description)}</p>` : ""}
-          <p>${escapeHtml(content.currentPosition.status)}</p>
-        </div>
-        <div class="card">
-          ${tags(content.currentPosition.areas)}
-        </div>
+          <div class="profile-copy">
+            ${content.currentPosition.description ? `<p>${escapeHtml(content.currentPosition.description)}</p>` : ""}
+            <p>${escapeHtml(content.currentPosition.status)}</p>
+            <p>${escapeHtml(orientationText)}</p>
+          </div>
+        </article>
       </div>
     </section>
   `;
@@ -428,8 +425,7 @@ function renderHome(lang) {
   const content = DATA[lang];
   main.innerHTML = [
     renderHero(content),
-    renderProfile(content),
-    renderCurrent(content),
+    renderProfileCurrent(content, lang),
     renderSkills(content),
     renderExperience(content, lang),
     renderProjects(content, lang),
