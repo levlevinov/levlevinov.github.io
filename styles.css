@@ -2034,6 +2034,13 @@ h3 {
     overflow-wrap: break-word;
   }
 
+  .mission-contribution-card p,
+  .project-contribution-card p,
+  .project-detail-card p {
+    text-align: left;
+    text-align-last: left;
+  }
+
   h3 {
     font-size: 22px;
   }
