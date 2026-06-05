@@ -2110,11 +2110,24 @@ h3 {
   }
 
   .profile-current-wrapper {
+    width: 100%;
+    max-width: 100%;
     gap: 48px;
+    overflow: hidden;
   }
 
   .text-section-block {
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
+  }
+
+  .text-section-block h2,
+  .text-section-block p {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
   }
 
   .project-image-card.is-wide {
