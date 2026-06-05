@@ -395,11 +395,11 @@ function renderContact(content) {
           ${links
             .map(([label, value, href]) =>
               href
-                ? `<a href="${escapeHtml(href)}" target="${href.startsWith("http") ? "_blank" : "_self"}" rel="noopener noreferrer"><span class="meta-label">${escapeHtml(label)}</span>${escapeHtml(value)}</a>`
-                : `<span><span class="meta-label">${escapeHtml(label)}</span>${escapeHtml(value)}</span>`,
+                ? `<a class="contact-item" href="${escapeHtml(href)}" target="${href.startsWith("http") ? "_blank" : "_self"}" rel="noopener noreferrer"><span class="contact-item-label">${escapeHtml(label)}</span><span class="contact-item-value">${escapeHtml(value)}</span></a>`
+                : `<span class="contact-item"><span class="contact-item-label">${escapeHtml(label)}</span><span class="contact-item-value">${escapeHtml(value)}</span></span>`,
             )
             .join("")}
-          ${content.contact.websites.map((site) => `<span><span class="meta-label">${escapeHtml(websiteLabel)}</span>${escapeHtml(site)}</span>`).join("")}
+          ${content.contact.websites.map((site) => `<span class="contact-item"><span class="contact-item-label">${escapeHtml(websiteLabel)}</span><span class="contact-item-value">${escapeHtml(site)}</span></span>`).join("")}
         </address>
       </div>
     </section>

@@ -1109,29 +1109,62 @@ h3 {
   gap: 10px;
 }
 
-.contact-links a,
-.contact-links span {
+.contact-item,
+.contact-links > a,
+.contact-links > span {
   display: block;
   border: none;
   outline: none;
   box-shadow: none;
-  border-radius: 20px;
-  background: var(--chip-bg-dark);
-  color: var(--chip-text-dark);
-  padding: 14px 18px;
+  border-radius: 22px;
+  background: rgba(248, 250, 252, 0.1);
+  color: var(--text-navy);
+  padding: 18px 20px;
   transition: background 200ms ease, color 200ms ease;
 }
 
-.contact-links a {
-  color: var(--chip-text-dark);
+.contact-item-label {
+  display: block;
+  margin: 0 0 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #B88A44;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.contact-links a:hover {
+.contact-item-value {
+  display: block;
+  color: var(--text-navy);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.contact-item.on-light {
+  background: rgba(6, 43, 73, 0.08);
+}
+
+.contact-item.on-light .contact-item-label {
+  color: #B88A44;
+}
+
+.contact-item.on-light .contact-item-value {
+  color: var(--navy-main);
+}
+
+.contact-links > a:hover {
   border: none;
   outline: none;
   box-shadow: none;
-  background: var(--chip-bg-dark-hover);
-  color: var(--chip-text-dark);
+  background: rgba(248, 250, 252, 0.14);
+  color: var(--text-navy);
 }
 
 .site-footer {
