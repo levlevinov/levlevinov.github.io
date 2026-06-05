@@ -1,11 +1,43 @@
+/*
+COLOR PALETTE BACKUP — before light background contrast adjustment.
+
+Changed variables before adjustment:
+--page-bg: #f8fafc;
+--page: var(--page-bg);
+--white-soft: #f8fafc;
+--white-warm: #f4f7fa;
+--light-card: var(--white-soft);
+--chip-bg-light: rgba(6, 43, 73, 0.08);
+--chip-bg-light-hover: rgba(6, 43, 73, 0.12);
+--border: rgba(6, 43, 73, 0.1);
+--border-light: rgba(6, 43, 73, 0.1);
+--text-dark: #102033;
+--text-muted: #5d6b7a;
+--card-shadow: 0 16px 40px rgba(6, 43, 73, 0.16);
+--card-shadow-light: 0 18px 44px rgba(4, 31, 53, 0.18);
+
+New variables added by the adjustment:
+--section-bg-light;
+--card-bg;
+--card-bg-soft;
+--inner-card-bg;
+--gold-accent;
+--card-border;
+--card-shadow-soft;
+*/
+
 :root {
   color-scheme: light;
 
   /* Active Palette 1 - Premium aerospace */
-  --page-bg: #f8fafc;
+  --page-bg: #eef3f7;
   --page: var(--page-bg);
-  --white-soft: #f8fafc;
-  --white-warm: #f4f7fa;
+  --section-bg-light: #eef3f7;
+  --card-bg: #ffffff;
+  --card-bg-soft: #f8fafc;
+  --inner-card-bg: #e8eef3;
+  --white-soft: var(--card-bg);
+  --white-warm: var(--card-bg-soft);
   --navy-main: #062b49;
   --navy-rich: #073b63;
   --navy-secondary: var(--navy-rich);
@@ -13,17 +45,18 @@
   --navy-surface-hover: #0f4f80;
   --navy-deep: #041f35;
   --navy: var(--navy-main);
-  --light-card: var(--white-soft);
-  --chip-bg-light: rgba(6, 43, 73, 0.08);
+  --light-card: var(--card-bg);
+  --chip-bg-light: var(--inner-card-bg);
   --chip-text-light: #062b49;
-  --chip-bg-light-hover: rgba(6, 43, 73, 0.12);
+  --chip-bg-light-hover: #dde7ef;
   --chip-bg-dark: rgba(255, 255, 255, 0.12);
   --chip-text-dark: #f8fafc;
   --chip-bg-dark-hover: rgba(255, 255, 255, 0.18);
   --border: rgba(6, 43, 73, 0.1);
   --border-light: rgba(6, 43, 73, 0.1);
+  --card-border: rgba(6, 43, 73, 0.1);
   --border-dark: rgba(255, 255, 255, 0.12);
-  --text-dark: #102033;
+  --text-dark: #071c2f;
   --text-muted: #5d6b7a;
   --text-light: var(--text-dark);
   --text-light-secondary: var(--text-muted);
@@ -34,6 +67,7 @@
   --accent: #b88a44;
   --accent-hover: #c99b55;
   --accent-soft: rgba(184, 138, 68, 0.14);
+  --gold-accent: #b88a44;
   --eyebrow-color: #B88A44;
   --eyebrow-color-soft: #C99B55;
 
@@ -69,8 +103,9 @@
   --navy-border: rgba(255, 255, 255, 0.12);
   --header-height: 78px;
   --container: 1200px;
-  --card-shadow: 0 16px 40px rgba(6, 43, 73, 0.16);
-  --card-shadow-light: 0 18px 44px rgba(4, 31, 53, 0.18);
+  --card-shadow: 0 18px 44px rgba(6, 43, 73, 0.1);
+  --card-shadow-soft: 0 10px 28px rgba(6, 43, 73, 0.07);
+  --card-shadow-light: var(--card-shadow);
   --photo-shadow: 0 24px 56px rgba(4, 31, 53, 0.24);
 }
 
@@ -86,7 +121,7 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-  background: var(--page);
+  background: var(--page-bg);
   color: var(--text-light);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 17px;
@@ -325,7 +360,7 @@ section,
 #education,
 #contact,
 .section:not(#skills):not(#experience):not(#projects) {
-  background: var(--page);
+  background: var(--section-bg-light);
   color: var(--text-light);
 }
 
@@ -612,9 +647,9 @@ h3 {
 #experience .card,
 #projects .card,
 .detail-card {
-  border: 0;
+  border: 1px solid var(--card-border);
   border-radius: 28px;
-  background: var(--white-soft);
+  background: var(--card-bg);
   color: var(--text-dark);
   box-shadow: var(--card-shadow-light);
 }
@@ -1234,7 +1269,7 @@ h3 {
 }
 
 .mission-detail-shell {
-  background: var(--page);
+  background: var(--section-bg-light);
   color: var(--text-dark);
 }
 
@@ -1308,7 +1343,7 @@ h3 {
 }
 
 .mission-section {
-  background: var(--page);
+  background: var(--section-bg-light);
   color: var(--text-dark);
 }
 
@@ -1336,7 +1371,7 @@ h3 {
 }
 
 .mission-section-navy .detail-card {
-  background: var(--white-soft);
+  background: var(--card-bg);
   color: var(--text-dark);
 }
 
@@ -1380,10 +1415,11 @@ h3 {
 .project-carousel-card {
   overflow: hidden;
   border-radius: 28px;
-  background: rgba(248, 250, 252, 0.96);
+  background: var(--card-bg);
   color: var(--text-dark);
   padding: 24px;
-  box-shadow: 0 18px 44px rgba(6, 43, 73, 0.12);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
 }
 
 .mission-contribution-card p,
