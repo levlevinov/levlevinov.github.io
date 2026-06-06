@@ -2344,7 +2344,11 @@ h3 {
     text-align-last: left;
   }
 
-  .about-hobbies-grid,
+  .about-hobbies-grid.container {
+    width: min(calc(100% - 32px), var(--container));
+    max-width: min(calc(100% - 32px), var(--container));
+  }
+
   .about-hobbies-card.text-section-block {
     width: 100%;
     max-width: 100%;
