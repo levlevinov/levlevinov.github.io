@@ -1,4 +1,20 @@
 /*
+COLOR PALETTE BACKUP — before deep page background experiment
+
+--page-bg: #eef3f7;
+--section-bg-light: #eef3f7;
+--card-bg: #ffffff;
+--card-bg-soft: #f8fafc;
+--inner-card-bg: #e8eef3;
+--chip-bg-light: var(--inner-card-bg);
+--text-dark: #071c2f;
+--text-muted: #5d6b7a;
+--card-border: rgba(6, 43, 73, 0.1);
+--card-shadow: 0 18px 44px rgba(6, 43, 73, 0.1);
+--card-shadow-soft: 0 10px 28px rgba(6, 43, 73, 0.07);
+*/
+
+/*
 COLOR PALETTE BACKUP — before light background contrast adjustment.
 
 Changed variables before adjustment:
@@ -30,11 +46,11 @@ New variables added by the adjustment:
   color-scheme: light;
 
   /* Active Palette 1 - Premium aerospace */
-  --page-bg: #eef3f7;
+  --page-bg: #d3dfe8;
   --page: var(--page-bg);
-  --section-bg-light: #eef3f7;
-  --card-bg: #ffffff;
-  --card-bg-soft: #f8fafc;
+  --section-bg-light: #d3dfe8;
+  --card-bg: #f8fafc;
+  --card-bg-soft: #ffffff;
   --inner-card-bg: #e8eef3;
   --white-soft: var(--card-bg);
   --white-warm: var(--card-bg-soft);
@@ -54,10 +70,10 @@ New variables added by the adjustment:
   --chip-bg-dark-hover: rgba(255, 255, 255, 0.18);
   --border: rgba(6, 43, 73, 0.1);
   --border-light: rgba(6, 43, 73, 0.1);
-  --card-border: rgba(6, 43, 73, 0.1);
+  --card-border: rgba(6, 43, 73, 0.12);
   --border-dark: rgba(255, 255, 255, 0.12);
   --text-dark: #071c2f;
-  --text-muted: #5d6b7a;
+  --text-muted: #4f6172;
   --text-light: var(--text-dark);
   --text-light-secondary: var(--text-muted);
   --text-light-muted: rgba(216, 227, 236, 0.78);
@@ -103,8 +119,8 @@ New variables added by the adjustment:
   --navy-border: rgba(255, 255, 255, 0.12);
   --header-height: 78px;
   --container: 1200px;
-  --card-shadow: 0 18px 44px rgba(6, 43, 73, 0.1);
-  --card-shadow-soft: 0 10px 28px rgba(6, 43, 73, 0.07);
+  --card-shadow: 0 18px 44px rgba(6, 43, 73, 0.12);
+  --card-shadow-soft: 0 10px 28px rgba(6, 43, 73, 0.08);
   --card-shadow-light: var(--card-shadow);
   --photo-shadow: 0 24px 56px rgba(4, 31, 53, 0.24);
 }
@@ -115,6 +131,7 @@ New variables added by the adjustment:
 
 html {
   scroll-behavior: smooth;
+  background: var(--page-bg);
 }
 
 body {
