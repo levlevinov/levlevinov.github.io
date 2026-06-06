@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">Mechanical CAD icon</title>
-  <rect width="64" height="64" rx="14" fill="#E8EEF3"/>
-  <path d="M20 24l12-7 12 7v16l-12 7-12-7V24Z" fill="#F8FAFC" stroke="#062B49" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M20 24l12 7 12-7M32 31v16" fill="none" stroke="#062B49" stroke-width="3" stroke-linejoin="round"/>
-  <circle cx="32" cy="31" r="4" fill="#B88A44"/>
+  <title id="title">SolidWorks style icon</title>
+  <rect width="64" height="64" rx="14" fill="#F5E6E6"/>
+  <path d="M18 22l14-8 14 8v17L32 48 18 39V22Z" fill="#C9362B"/>
+  <path d="M18 22l14 8 14-8M32 30v18" fill="none" stroke="#F8FAFC" stroke-width="3" stroke-linejoin="round"/>
+  <text x="16" y="57" fill="#8E201A" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">SW</text>
 </svg>

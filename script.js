@@ -578,7 +578,6 @@ function missionContributionRows(detail, lang) {
 function renderMissionCarousel(lang, title, images, carouselIndex) {
   const previousLabel = lang === "fr" ? "Photo précédente" : "Previous photo";
   const nextLabel = lang === "fr" ? "Photo suivante" : "Next photo";
-  const total = String(images.length).padStart(2, "0");
   const carouselLabel = `${title} ${lang === "fr" ? "photos" : "photos"}`;
   const firstCaption = images[0] ? missionCarouselCaption(lang, images[0]) : "";
 
@@ -588,7 +587,7 @@ function renderMissionCarousel(lang, title, images, carouselIndex) {
         ${images
           .map(
             (image, index) => `
-              <figure class="mission-carousel-slide ${index === 0 ? "is-active" : ""}" data-carousel-slide data-photo-number="${escapeHtml(image.number)}" data-photo-caption="${escapeHtml(image.caption)}">
+              <figure class="mission-carousel-slide ${index === 0 ? "is-active" : ""}" data-carousel-slide data-photo-caption="${escapeHtml(image.caption)}">
                 <div class="project-carousel-stage carousel-image-wrap">
                   <img class="carousel-image" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="${index === 0 ? "eager" : "lazy"}" />
                 </div>
@@ -600,7 +599,6 @@ function renderMissionCarousel(lang, title, images, carouselIndex) {
         <button class="mission-carousel-control carousel-nav-button is-next" type="button" data-carousel-next aria-label="${escapeHtml(nextLabel)}">›</button>
       </div>
       <div class="mission-carousel-footer carousel-meta-row">
-        <span class="mission-carousel-counter carousel-meta-pill carousel-photo-number" data-carousel-counter>Photo 01 / ${total}</span>
         <span class="mission-carousel-caption carousel-meta-pill carousel-caption" data-carousel-caption>${escapeHtml(firstCaption)}</span>
         <div class="mission-carousel-dots carousel-meta-pill carousel-dots" aria-label="${escapeHtml(carouselLabel)}">
           ${images
@@ -622,9 +620,7 @@ function bindMissionCarousel() {
   carousels.forEach((carousel) => {
     const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
     const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
-    const counter = carousel.querySelector("[data-carousel-counter]");
     const caption = carousel.querySelector("[data-carousel-caption]");
-    const total = String(slides.length).padStart(2, "0");
     let activeIndex = 0;
 
     const setActive = (nextIndex) => {
@@ -632,7 +628,6 @@ function bindMissionCarousel() {
       slides.forEach((slide, index) => slide.classList.toggle("is-active", index === activeIndex));
       dots.forEach((dot, index) => dot.classList.toggle("is-active", index === activeIndex));
       dots.forEach((dot, index) => dot.classList.toggle("active", index === activeIndex));
-      counter.textContent = `Photo ${String(activeIndex + 1).padStart(2, "0")} / ${total}`;
       if (caption) caption.textContent = slides[activeIndex].dataset.photoCaption || "";
     };
 
@@ -664,7 +659,6 @@ function renderMissionContributionRows(lang, detail) {
                   <div class="detail-card mission-contribution-card">
                     <h3>${escapeHtml(row.contribution.title)}</h3>
                     ${paragraphs(row.contribution.paragraphs)}
-                    ${tags(row.contribution.images, "tag-list")}
                   </div>
                   <div class="detail-card mission-carousel-card project-carousel-card">
                     ${renderMissionCarousel(lang, row.contribution.title, row.images, index)}
@@ -688,7 +682,14 @@ function renderMissionSophieProjectDetail(content, lang, project) {
         <div class="container mission-hero-grid">
           <div>
             <p class="eyebrow">${escapeHtml(detail.eyebrow)}</p>
-            <h1>${escapeHtml(project.title)}</h1>
+            <div class="mission-title-row">
+              <h1>${escapeHtml(project.title)}</h1>
+              ${
+                detail.externalLink
+                  ? `<a class="button secondary mission-link-button" href="${escapeHtml(detail.externalLink.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(detail.externalLink.label)}</a>`
+                  : ""
+              }
+            </div>
             <p class="detail-lead">${escapeHtml(project.subtitle)}</p>
             <div class="detail-meta mission-meta">
               ${detail.meta.map((item) => `<span class="category-pill"><span>${escapeHtml(item.label)}</span>${escapeHtml(item.value)}</span>`).join("")}
@@ -703,11 +704,11 @@ function renderMissionSophieProjectDetail(content, lang, project) {
 
       <section class="section mission-section">
         <div class="container">
-          <div class="section-header">
+          <article class="detail-card project-context-card">
             <p class="eyebrow">${escapeHtml(detail.overview.eyebrow)}</p>
             <h2>${escapeHtml(detail.overview.title)}</h2>
             ${paragraphs(detail.overview.paragraphs)}
-          </div>
+          </article>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">CAD design icon</title>
-  <rect width="64" height="64" rx="14" fill="#E8EEF3"/>
-  <path d="M18 19h19l9 9v17H18V19Z" fill="#F8FAFC" stroke="#062B49" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M37 19v10h9" fill="none" stroke="#062B49" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M24 38h16M24 30h8" stroke="#B88A44" stroke-width="4" stroke-linecap="round"/>
+  <title id="title">Fusion 360 style icon</title>
+  <rect width="64" height="64" rx="14" fill="#F3E8D8"/>
+  <path d="M18 16h28l-6 10H28v7h11l-5 9h-6v13H18V16Z" fill="#D96F22"/>
+  <path d="M42 33c5.5 0 9 3.6 9 8.6 0 5.2-3.8 8.8-9.2 8.8-3.8 0-7.1-1.6-8.8-4.4l4.5-3c.9 1.5 2.3 2.4 4.1 2.4 2 0 3.4-1.5 3.4-3.6 0-2-1.4-3.4-3.5-3.4-1.4 0-2.5.5-3.4 1.5l-3.9-1.8 1.4-12h14.2v5.1H40l-.4 3.2c.8-.3 1.6-.4 2.4-.4Z" fill="#062B49"/>
+  <text x="34" y="58" fill="#062B49" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="800">360</text>
 </svg>

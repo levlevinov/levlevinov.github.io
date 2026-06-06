@@ -1,7 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
   <title id="title">CNC milling icon</title>
   <rect width="64" height="64" rx="14" fill="#E8EEF3"/>
-  <path d="M21 17h22v10H21V17ZM28 27h8v13h-8V27Z" fill="#F8FAFC" stroke="#062B49" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M20 47h24M25 40h14" stroke="#062B49" stroke-width="3" stroke-linecap="round"/>
-  <path d="M32 40l-4 7h8l-4-7Z" fill="#B88A44"/>
+  <path d="M20 16h24v10H20V16Z" fill="#F8FAFC" stroke="#062B49" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M28 26h8v15h-8V26Z" fill="#F8FAFC" stroke="#062B49" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M17 50h30M23 42h18" stroke="#062B49" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 41l-5 9h10l-5-9Z" fill="#B88A44"/>
+  <path d="M43 30l4-4M46 34l5-1" stroke="#B88A44" stroke-width="3" stroke-linecap="round"/>
 </svg>

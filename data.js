@@ -724,12 +724,16 @@ window.PORTFOLIO_DATA = {
         src: images.p01,
         alt: "Antenna test setup used during Mission Sophie preparation",
       },
+      externalLink: {
+        label: "Link",
+        href: "https://www.iut.u-bordeaux.fr/projet-mission-sophie/",
+      },
       overview: {
         eyebrow: "PROJECT OVERVIEW",
         title: "Project context",
         paragraphs: [
-          "As a first-year GEII student, I joined the project’s technical team to contribute to several practical tasks related to the preparation of the radio setup, mechanical assembly and functional prototyping.",
-          "My role was not to lead the project, but to provide a technical contribution on specific elements: antenna rotor fixation, preparation of 3D printed supports, participation in cabling, antenna assembly and the design of small equipment intended for radio operators.",
+          "Being invited and interested in participating, I joined the project’s technical team to contribute to the preparation of the radio setup, mechanical assembly and prototyping of functional parts.",
+          "My role was to provide a technical contribution on specific elements: antenna rotor fixation, preparation of 3D printed supports, participation in cabling, assembly of antenna elements and design of small equipment intended for radio operators.",
         ],
       },
       contributionsEyebrow: "TECHNICAL CONTRIBUTION",
@@ -738,29 +742,32 @@ window.PORTFOLIO_DATA = {
         {
           title: "Antenna rotor fixation",
           paragraphs: [
-            "The first contribution focused on the design of a fixation system for the antenna rotor. The rotor did not have a sufficiently rigid connection with its support, which could create a mechanical stability issue.",
-            "After taking measurements, I designed a fixation part in Fusion 360 and produced a first prototype using 3D printing. After adjustments, the part was installed on the setup to improve the mechanical stability of the assembly.",
+            "During the testing period, the Radio Club only had a small antenna setup available. This setup had one issue: the rotor did not have a sufficiently rigid fixation with its support, which could create a mechanical stability problem.",
+            "After taking measurements, I designed a fixation part in Fusion 360 and then produced a first prototype using 3D printing. After adjustments, the part was installed on the setup to improve the mechanical stability of the assembly.",
           ],
           images: ["Photo 03", "Photo 04", "Photo 05"],
         },
         {
           title: "Antenna and cable preparation",
           paragraphs: [
-            "After this first task, I took part in the hardware preparation of the setup with the technical team: assembly of antenna elements, preparation of the working area, cable routing and participation in the outdoor installation.",
+            "As an enthusiast, I wanted to help move this project forward as much as possible.",
+            "At the beginning, I started with the assembly of the two directional antennas.",
+            "Then, I prepared the coaxial cables: connector installation, cable routing and participation in the outdoor installation.",
+            "In this technical part, I applied my manual skills.",
           ],
           images: ["Photo 06", "Photo 07", "Photo 08", "Photo 09", "Photo 10"],
         },
         {
           title: "PTT microphone stands",
           paragraphs: [
-            "I also designed PTT microphone stands to help organize the operator workstation and make the equipment easier to use during the radio contact. These parts were modeled in Fusion 360 and produced using 3D printing.",
+            "Following a request from my colleague, I designed PTT (Push to talk) microphone stands to make the operator workstation easier to organize and the equipment easier to use during the radio contact. These parts were modeled in Fusion 360 and then produced using 3D printing.",
           ],
           images: ["Photo 11"],
         },
         {
           title: "Audio channel router enclosure",
           paragraphs: [
-            "Another element developed for the project was an enclosure for audio channel routing. The goal was to provide a cleaner integration of the connections and improve the organization of the audio wiring.",
+            "Another element produced as part of the project is an enclosure for audio channel routing. The goal was to provide a cleaner integration of the connections and make the audio wiring easier to organize.",
           ],
           images: ["Photo 12", "Photo 13"],
         },
@@ -954,12 +961,16 @@ window.PORTFOLIO_DATA = {
         src: images.p01,
         alt: "Installation d’essai avec antennes pour la préparation de Mission Sophie",
       },
+      externalLink: {
+        label: "Link",
+        href: "https://www.iut.u-bordeaux.fr/projet-mission-sophie/",
+      },
       overview: {
         eyebrow: "CONTEXTE",
         title: "Contexte du projet",
         paragraphs: [
-          "En tant qu’étudiant en première année de GEII, j’ai rejoint l’équipe technique du projet pour contribuer à plusieurs tâches concrètes liées à la préparation du dispositif radio, à l’assemblage mécanique et au prototypage de pièces fonctionnelles.",
-          "Mon rôle n’était pas de diriger le projet, mais d’apporter une contribution technique sur des éléments précis : fixation du rotor d’antenne, préparation de supports imprimés en 3D, participation au câblage, assemblage d’éléments d’antenne et conception de petits équipements destinés aux opérateurs radio.",
+          "Étant invité et intéressé à participer, j’ai rejoint l’équipe technique du projet pour contribuer à la préparation du dispositif radio, à l’assemblage mécanique et au prototypage de pièces fonctionnelles.",
+          "Mon rôle était d’apporter une contribution technique sur des éléments précis : fixation du rotor d’antenne, préparation de supports imprimés en 3D, participation au câblage, assemblage d’éléments d’antenne et conception de petits équipements destinés aux opérateurs radio.",
         ],
       },
       contributionsEyebrow: "CONTRIBUTION TECHNIQUE",
@@ -968,7 +979,7 @@ window.PORTFOLIO_DATA = {
         {
           title: "Fixation du rotor d’antenne",
           paragraphs: [
-            "La première contribution a porté sur la conception d’un système de fixation pour le rotor d’antenne. Le rotor ne disposait pas d’une fixation suffisamment rigide avec son support, ce qui pouvait poser un problème de stabilité mécanique.",
+            "Pendant la période des essais, le Radio Club ne disposait que d’une petite installation avec des antennes. Cette installation présentait un problème : le rotor ne disposait pas d’une fixation suffisamment rigide avec son support, ce qui pouvait poser un problème de stabilité mécanique.",
             "Après prise de mesures, j’ai conçu une pièce de fixation sous Fusion 360, puis réalisé un premier prototype en impression 3D. Après ajustements, la pièce a été installée sur le dispositif afin d’améliorer la tenue mécanique de l’ensemble.",
           ],
           images: ["Photo 03", "Photo 04", "Photo 05"],
@@ -976,14 +987,17 @@ window.PORTFOLIO_DATA = {
         {
           title: "Préparation des antennes et du câblage",
           paragraphs: [
-            "Après cette première réalisation, j’ai participé à la préparation matérielle du dispositif avec l’équipe technique : assemblage d’éléments d’antenne, préparation de la zone de travail, cheminement des câbles et participation à l’installation extérieure.",
+            "En tant qu’enthousiaste, je voulais aider à faire avancer ce projet au maximum.",
+            "Au départ, j’ai commencé par l’assemblage des deux antennes directives.",
+            "Ensuite, j’ai préparé les câbles coaxiaux : montage des connecteurs, cheminement des câbles et participation à l’installation extérieure.",
+            "Dans cette partie technique, j’ai appliqué mes compétences manuelles.",
           ],
           images: ["Photo 06", "Photo 07", "Photo 08", "Photo 09", "Photo 10"],
         },
         {
           title: "Supports pour microphones PTT",
           paragraphs: [
-            "J’ai également conçu des supports pour microphones PTT afin de faciliter l’organisation du poste opérateur et l’utilisation du matériel pendant le contact radio. Ces pièces ont été modélisées sous Fusion 360 puis fabriquées par impression 3D.",
+            "À la suite d’une demande de mon collègue, j’ai conçu des supports pour microphones PTT (Push to talk) afin de faciliter l’organisation du poste opérateur et l’utilisation du matériel pendant le contact radio. Ces pièces ont été modélisées sous Fusion 360, puis fabriquées par impression 3D.",
           ],
           images: ["Photo 11"],
         },

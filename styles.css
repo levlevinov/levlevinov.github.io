@@ -633,7 +633,8 @@ h3 {
 }
 
 .hero .button.secondary,
-.detail-shell .button.secondary {
+.detail-shell .button.secondary,
+.mission-hero .button.secondary {
   color: var(--text-navy);
   border-color: rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.08);
@@ -641,7 +642,8 @@ h3 {
 }
 
 .hero .button.secondary:hover,
-.detail-shell .button.secondary:hover {
+.detail-shell .button.secondary:hover,
+.mission-hero .button.secondary:hover {
   border-color: rgba(255, 255, 255, 0.26);
   background: rgba(255, 255, 255, 0.14);
 }
@@ -1413,6 +1415,23 @@ h3 {
   color: var(--text-navy);
 }
 
+.mission-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.mission-title-row h1 {
+  margin: 0;
+}
+
+.mission-link-button {
+  min-height: 40px;
+  flex-shrink: 0;
+  padding: 0 18px;
+}
+
 .mission-meta {
   margin: 24px 0;
   max-width: 100%;
@@ -1468,6 +1487,29 @@ h3 {
 
 .mission-section p:not(.eyebrow) {
   color: var(--text-dark);
+}
+
+.project-context-card {
+  max-width: 860px;
+}
+
+.project-context-card p:not(.eyebrow) {
+  max-width: 760px;
+  color: var(--text-muted);
+  text-align: justify;
+  text-align-last: left;
+  line-height: 1.65;
+  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.project-context-card h2 {
+  color: #071C2F;
+  text-align: left;
+  text-wrap: balance;
+  hyphens: none;
+  word-break: normal;
 }
 
 .mission-section-navy {
@@ -1552,6 +1594,26 @@ h3 {
   text-wrap: pretty;
   hyphens: auto;
   overflow-wrap: normal;
+  word-break: normal;
+}
+
+.text-card p,
+.info-card p {
+  text-align: justify;
+  text-align-last: left;
+  line-height: 1.65;
+  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.text-card h2,
+.text-card h3,
+.info-card h2,
+.info-card h3 {
+  text-align: left;
+  text-wrap: balance;
+  hyphens: none;
   word-break: normal;
 }
 
@@ -1807,6 +1869,7 @@ h3 {
 }
 
 .mission-carousel-counter {
+  display: none;
   color: #062B49;
   font-size: 14px;
   font-weight: 600;
@@ -1837,6 +1900,7 @@ h3 {
 
 .carousel-dots,
 .mission-carousel-dots {
+  flex: 0 0 auto;
   gap: 6px;
 }
 
@@ -1855,7 +1919,7 @@ h3 {
 .mission-carousel-dot.is-active,
 .mission-carousel-dot.active,
 .carousel-dot.active {
-  background: var(--accent);
+  background: var(--gold-accent);
 }
 
 .detail-shell .section {
@@ -2033,6 +2097,12 @@ h3 {
     gap: 32px;
   }
 
+  .mission-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .mission-meta {
     display: grid;
     grid-template-columns: 1fr;
@@ -2198,7 +2268,7 @@ h3 {
   .mission-contribution-card p,
   .project-contribution-card p,
   .project-detail-card p {
-    text-align: left;
+    text-align: justify;
     text-align-last: left;
   }
 
@@ -2338,8 +2408,7 @@ h3 {
     max-width: 100%;
   }
 
-  .hero-text-block .lead,
-  .about-hobbies-card p {
+  .hero-text-block .lead {
     text-align: left;
     text-align-last: left;
   }
