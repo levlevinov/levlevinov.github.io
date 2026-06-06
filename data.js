@@ -6,9 +6,9 @@ window.PORTFOLIO_DATA = {
         "Technical portfolio for Lev Levinov: electronics, embedded systems, CAD, prototyping and digital fabrication.",
     },
     navigation: {
-      profile: "Profile",
-      experience: "Experience",
+      profile: "About me",
       skills: "Skills",
+      experience: "Experience",
       projects: "Projects",
       education: "Education",
       contact: "Contact",
@@ -45,10 +45,12 @@ window.PORTFOLIO_DATA = {
     },
     hero: {
       title: "Lev Levinov",
-      subtitle: "Electronics engineering student",
-      positioning: "Electronics, embedded systems, CAD, prototyping and digital fabrication.",
-      description:
-        "Technical portfolio focused on electronics, embedded systems, CAD, prototyping and digital fabrication.",
+      subtitle: "",
+      positioning: "",
+      description: [
+        "Hello, I am a student in the Electrical Engineering and Industrial Computing department. My future specialization will be electronics.",
+        "In addition, I am training in the field of CAD development. I work on design, applied load studies and simulations, as well as prototyping.",
+      ],
       locationLabel: "Location",
       location: "France — Bordeaux",
       availabilityLabel: "Availability",
@@ -58,23 +60,24 @@ window.PORTFOLIO_DATA = {
       photoAlt: "Professional portrait of Lev Levinov",
     },
     profile: {
-      eyebrow: "PROFILE",
-      title: "Technical profile focused on precise and verifiable engineering work.",
+      eyebrow: "ABOUT ME",
+      title: "Student on the path to becoming an engineer.",
       description: [
-        "I am building a technical path around electronics, embedded systems, CAD, prototyping and digital fabrication.",
-        "My approach is practical: understanding constraints, designing simple solutions, producing prototypes and documenting results.",
-        "This portfolio presents only experience, projects and training that can be documented or completed with concrete elements.",
+        "Being passionate about engineering, especially electronics and CAD design, I started my studies in the field of electronics.",
+        "By participating in several university and amateur projects, I acquire new knowledge and develop my skills.",
+        "My view of problems is simple and practical: I see the problem, I understand it, I develop the right and simple solution, then I apply it.",
+        "I emphasize personal qualities such as pragmatism, resistance to stress and scrupulousness. The rest, I leave for you to see.",
       ],
-      qualities: ["Autonomous", "Rigorous", "Solution-oriented"],
     },
     currentPosition: {
-      eyebrow: "CURRENT POSITION",
-      title: "Current technical orientation",
-      description:
-        "First-year GEII student at IUT de Bordeaux, mainly oriented toward electronics, embedded systems, CAD, prototyping and digital fabrication.",
-      status:
-        "I am not actively looking for an internship or a job at the moment, but I remain available for relevant technical projects and collaborations.",
-      areas: ["Electronics", "Embedded systems", "CAD", "Prototyping", "Digital fabrication"],
+      eyebrow: "HOBBIES",
+      title: "Hobbies",
+      description: [
+        "When I have free time, I make good use of it:",
+        "I play guitar, do design work or build models.",
+        "I also practice the following activities: weight training, calisthenics, cycling, dinghy sailing and bivouacking.",
+      ],
+      status: "Currently, I am focused on my studies and I am also involved in a startup.",
     },
     skills: {
       eyebrow: "SKILLS",
@@ -83,9 +86,8 @@ window.PORTFOLIO_DATA = {
         {
           title: "CAD & mechanical design",
           items: [
-            "Fusion 360 — highly advanced level",
-            "SolidWorks — advanced level",
-            "3D modeling",
+            { text: "Fusion 360 — highly advanced level", icon: "/public/icons/fusion-360-icon.svg", alt: "Fusion 360 CAD icon" },
+            { text: "SolidWorks — advanced level", icon: "/public/icons/solidworks-icon.svg", alt: "SolidWorks CAD icon" },
             "Design of parts for prototyping",
             "Preparation of models for fabrication",
           ],
@@ -93,17 +95,15 @@ window.PORTFOLIO_DATA = {
         {
           title: "Digital fabrication",
           items: [
-            "FDM 3D printing — advanced level",
+            { text: "FDM 3D printing — advanced level", icon: "/public/icons/3d-printer-icon.svg", alt: "3D printer icon" },
             "Preparation of printable parts",
-            "Print parameter adjustment",
             "Functional prototyping",
-            "CNC milling — beginner level",
+            { text: "CNC milling — beginner level", icon: "/public/icons/cnc-milling-icon.svg", alt: "CNC milling icon" },
           ],
         },
         {
           title: "Electronics & embedded systems",
           items: [
-            "GEII training in progress",
             "Electronics fundamentals",
             "Sensors and measurement systems",
             "Embedded systems",
@@ -332,9 +332,9 @@ window.PORTFOLIO_DATA = {
         "Portfolio technique de Lev Levinov : électronique, systèmes embarqués, CAO, prototypage et fabrication numérique.",
     },
     navigation: {
-      profile: "Profil",
-      experience: "Expérience",
+      profile: "À propos",
       skills: "Compétences",
+      experience: "Expérience",
       projects: "Projets",
       education: "Formation",
       contact: "Contact",
@@ -371,10 +371,12 @@ window.PORTFOLIO_DATA = {
     },
     hero: {
       title: "Lev Levinov",
-      subtitle: "Étudiant en ingénierie électronique",
-      positioning: "Électronique, systèmes embarqués, CAO, prototypage et fabrication numérique.",
-      description:
-        "Portfolio technique orienté vers l’électronique, les systèmes embarqués, la CAO, le prototypage et la fabrication numérique.",
+      subtitle: "",
+      positioning: "",
+      description: [
+        "Bonjour, je suis étudiant au département Génie électrique et informatique industrielle. Ma future spécialisation sera l’électronique.",
+        "En plus, je me forme dans le domaine du développement CAO. Je fais de la conception, des études des charges appliquées et des simulations, ainsi que du prototypage.",
+      ],
       locationLabel: "Localisation",
       location: "France — Bordeaux",
       availabilityLabel: "Disponibilité",
@@ -384,23 +386,24 @@ window.PORTFOLIO_DATA = {
       photoAlt: "Portrait professionnel de Lev Levinov",
     },
     profile: {
-      eyebrow: "PROFIL",
-      title: "Profil technique orienté vers un travail d’ingénierie précis et vérifiable.",
+      eyebrow: "À PROPOS DE MOI",
+      title: "Étudiant sur le chemin d’ingénieur.",
       description: [
-        "Je construis un parcours technique autour de l’électronique, des systèmes embarqués, de la CAO, du prototypage et de la fabrication numérique.",
-        "Mon approche est pratique : comprendre les contraintes, concevoir des solutions simples, fabriquer des prototypes et documenter les résultats.",
-        "Ce portfolio présente uniquement des expériences, projets et formations pouvant être documentés ou complétés par des éléments concrets.",
+        "Étant passionné par l’ingénierie, surtout par l’électronique et la conception CAO, j’ai commencé mes études dans le domaine de l’électronique.",
+        "En participant à plusieurs projets universitaires et amateurs, j’acquiers de nouvelles connaissances et je développe mes compétences.",
+        "Ma vision des problèmes est simple et pratique : je vois le problème, je le comprends, je développe la solution juste et simple, puis je l’applique.",
+        "Je souligne mes qualités personnelles telles que le pragmatisme, la résistance au stress et la scrupulosité. Le reste, je vous laisse le voir.",
       ],
-      qualities: ["Autonome", "Rigoureux", "Orienté solution"],
     },
     currentPosition: {
-      eyebrow: "SITUATION ACTUELLE",
-      title: "Orientation technique actuelle",
-      description:
-        "Étudiant en première année de GEII à l’IUT de Bordeaux, avec une orientation principale vers l’électronique, les systèmes embarqués, la CAO, le prototypage et la fabrication numérique.",
-      status:
-        "Je ne recherche pas activement un stage ou un emploi pour le moment, mais je reste disponible pour des projets techniques et des collaborations pertinentes.",
-      areas: ["Électronique", "Systèmes embarqués", "CAO", "Prototypage", "Fabrication numérique"],
+      eyebrow: "HOBBIES",
+      title: "Hobbies",
+      description: [
+        "Quand j’ai du temps libre, j’en profite :",
+        "Je joue de la guitare, je fais du design ou du modélisme.",
+        "Je pratique également les activités suivantes : la musculation, la calisthénie, le vélo, la navigation en dériveur et le bivouac.",
+      ],
+      status: "Actuellement, je suis occupé par mes études et je suis également intégré dans une startup.",
     },
     skills: {
       eyebrow: "COMPÉTENCES",
@@ -409,9 +412,8 @@ window.PORTFOLIO_DATA = {
         {
           title: "CAO & conception mécanique",
           items: [
-            "Fusion 360 — niveau très avancé",
-            "SolidWorks — niveau avancé",
-            "Modélisation 3D",
+            { text: "Fusion 360 — niveau très avancé", icon: "/public/icons/fusion-360-icon.svg", alt: "Icône CAO Fusion 360" },
+            { text: "SolidWorks — niveau avancé", icon: "/public/icons/solidworks-icon.svg", alt: "Icône CAO SolidWorks" },
             "Conception de pièces pour prototypage",
             "Préparation de modèles pour fabrication",
           ],
@@ -419,17 +421,15 @@ window.PORTFOLIO_DATA = {
         {
           title: "Fabrication numérique",
           items: [
-            "Impression 3D FDM — niveau avancé",
+            { text: "Impression 3D FDM — niveau avancé", icon: "/public/icons/3d-printer-icon.svg", alt: "Icône impression 3D" },
             "Préparation de pièces imprimables",
-            "Réglage des paramètres d’impression",
             "Prototypage fonctionnel",
-            "Fraisage CNC — niveau débutant",
+            { text: "Fraisage CNC — niveau débutant", icon: "/public/icons/cnc-milling-icon.svg", alt: "Icône fraisage CNC" },
           ],
         },
         {
           title: "Électronique & systèmes embarqués",
           items: [
-            "Formation GEII en cours",
             "Bases d’électronique",
             "Capteurs et systèmes de mesure",
             "Systèmes embarqués",

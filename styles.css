@@ -528,6 +528,10 @@ h1 {
   line-height: 1.05;
 }
 
+.hero h1 {
+  color: var(--gold-accent);
+}
+
 h2 {
   margin-bottom: 16px;
   font-size: 40px;
@@ -553,6 +557,22 @@ h3 {
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
+}
+
+.hero-text-block {
+  display: grid;
+  max-width: 740px;
+  gap: 14px;
+}
+
+.hero-text-block .lead {
+  max-width: 100%;
+  text-align: justify;
+  text-align-last: left;
+  line-height: 1.65;
+  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .hero-actions,
@@ -766,6 +786,25 @@ h3 {
   hyphens: none;
 }
 
+.hero-map-link {
+  display: block;
+  width: 100%;
+  height: 150px;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--inner-card-bg);
+  box-shadow: var(--card-shadow-soft);
+}
+
+.hero-map-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+
 .section-header {
   max-width: 760px;
   margin-bottom: 40px;
@@ -823,6 +862,39 @@ h3 {
   max-width: 1080px;
   gap: 72px;
   margin: 0 auto;
+}
+
+.about-hobbies-grid {
+  display: grid;
+  max-width: 1180px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.about-hobbies-card {
+  max-width: none;
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow-soft);
+  padding: 34px 38px;
+  color: var(--text-dark);
+}
+
+.about-hobbies-card h2 {
+  color: var(--text-dark);
+}
+
+.about-hobbies-card p {
+  max-width: 100%;
+  text-align: justify;
+  text-align-last: left;
+  line-height: 1.65;
+  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .text-section-block {
@@ -1043,6 +1115,23 @@ h3 {
   outline: none;
   box-shadow: none;
   background: var(--chip-bg-light-hover);
+}
+
+.compact-list li.with-icon {
+  align-items: center;
+}
+
+.compact-list li.with-icon::before {
+  content: none;
+}
+
+.skill-item-icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: rgba(6, 43, 73, 0.06);
 }
 
 #profile .compact-list li,
@@ -1853,6 +1942,7 @@ h3 {
   .hero-grid,
   .mission-hero-grid,
   .profile-layout,
+  .about-hobbies-grid,
   .current-grid,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1891,6 +1981,10 @@ h3 {
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 24px;
+  }
+
+  .hero-map-link {
+    height: 120px;
   }
 }
 
@@ -2215,6 +2309,10 @@ h3 {
   .card,
   .detail-card {
     padding: 22px;
+  }
+
+  .about-hobbies-card {
+    padding: 26px 24px;
   }
 
   .hero-photo-frame {

@@ -35,7 +35,18 @@ function escapeHtml(value) {
 }
 
 function list(items, className = "compact-list") {
-  return `<ul class="${className}">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+  return `<ul class="${className}">${items
+    .map((item) => {
+      if (item && typeof item === "object") {
+        const icon = item.icon
+          ? `<img class="skill-item-icon" src="${escapeHtml(item.icon)}" alt="${escapeHtml(item.alt || "")}" loading="lazy" />`
+          : "";
+        return `<li class="skill-item${icon ? " with-icon" : ""}">${icon}<span>${escapeHtml(item.text || "")}</span></li>`;
+      }
+
+      return `<li>${escapeHtml(item)}</li>`;
+    })
+    .join("")}</ul>`;
 }
 
 function tags(items, className = "tag-list") {
@@ -43,7 +54,8 @@ function tags(items, className = "tag-list") {
 }
 
 function paragraphs(items) {
-  return items.map((item) => `<p>${escapeHtml(item)}</p>`).join("");
+  const values = Array.isArray(items) ? items : [items].filter(Boolean);
+  return values.map((item) => `<p>${escapeHtml(item)}</p>`).join("");
 }
 
 function educationValue(value) {
@@ -107,8 +119,8 @@ function renderNavigation(lang, route) {
 
   const links = [
     ["profile", content.navigation.profile],
-    ["experience", content.navigation.experience],
     ["skills", content.navigation.skills],
+    ["experience", content.navigation.experience],
     ["projects", content.navigation.projects],
     ["education", content.navigation.education],
     ["contact", content.navigation.contact],
@@ -130,16 +142,20 @@ function renderHero(content) {
   const photoMarkup = content.hero.photoSrc
     ? `<div class="hero-photo"><img class="hero-photo-image" src="${escapeHtml(content.hero.photoSrc)}" alt="${escapeHtml(content.hero.photoAlt)}" /></div>`
     : `<div class="hero-photo-placeholder" aria-label="${escapeHtml(content.hero.photoAlt)}"><span>LL</span></div>`;
+  const heroParagraphs = [
+    content.hero.subtitle,
+    content.hero.positioning,
+    ...(Array.isArray(content.hero.description) ? content.hero.description : [content.hero.description]),
+  ].filter(Boolean);
 
   return `
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">${escapeHtml(content.profile.eyebrow)}</p>
           <h1 id="hero-title">${escapeHtml(content.hero.title)}</h1>
-          <p class="lead">${escapeHtml(content.hero.subtitle)}</p>
-          <p class="lead">${escapeHtml(content.hero.positioning)}</p>
-          ${content.hero.description ? `<p class="lead">${escapeHtml(content.hero.description)}</p>` : ""}
+          <div class="hero-text-block">
+            ${heroParagraphs.map((paragraph) => `<p class="lead">${escapeHtml(paragraph)}</p>`).join("")}
+          </div>
           <div class="hero-actions">
             <a class="button primary" href="#projects">${escapeHtml(content.translations.viewProjects)}</a>
             <a class="button secondary" href="#contact">${escapeHtml(content.translations.contact)}</a>
@@ -154,6 +170,16 @@ function renderHero(content) {
             <div class="hero-info-item">
               <span class="hero-info-label">${escapeHtml(content.hero.locationLabel)}</span>
               <strong class="hero-info-value">${escapeHtml(content.hero.location)}</strong>
+              <a class="hero-map-link" href="https://www.google.com/maps/search/?api=1&query=Bordeaux%2C%20France" target="_blank" rel="noopener noreferrer" aria-label="Open Bordeaux, France in Google Maps">
+                <iframe
+                  class="hero-map-frame"
+                  title="Bordeaux, France map"
+                  src="https://www.google.com/maps?q=Bordeaux%2C%20France&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  tabindex="-1"
+                ></iframe>
+              </a>
             </div>
             <div class="hero-info-item">
               <span class="hero-info-label">${escapeHtml(content.hero.availabilityLabel)}</span>
@@ -198,6 +224,29 @@ function renderProfileCurrent(content, lang) {
             ${content.currentPosition.description ? `<p>${escapeHtml(content.currentPosition.description)}</p>` : ""}
             <p>${escapeHtml(content.currentPosition.status)}</p>
             <p>${escapeHtml(orientationText)}</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  `;
+}
+
+function renderAboutHobbies(content) {
+  return `
+    <section class="section profile-current-section" id="profile" aria-labelledby="profile-title">
+      <div class="container about-hobbies-grid">
+        <article class="about-hobbies-card text-section-block">
+          <p class="eyebrow">${escapeHtml(content.profile.eyebrow)}</p>
+          <h2 id="profile-title">${escapeHtml(content.profile.title)}</h2>
+          <div class="profile-copy">
+            ${paragraphs(content.profile.description)}
+          </div>
+        </article>
+        <article class="about-hobbies-card text-section-block" aria-labelledby="current-title">
+          <p class="eyebrow">${escapeHtml(content.currentPosition.eyebrow)}</p>
+          <h2 id="current-title">${escapeHtml(content.currentPosition.title)}</h2>
+          <div class="profile-copy">
+            ${paragraphs(content.currentPosition.description)}
           </div>
         </article>
       </div>
@@ -425,7 +474,7 @@ function renderHome(lang) {
   const content = DATA[lang];
   main.innerHTML = [
     renderHero(content),
-    renderProfileCurrent(content, lang),
+    renderAboutHobbies(content),
     renderSkills(content),
     renderExperience(content, lang),
     renderProjects(content, lang),

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">3D printer icon</title>
+  <rect width="64" height="64" rx="14" fill="#E8EEF3"/>
+  <path d="M18 20h28v10H18V20ZM22 30h20v17H22V30Z" fill="#F8FAFC" stroke="#062B49" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M27 38h10M27 44h10" stroke="#B88A44" stroke-width="4" stroke-linecap="round"/>
+  <path d="M24 16h16M16 47h32" stroke="#062B49" stroke-width="3" stroke-linecap="round"/>
+</svg>
