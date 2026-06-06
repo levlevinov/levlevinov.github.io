@@ -920,6 +920,14 @@ h3 {
   hyphens: auto;
 }
 
+.about-hobbies-card.text-section-block {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  padding: 34px 38px;
+  background: var(--card-bg);
+}
+
 .profile-copy {
   max-width: 780px;
 }
@@ -2322,12 +2330,29 @@ h3 {
   .hero-panel {
     justify-self: center;
     width: 100%;
-    max-width: min(100%, 342px);
+    max-width: 100%;
   }
 
   .hero-info-card {
     width: 100%;
     max-width: 100%;
+  }
+
+  .hero-text-block .lead,
+  .about-hobbies-card p {
+    text-align: left;
+    text-align-last: left;
+  }
+
+  .about-hobbies-grid,
+  .about-hobbies-card.text-section-block {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .about-hobbies-card.text-section-block {
+    padding: 26px 24px;
   }
 
   .footer-grid {
