@@ -1060,7 +1060,7 @@ h3 {
 
 .skill-main-list {
   flex: 1;
-  gap: 14px;
+  gap: 12px;
 }
 
 .skill-subcard-list {
@@ -1069,27 +1069,27 @@ h3 {
 
 .skill-main-item {
   display: flex;
-  min-height: 56px;
+  min-height: 44px;
   align-items: center;
   justify-content: flex-start;
-  border-radius: 18px;
+  border-radius: 14px;
   background: rgba(6, 43, 73, 0.055);
   color: var(--text-dark);
-  padding: 14px 18px;
-  font-size: 18px;
+  padding: 10px 16px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.25;
   text-align: left;
 }
 
 .skill-main-item::before {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   flex-shrink: 0;
   border-radius: 999px;
   background: var(--gold-accent);
   content: "";
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 .skill-subcard {
@@ -1120,7 +1120,7 @@ h3 {
   align-items: center;
   justify-content: flex-start;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.7);
   color: var(--text-dark);
   padding: 7px 12px;
   font-size: 14px;
@@ -2370,8 +2370,8 @@ h3 {
   }
 
   .skill-main-item {
-    min-height: 50px;
-    font-size: 17px;
+    min-height: 44px;
+    font-size: 16px;
   }
 
   .skill-subcard-title {

@@ -93,11 +93,11 @@ window.PORTFOLIO_DATA = {
           subcards: [
             {
               title: "SolidWorks",
-              items: ["Design", "Simulate", "Aerodynamic study / stress analysis"],
+              items: ["Design", "Simulate", "Aerodynamic study", "Stress analysis"],
             },
             {
               title: "Fusion 360",
-              items: ["Design", "Simulate", "Aerodynamic study / stress analysis"],
+              items: ["Design", "Simulate", "Aerodynamic study", "Stress analysis"],
             },
           ],
         },
@@ -418,11 +418,11 @@ window.PORTFOLIO_DATA = {
           subcards: [
             {
               title: "SolidWorks",
-              items: ["Concevoir", "Simuler", "Étude aérodynamique / étude des contraintes"],
+              items: ["Concevoir", "Simuler", "Étude aérodynamique", "Étude des contraintes"],
             },
             {
               title: "Fusion 360",
-              items: ["Concevoir", "Simuler", "Étude aérodynamique / étude des contraintes"],
+              items: ["Concevoir", "Simuler", "Étude aérodynamique", "Étude des contraintes"],
             },
           ],
         },
