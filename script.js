@@ -255,6 +255,28 @@ function renderAboutHobbies(content) {
 }
 
 function renderSkills(content) {
+  const renderSkillMainItems = (items = []) =>
+    items.length
+      ? `<div class="skill-main-list">${items.map((item) => `<span class="skill-main-item">${escapeHtml(item)}</span>`).join("")}</div>`
+      : "";
+  const renderSkillSubcards = (subcards = []) =>
+    subcards.length
+      ? `<div class="skill-subcard-list">
+          ${subcards
+            .map(
+              (subcard) => `
+                <div class="skill-subcard">
+                  <h4 class="skill-subcard-title">${escapeHtml(subcard.title)}</h4>
+                  <div class="skill-mini-list">
+                    ${subcard.items.map((item) => `<span class="skill-mini-item">${escapeHtml(item)}</span>`).join("")}
+                  </div>
+                </div>
+              `,
+            )
+            .join("")}
+        </div>`
+      : "";
+
   return `
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="container">
@@ -266,9 +288,10 @@ function renderSkills(content) {
           ${content.skills.categories
             .map(
               (category) => `
-                <article class="card">
-                  <h3>${escapeHtml(category.title)}</h3>
-                  ${list(category.items)}
+                <article class="card skill-card">
+                  <h3 class="skill-card-title">${escapeHtml(category.title)}</h3>
+                  ${renderSkillMainItems(category.mainItems)}
+                  ${renderSkillSubcards(category.subcards)}
                 </article>
               `,
             )

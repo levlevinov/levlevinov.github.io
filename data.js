@@ -86,24 +86,32 @@ window.PORTFOLIO_DATA = {
       categories: [
         {
           title: "GEII – BUT 1",
-          items: ["Design", "Verify", "Manufacture"],
+          mainItems: ["Design", "Verify", "Manufacture"],
         },
         {
-          title: "CAD & mechanical design",
-          items: [
-            { text: "Fusion 360 — highly advanced level", icon: "/public/icons/fusion-360-icon.svg", alt: "Fusion 360 CAD icon" },
-            { text: "SolidWorks — advanced level", icon: "/public/icons/solidworks-icon.svg", alt: "SolidWorks CAD icon" },
-            "Part design for prototyping",
-            "Model preparation for manufacturing",
+          title: "CAD",
+          subcards: [
+            {
+              title: "SolidWorks",
+              items: ["Design", "Simulate", "Aerodynamic study / stress analysis"],
+            },
+            {
+              title: "Fusion 360",
+              items: ["Design", "Simulate", "Aerodynamic study / stress analysis"],
+            },
           ],
         },
         {
           title: "Digital fabrication",
-          items: [
-            "FDM 3D printing — advanced level",
-            "Preparation of printable parts",
-            "Functional prototyping",
-            "CNC milling — beginner level",
+          subcards: [
+            {
+              title: "3D printing",
+              items: ["Set parameters", "Manufacture", "Maintain"],
+            },
+            {
+              title: "CNC milling",
+              items: ["Set parameters", "Manufacture", "Maintain"],
+            },
           ],
         },
       ],
@@ -403,24 +411,32 @@ window.PORTFOLIO_DATA = {
       categories: [
         {
           title: "GEII – BUT 1",
-          items: ["Concevoir", "Vérifier", "Fabriquer"],
+          mainItems: ["Concevoir", "Vérifier", "Fabriquer"],
         },
         {
-          title: "CAO & conception mécanique",
-          items: [
-            { text: "Fusion 360 — niveau très avancé", icon: "/public/icons/fusion-360-icon.svg", alt: "Icône CAO Fusion 360" },
-            { text: "SolidWorks — niveau avancé", icon: "/public/icons/solidworks-icon.svg", alt: "Icône CAO SolidWorks" },
-            "Conception de pièces pour prototypage",
-            "Préparation de modèles pour fabrication",
+          title: "CAO",
+          subcards: [
+            {
+              title: "SolidWorks",
+              items: ["Concevoir", "Simuler", "Étude aérodynamique / étude des contraintes"],
+            },
+            {
+              title: "Fusion 360",
+              items: ["Concevoir", "Simuler", "Étude aérodynamique / étude des contraintes"],
+            },
           ],
         },
         {
           title: "Fabrication numérique",
-          items: [
-            "Impression 3D FDM — niveau avancé",
-            "Préparation de pièces imprimables",
-            "Prototypage fonctionnel",
-            "Fraisage CNC — niveau débutant",
+          subcards: [
+            {
+              title: "Impression 3D",
+              items: ["Régler les paramètres", "Fabriquer", "Entretenir"],
+            },
+            {
+              title: "Fraisage CNC",
+              items: ["Régler les paramètres", "Fabriquer", "Entretenir"],
+            },
           ],
         },
       ],
