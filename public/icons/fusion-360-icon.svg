@@ -1,7 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">Fusion 360 style icon</title>
-  <rect width="64" height="64" rx="14" fill="#F3E8D8"/>
-  <path d="M18 16h28l-6 10H28v7h11l-5 9h-6v13H18V16Z" fill="#D96F22"/>
-  <path d="M42 33c5.5 0 9 3.6 9 8.6 0 5.2-3.8 8.8-9.2 8.8-3.8 0-7.1-1.6-8.8-4.4l4.5-3c.9 1.5 2.3 2.4 4.1 2.4 2 0 3.4-1.5 3.4-3.6 0-2-1.4-3.4-3.5-3.4-1.4 0-2.5.5-3.4 1.5l-3.9-1.8 1.4-12h14.2v5.1H40l-.4 3.2c.8-.3 1.6-.4 2.4-.4Z" fill="#062B49"/>
-  <text x="34" y="58" fill="#062B49" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="800">360</text>
+  <title id="title">Fusion 360 icon</title>
+  <rect width="64" height="64" rx="12" fill="#FFFFFF"/>
+  <path d="M16 16h31c4.4 0 8 3.6 8 8v21H22V16Z" fill="#FF6A00"/>
+  <path d="M16 16 22 12h25c6.6 0 12 5.4 12 12v25H55V24c0-4.4-3.6-8-8-8H22v33l-6 5V16Z" fill="#FF9142"/>
+  <path d="M22 49h37v3H22v-3Z" fill="#9E4400"/>
+  <path d="M33 25h16v7H41v5h8v7h-8v11h-8V25Z" fill="#FFFFFF"/>
+  <text x="29" y="60" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">360</text>
 </svg>

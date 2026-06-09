@@ -293,12 +293,27 @@ function renderExperience(content, lang) {
               (item) => `
                 <article class="card" id="experience-${escapeHtml(item.slug)}">
                   <h3>${escapeHtml(item.title)}</h3>
+                  ${item.projectTitle ? `<p class="experience-project-title">${escapeHtml(item.projectTitle)}</p>` : ""}
                   <div class="card-meta experience-meta">
-                    <span><span class="meta-label">${escapeHtml(content.translations.contextLabel)}</span>${escapeHtml(item.company)}</span>
+                    ${
+                      item.context
+                        ? `<span><span class="meta-label">${escapeHtml(content.translations.contextLabel)}</span>${escapeHtml(item.context)}</span>`
+                        : !item.projectTitle && item.company
+                          ? `<span><span class="meta-label">${escapeHtml(content.translations.contextLabel)}</span>${escapeHtml(item.company)}</span>`
+                          : ""
+                    }
                     <span><span class="meta-label">${escapeHtml(content.translations.periodLabel)}</span>${escapeHtml(item.period)}</span>
                     <span><span class="meta-label">${escapeHtml(content.translations.locationLabel)}</span>${escapeHtml(item.location)}</span>
                   </div>
                   <p class="card-summary">${escapeHtml(item.summary)}</p>
+                  ${
+                    item.role
+                      ? `<div class="experience-role">
+                          <p class="meta-label experience-role-label">${escapeHtml(content.translations.roleLabel)}</p>
+                          <p class="experience-role-value">${escapeHtml(item.role)}</p>
+                        </div>`
+                      : ""
+                  }
                   <p class="meta-label">${escapeHtml(content.translations.responsibilities)}</p>
                   ${list(item.responsibilities)}
                   <p class="meta-label">${escapeHtml(content.translations.skillsUsed)}</p>

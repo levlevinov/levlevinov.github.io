@@ -36,6 +36,7 @@ window.PORTFOLIO_DATA = {
       contextLabel: "Context",
       periodLabel: "Period",
       locationLabel: "Location",
+      roleLabel: "ROLE",
       all: "All",
       backToProjects: "Back to projects",
       backToExperience: "Back to experience",
@@ -84,40 +85,25 @@ window.PORTFOLIO_DATA = {
       title: "Skills organized by technical domain.",
       categories: [
         {
+          title: "GEII – BUT 1",
+          items: ["Design", "Verify", "Manufacture"],
+        },
+        {
           title: "CAD & mechanical design",
           items: [
             { text: "Fusion 360 — highly advanced level", icon: "/public/icons/fusion-360-icon.svg", alt: "Fusion 360 CAD icon" },
             { text: "SolidWorks — advanced level", icon: "/public/icons/solidworks-icon.svg", alt: "SolidWorks CAD icon" },
-            "Design of parts for prototyping",
-            "Preparation of models for fabrication",
+            "Part design for prototyping",
+            "Model preparation for manufacturing",
           ],
         },
         {
           title: "Digital fabrication",
           items: [
-            { text: "FDM 3D printing — advanced level", icon: "/public/icons/3d-printer-icon.svg", alt: "3D printer icon" },
+            "FDM 3D printing — advanced level",
             "Preparation of printable parts",
             "Functional prototyping",
-            { text: "CNC milling — beginner level", icon: "/public/icons/cnc-milling-icon.svg", alt: "CNC milling icon" },
-          ],
-        },
-        {
-          title: "Electronics & embedded systems",
-          items: [
-            "Electronics fundamentals",
-            "Sensors and measurement systems",
-            "Embedded systems",
-            "Technical testing and diagnostics",
-          ],
-        },
-        {
-          title: "Method & technical documentation",
-          items: [
-            "Structured documentation",
-            "Technical teamwork",
-            "Project organization",
-            "Constraint analysis",
-            "Prototyping workflow",
+            "CNC milling — beginner level",
           ],
         },
       ],
@@ -129,11 +115,13 @@ window.PORTFOLIO_DATA = {
         {
           slug: "technical-experience-placeholder",
           title: "Technical team member",
-          company: "Mission Sophie — educational contact project with French astronaut Sophie Adenot",
+          projectTitle: "Mission Sophie — university and scientific project",
+          company: "Mission Sophie — university and scientific project",
           period: "January 2026 — April 2026",
           location: "Bordeaux, France",
           summary:
-            "Technical contribution to the material and mechanical preparation of the project, including cabling, assembly and prototyping tasks.",
+            "Technical contribution to the hardware and mechanical preparation of the project, including participation in cabling, assembly and prototyping tasks.",
+          role: "Technical team member",
           responsibilities: [
             "Cable routing, organization and fixing",
             "Assembly of antenna elements",
@@ -157,11 +145,14 @@ window.PORTFOLIO_DATA = {
         },
         {
           slug: "cad-mechanical-prototyping-du-tss",
-          title: "CAD & mechanical prototyping lead",
-          company: "DU TSS — university project",
+          title: "CAD & mechanical prototyping responsible",
+          projectTitle: "HEALTH SEA project — university project",
+          context: "As part of the DU TSS programme",
+          company: "HEALTH SEA project — university project",
           period: "March 2026 — June 2026",
           location: "Bordeaux, France",
-          summary: "3D design and mechanical prototyping contribution within a DU TSS university project.",
+          summary: "3D design and preparation of a prototype related to a sensor-based monitoring system.",
+          role: "CAD and mechanical design lead",
           responsibilities: [
             "Development of the 3D design",
             "Preparation of the model for 3D printing",
@@ -362,6 +353,7 @@ window.PORTFOLIO_DATA = {
       contextLabel: "Contexte",
       periodLabel: "Période",
       locationLabel: "Localisation",
+      roleLabel: "RÔLE OCCUPÉ",
       all: "Tous",
       backToProjects: "Retour aux projets",
       backToExperience: "Retour à l’expérience",
@@ -410,6 +402,10 @@ window.PORTFOLIO_DATA = {
       title: "Compétences organisées par domaine technique.",
       categories: [
         {
+          title: "GEII – BUT 1",
+          items: ["Concevoir", "Vérifier", "Fabriquer"],
+        },
+        {
           title: "CAO & conception mécanique",
           items: [
             { text: "Fusion 360 — niveau très avancé", icon: "/public/icons/fusion-360-icon.svg", alt: "Icône CAO Fusion 360" },
@@ -421,29 +417,10 @@ window.PORTFOLIO_DATA = {
         {
           title: "Fabrication numérique",
           items: [
-            { text: "Impression 3D FDM — niveau avancé", icon: "/public/icons/3d-printer-icon.svg", alt: "Icône impression 3D" },
+            "Impression 3D FDM — niveau avancé",
             "Préparation de pièces imprimables",
             "Prototypage fonctionnel",
-            { text: "Fraisage CNC — niveau débutant", icon: "/public/icons/cnc-milling-icon.svg", alt: "Icône fraisage CNC" },
-          ],
-        },
-        {
-          title: "Électronique & systèmes embarqués",
-          items: [
-            "Bases d’électronique",
-            "Capteurs et systèmes de mesure",
-            "Systèmes embarqués",
-            "Tests et diagnostic technique",
-          ],
-        },
-        {
-          title: "Méthode & documentation technique",
-          items: [
-            "Documentation structurée",
-            "Travail en équipe technique",
-            "Organisation de projet",
-            "Analyse de contraintes",
-            "Démarche de prototypage",
+            "Fraisage CNC — niveau débutant",
           ],
         },
       ],
@@ -455,11 +432,13 @@ window.PORTFOLIO_DATA = {
         {
           slug: "technical-experience-placeholder",
           title: "Membre de l’équipe technique",
-          company: "Mission Sophie — projet de contact éducatif avec l’astronaute française Sophie Adenot",
+          projectTitle: "Mission Sophie — projet universitaire et scientifique",
+          company: "Mission Sophie — projet universitaire et scientifique",
           period: "Janvier 2026 — Avril 2026",
           location: "Bordeaux, France",
           summary:
             "Contribution technique à la préparation matérielle et mécanique du projet, avec participation aux tâches de câblage, d’assemblage et de prototypage.",
+          role: "Équipier technique",
           responsibilities: [
             "Cheminement, organisation et fixation de câbles",
             "Assemblage d’éléments d’antenne",
@@ -484,10 +463,13 @@ window.PORTFOLIO_DATA = {
         {
           slug: "cad-mechanical-prototyping-du-tss",
           title: "Responsable CAO & prototypage mécanique",
-          company: "DU TSS — projet universitaire",
+          projectTitle: "Projet HEALTH SEA — projet universitaire",
+          context: "Dans le cadre du DU TSS",
+          company: "Projet HEALTH SEA — projet universitaire",
           period: "Mars 2026 — Juin 2026",
           location: "Bordeaux, France",
-          summary: "Contribution en conception 3D et prototypage mécanique dans le cadre d’un projet universitaire DU TSS.",
+          summary: "Conception 3D et préparation d’un prototype lié à un système de monitoring basé sur des capteurs.",
+          role: "Responsable CAO et mécanique",
           responsibilities: [
             "Développement de la conception 3D",
             "Préparation du modèle pour impression 3D",
