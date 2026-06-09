@@ -1025,11 +1025,63 @@ h3 {
 
 .skills-grid {
   grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
 .experience-grid,
 .projects-grid {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .card-summary {
+  margin-bottom: 0;
+}
+
+.project-card-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.project-card-label {
+  margin: 0;
+  color: var(--gold-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-align: left;
+  text-align-last: left;
+  text-transform: uppercase;
+  hyphens: none;
+}
+
+.project-card-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.project-card .project-card-chip-group li {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 8px 14px;
+  white-space: nowrap;
+}
+
+.project-card-button {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 24px;
 }
 
 .education-grid {

@@ -292,8 +292,7 @@ function renderExperience(content, lang) {
             .map(
               (item) => `
                 <article class="card" id="experience-${escapeHtml(item.slug)}">
-                  <h3>${escapeHtml(item.title)}</h3>
-                  ${item.projectTitle ? `<p class="experience-project-title">${escapeHtml(item.projectTitle)}</p>` : ""}
+                  <h3>${escapeHtml(item.projectTitle || item.title)}</h3>
                   <div class="card-meta experience-meta">
                     ${
                       item.context
@@ -361,11 +360,15 @@ function renderProjects(content, lang) {
                   <span class="category-pill">${escapeHtml(project.category)}</span>
                   <h3>${escapeHtml(project.title)}</h3>
                   <p class="card-summary">${escapeHtml(project.summary)}</p>
-                  <p class="meta-label">${escapeHtml(content.translations.tools)}</p>
-                  ${tags(project.tools)}
-                  <p class="meta-label">${escapeHtml(content.translations.status)}</p>
-                  <p class="project-status">${escapeHtml(project.status)}</p>
-                  <div class="button-row">
+                  <div class="project-card-section">
+                    <p class="meta-label project-card-label">${escapeHtml(content.translations.tools)}</p>
+                    ${tags(project.tools, "tag-list project-card-chip-group")}
+                  </div>
+                  <div class="project-card-section">
+                    <p class="meta-label project-card-label">${escapeHtml(content.translations.status)}</p>
+                    ${tags([project.status], "tag-list project-card-chip-group")}
+                  </div>
+                  <div class="button-row project-card-button">
                     <a class="button secondary" href="${routeFor(lang, `projects/${project.slug}`)}" target="_blank" rel="noopener noreferrer">
                       ${escapeHtml(content.translations.learnMore)}
                     </a>
