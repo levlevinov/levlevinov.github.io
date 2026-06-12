@@ -62,13 +62,17 @@ New variables added by the adjustment:
   --navy-deep: #041f35;
   --navy: var(--navy-main);
   --light-card: var(--card-bg);
-  --chip-bg-light: var(--chip-bg);
-  --chip-text-light: #062b49;
-  --chip-bg-light-hover: var(--chip-bg-hover);
-  --chip-bg: #e1eaf1;
-  --chip-bg-strong: #d7e3ec;
-  --chip-bg-hover: #cbd9e4;
-  --chip-border: rgba(6, 43, 73, 0.1);
+  --competency-bg: #d0d4d8;
+  --competency-bg-strong: #c5cbd0;
+  --competency-bg-hover: #bac1c7;
+  --competency-text: #071c2f;
+  --chip-bg-light: var(--competency-bg);
+  --chip-text-light: var(--competency-text);
+  --chip-bg-light-hover: var(--competency-bg-hover);
+  --chip-bg: var(--competency-bg);
+  --chip-bg-strong: var(--competency-bg-strong);
+  --chip-bg-hover: var(--competency-bg-hover);
+  --chip-border: transparent;
   --chip-bg-dark: rgba(255, 255, 255, 0.12);
   --chip-text-dark: #f8fafc;
   --chip-bg-dark-hover: rgba(255, 255, 255, 0.18);
@@ -94,12 +98,12 @@ New variables added by the adjustment:
   --button-soft-bg-hover: #cadae7;
   --button-soft-border: rgba(6, 43, 73, 0.14);
   --button-soft-text: #062b49;
-  --skill-pill-bg: #d5dee6;
-  --skill-pill-bg-strong: #cbd7e1;
-  --skill-pill-border: rgba(6, 43, 73, 0.16);
-  --skill-subcard-bg: #e3e9ee;
-  --skill-mini-bg: #d3dee7;
-  --skill-mini-border: rgba(6, 43, 73, 0.14);
+  --skill-pill-bg: var(--competency-bg);
+  --skill-pill-bg-strong: var(--competency-bg-strong);
+  --skill-pill-border: transparent;
+  --skill-subcard-bg: #d0d4d8;
+  --skill-mini-bg: var(--competency-bg);
+  --skill-mini-border: transparent;
 
   /*
   Palette 2 - Warm professional
@@ -999,12 +1003,12 @@ h3 {
   min-height: 34px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--chip-border);
+  border: none;
   outline: none;
   box-shadow: none;
   border-radius: 999px;
-  background: var(--chip-bg);
-  color: var(--navy-main);
+  background: var(--competency-bg);
+  color: var(--competency-text);
   padding: 7px 14px;
   font-size: 14px;
   font-weight: 500;
@@ -1016,10 +1020,10 @@ h3 {
 
 .quality-list li:hover,
 .tag-list li:hover {
-  border: 1px solid var(--chip-border);
+  border: none;
   outline: none;
   box-shadow: none;
-  background: var(--chip-bg);
+  background: var(--competency-bg);
 }
 
 #profile .quality-list li,
@@ -1106,9 +1110,10 @@ h3 {
 .skill-main-list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex: 1;
   gap: 12px;
+  width: 100%;
 }
 
 .skill-subcard-list {
@@ -1117,15 +1122,17 @@ h3 {
 
 .skill-main-item {
   display: inline-flex;
-  width: 260px;
+  width: min(320px, calc(100% - 48px));
   max-width: 100%;
   min-height: 40px;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid var(--skill-pill-border);
+  border: none;
+  outline: none;
+  box-shadow: none;
   border-radius: 999px;
-  background: var(--skill-pill-bg);
-  color: var(--text-dark);
+  background: var(--competency-bg);
+  color: var(--competency-text);
   padding: 9px 18px;
   font-size: 15px;
   font-weight: 600;
@@ -1147,9 +1154,10 @@ h3 {
 .skill-subcard {
   display: grid;
   gap: 12px;
-  border: 1px solid rgba(6, 43, 73, 0.1);
+  border: none;
   border-radius: 22px;
   background: var(--skill-subcard-bg);
+  box-shadow: none;
   padding: 18px;
 }
 
@@ -1171,10 +1179,12 @@ h3 {
   min-height: 30px;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid var(--skill-mini-border);
+  border: none;
+  outline: none;
+  box-shadow: none;
   border-radius: 10px;
-  background: var(--skill-mini-bg);
-  color: var(--text-dark);
+  background: var(--competency-bg);
+  color: var(--competency-text);
   padding: 7px 12px;
   font-size: 14px;
   font-weight: 500;
@@ -1368,12 +1378,12 @@ h3 {
   min-height: 46px;
   align-items: flex-start;
   gap: 12px;
-  border: 1px solid var(--chip-border);
+  border: none;
   outline: none;
   box-shadow: none;
   border-radius: 20px;
-  background: var(--chip-bg);
-  color: var(--navy-main);
+  background: var(--competency-bg);
+  color: var(--competency-text);
   padding: 10px 16px;
   font-size: 15px;
   line-height: 1.35;
@@ -1382,10 +1392,10 @@ h3 {
 
 .compact-list li:hover,
 .detail-list li:hover {
-  border: 1px solid var(--chip-border);
+  border: none;
   outline: none;
   box-shadow: none;
-  background: var(--chip-bg);
+  background: var(--competency-bg);
 }
 
 .compact-list li.with-icon {
@@ -1443,12 +1453,12 @@ h3 {
   min-height: 34px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--chip-border);
+  border: none;
   outline: none;
   box-shadow: none;
   border-radius: 999px;
-  background: var(--chip-bg);
-  color: var(--navy-main);
+  background: var(--competency-bg);
+  color: var(--competency-text);
   padding: 7px 14px;
   font-size: 14px;
   font-weight: 500;
@@ -1460,10 +1470,10 @@ h3 {
 
 .project-status:hover,
 .category-pill:hover {
-  border: 1px solid var(--chip-border);
+  border: none;
   outline: none;
   box-shadow: none;
-  background: var(--chip-bg);
+  background: var(--competency-bg);
 }
 
 .category-pill {
@@ -1932,28 +1942,30 @@ h3 {
 
 .mission-contribution-card .tag-list li,
 .mission-final-grid .tag-list li {
-  background: var(--chip-bg-light);
-  color: var(--chip-text-light);
+  border: none;
+  background: var(--competency-bg);
+  color: var(--competency-text);
 }
 
 .mission-contribution-card .tag-list li:hover,
 .mission-final-grid .tag-list li:hover {
-  background: var(--chip-bg-light-hover);
-  color: var(--chip-text-light);
+  border: none;
+  background: var(--competency-bg);
+  color: var(--competency-text);
 }
 
 .mission-section-navy .mission-final-grid .tag-list li {
   border: none !important;
   box-shadow: none !important;
-  background: rgba(6, 43, 73, 0.08) !important;
-  color: #062B49 !important;
+  background: var(--competency-bg) !important;
+  color: var(--competency-text) !important;
 }
 
 .mission-section-navy .mission-final-grid .tag-list li:hover {
   border: none !important;
   box-shadow: none !important;
-  background: rgba(6, 43, 73, 0.14) !important;
-  color: #062B49 !important;
+  background: var(--competency-bg) !important;
+  color: var(--competency-text) !important;
 }
 
 .project-gallery {
@@ -2184,10 +2196,10 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--chip-border);
+  border: none;
   border-radius: 999px;
-  background: var(--chip-bg);
-  color: var(--navy-main);
+  background: var(--competency-bg);
+  color: var(--competency-text);
   box-shadow: none;
   padding: 8px 14px;
   font-size: 14px;
@@ -2195,6 +2207,44 @@ h3 {
   line-height: 1.2;
   overflow-wrap: normal;
   word-break: normal;
+}
+
+.skill-main-item,
+.skill-mini-item,
+.skill-chip,
+.tech-chip,
+.chip,
+.tag,
+.badge,
+.quality-list li,
+.tag-list li,
+.compact-list li,
+.detail-list li,
+.project-status,
+.category-pill,
+.carousel-meta-pill,
+.experience-card .chip,
+.experience-card .tag,
+.experience-card .badge,
+.project-card .chip,
+.project-card .tag,
+.project-card .badge,
+.project-detail-card .chip,
+.project-detail-card .tag,
+.project-detail-card .badge,
+.project-tools-card .chip,
+.project-tools-card .tag,
+.project-tools-card .badge {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--competency-bg);
+  color: var(--competency-text);
+}
+
+.skill-main-item {
+  width: min(320px, calc(100% - 48px));
+  background: var(--competency-bg-strong);
 }
 
 .carousel-dots,
