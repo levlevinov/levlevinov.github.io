@@ -71,11 +71,17 @@ function routeFor(lang, suffix = "") {
   return `/${lang}/${suffix}`.replace(/\/{2,}/g, "/");
 }
 
+function projectCatalog(content) {
+  return [...content.projects.items, ...(content.projectDetails || [])];
+}
+
+function findProject(content, slug) {
+  return projectCatalog(content).find((item) => item.slug === slug);
+}
+
 function equivalentRoute(lang, route) {
   if (route.type === "projects" && route.slug) {
-    const currentProject = DATA[route.lang].projects.items.find((item) => item.slug === route.slug);
-    const index = DATA[route.lang].projects.items.indexOf(currentProject);
-    const target = DATA[lang].projects.items[index];
+    const target = findProject(DATA[lang], route.slug);
     return target ? routeFor(lang, `projects/${target.slug}`) : routeFor(lang);
   }
 
@@ -96,7 +102,7 @@ function setDocumentMeta(lang, route) {
   metaDescription.setAttribute("content", content.meta.description);
 
   if (route.type === "projects") {
-    const project = content.projects.items.find((item) => item.slug === route.slug);
+    const project = findProject(content, route.slug);
     if (project) {
       document.title = `${project.title} | Lev Levinov`;
       metaDescription.setAttribute("content", project.summary);
@@ -863,7 +869,7 @@ function renderStructuredPlaceholderProjectDetail(content, lang, project) {
 
 function renderProjectDetail(lang, slug) {
   const content = DATA[lang];
-  const project = content.projects.items.find((item) => item.slug === slug);
+  const project = findProject(content, slug);
   if (!project) return renderNotFound(lang);
   if (project.detailType === "mission-sophie") return renderMissionSophieProjectDetail(content, lang, project);
   if (project.detailType === "structured-placeholder") return renderStructuredPlaceholderProjectDetail(content, lang, project);

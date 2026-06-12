@@ -1204,7 +1204,7 @@ window.PORTFOLIO_DATA = {
         resultTitle: "Conclusion",
         resultParagraphs: ["To be completed."],
         backLabel: "Back to portfolio",
-        backHref: "/en/#projects",
+        backHref: "/en/#experience",
       },
     },
     fr: {
@@ -1254,19 +1254,54 @@ window.PORTFOLIO_DATA = {
         resultTitle: "Conclusion",
         resultParagraphs: ["À compléter."],
         backLabel: "Retour au portfolio",
-        backHref: "/fr/#projects",
+        backHref: "/fr/#experience",
       },
     },
   };
 
-  window.PORTFOLIO_DATA.en.projects.items = [
-    monSaeProjects.en,
-    window.PORTFOLIO_DATA.en.projects.items[0],
-    ...window.PORTFOLIO_DATA.en.projects.items.slice(1),
-  ];
-  window.PORTFOLIO_DATA.fr.projects.items = [
-    monSaeProjects.fr,
-    window.PORTFOLIO_DATA.fr.projects.items[0],
-    ...window.PORTFOLIO_DATA.fr.projects.items.slice(1),
-  ];
+  const monSaeExperience = {
+    en: {
+      slug: "mon-sae",
+      title: "Mon SAE",
+      projectTitle: "Mon SAE",
+      context: "Technical project to be completed",
+      company: "Technical project to be completed",
+      period: "To be completed",
+      location: "To be completed",
+      summary: "Technical project to be completed with the objectives, context, tools used and results obtained.",
+      role: "To be completed",
+      responsibilities: ["To be completed"],
+      skills: ["To be completed"],
+      detailHref: "/en/projects/mon-sae",
+      details: {
+        context: "Technical project to be completed.",
+        technicalTasks: ["To be completed"],
+        results: ["To be completed"],
+      },
+    },
+    fr: {
+      slug: "mon-sae",
+      title: "Mon SAE",
+      projectTitle: "Mon SAE",
+      context: "Projet technique à compléter",
+      company: "Projet technique à compléter",
+      period: "À compléter",
+      location: "À compléter",
+      summary: "Projet technique à compléter avec les objectifs, le contexte, les outils utilisés et les résultats obtenus.",
+      role: "À compléter",
+      responsibilities: ["À compléter"],
+      skills: ["À compléter"],
+      detailHref: "/fr/projects/mon-sae",
+      details: {
+        context: "Projet technique à compléter.",
+        technicalTasks: ["À compléter"],
+        results: ["À compléter"],
+      },
+    },
+  };
+
+  window.PORTFOLIO_DATA.en.projectDetails = [monSaeProjects.en];
+  window.PORTFOLIO_DATA.fr.projectDetails = [monSaeProjects.fr];
+  window.PORTFOLIO_DATA.en.experience.items.unshift(monSaeExperience.en);
+  window.PORTFOLIO_DATA.fr.experience.items.unshift(monSaeExperience.fr);
 })();
