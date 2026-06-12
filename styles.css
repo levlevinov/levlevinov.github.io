@@ -94,6 +94,12 @@ New variables added by the adjustment:
   --button-soft-bg-hover: #cadae7;
   --button-soft-border: rgba(6, 43, 73, 0.14);
   --button-soft-text: #062b49;
+  --skill-pill-bg: #d5dee6;
+  --skill-pill-bg-strong: #cbd7e1;
+  --skill-pill-border: rgba(6, 43, 73, 0.16);
+  --skill-subcard-bg: #e3e9ee;
+  --skill-mini-bg: #d3dee7;
+  --skill-mini-border: rgba(6, 43, 73, 0.14);
 
   /*
   Palette 2 - Warm professional
@@ -1111,16 +1117,16 @@ h3 {
 
 .skill-main-item {
   display: inline-flex;
-  width: 190px;
+  width: 260px;
   max-width: 100%;
   min-height: 40px;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid var(--chip-border);
+  border: 1px solid var(--skill-pill-border);
   border-radius: 999px;
-  background: var(--chip-bg-strong);
+  background: var(--skill-pill-bg);
   color: var(--text-dark);
-  padding: 9px 16px;
+  padding: 9px 18px;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.2;
@@ -1141,9 +1147,9 @@ h3 {
 .skill-subcard {
   display: grid;
   gap: 12px;
-  border: 1px solid rgba(6, 43, 73, 0.04);
+  border: 1px solid rgba(6, 43, 73, 0.1);
   border-radius: 22px;
-  background: rgba(6, 43, 73, 0.045);
+  background: var(--skill-subcard-bg);
   padding: 18px;
 }
 
@@ -1165,9 +1171,9 @@ h3 {
   min-height: 30px;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid var(--chip-border);
+  border: 1px solid var(--skill-mini-border);
   border-radius: 10px;
-  background: var(--chip-bg);
+  background: var(--skill-mini-bg);
   color: var(--text-dark);
   padding: 7px 12px;
   font-size: 14px;
@@ -2477,6 +2483,7 @@ h3 {
   }
 
   .skill-main-item {
+    width: 100%;
     min-height: 38px;
     font-size: 15px;
   }
@@ -2499,10 +2506,6 @@ h3 {
 }
 
 @media (max-width: 480px) {
-  .skill-main-item {
-    width: 100%;
-  }
-
   .info-card {
     padding: 24px;
   }
