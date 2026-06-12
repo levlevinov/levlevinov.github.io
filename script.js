@@ -731,7 +731,6 @@ function renderMissionSophieProjectDetail(content, lang, project) {
                   : ""
               }
             </div>
-            <p class="detail-lead">${escapeHtml(project.subtitle)}</p>
             <div class="detail-meta mission-meta">
               ${detail.meta.map((item) => `<span class="category-pill"><span>${escapeHtml(item.label)}</span>${escapeHtml(item.value)}</span>`).join("")}
             </div>
@@ -780,11 +779,94 @@ function renderMissionSophieProjectDetail(content, lang, project) {
   bindMissionCarousel();
 }
 
+function renderStructuredPlaceholderProjectDetail(content, lang, project) {
+  const detail = project.structuredDetail;
+
+  main.innerHTML = `
+    <article class="mission-detail-shell structured-project-detail">
+      <section class="mission-hero">
+        <div class="container mission-hero-grid">
+          <div>
+            <p class="eyebrow">${escapeHtml(detail.eyebrow)}</p>
+            <div class="mission-title-row">
+              <h1>${escapeHtml(project.title)}</h1>
+            </div>
+            <div class="detail-meta mission-meta">
+              ${detail.meta.map((item) => `<span class="category-pill"><span>${escapeHtml(item.label)}</span>${escapeHtml(item.value)}</span>`).join("")}
+            </div>
+            <p>${escapeHtml(project.subtitle)}</p>
+          </div>
+          <div class="detail-card structured-project-visual" aria-label="${escapeHtml(detail.visualPlaceholder)}">
+            <span>${escapeHtml(detail.visualPlaceholder)}</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section mission-section">
+        <div class="container">
+          <article class="detail-card project-context-card">
+            <p class="eyebrow">${escapeHtml(detail.overview.eyebrow)}</p>
+            <h2>${escapeHtml(detail.overview.title)}</h2>
+            ${paragraphs(detail.overview.paragraphs)}
+          </article>
+        </div>
+      </section>
+
+      <section class="section mission-section mission-section-navy mission-structured-section">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">${escapeHtml(detail.contributionsEyebrow)}</p>
+            <h2>${escapeHtml(detail.contributionsTitle)}</h2>
+          </div>
+          <div class="project-contribution-section">
+            ${detail.contributions
+              .map(
+                (contribution) => `
+                  <article class="project-contribution-row">
+                    <div class="detail-card mission-contribution-card structured-placeholder-card">
+                      <h3>${escapeHtml(contribution.title)}</h3>
+                      ${paragraphs(contribution.paragraphs)}
+                    </div>
+                    <div class="detail-card mission-carousel-card project-carousel-card structured-placeholder-media">
+                      <span>${escapeHtml(detail.visualPlaceholder)}</span>
+                    </div>
+                  </article>
+                `,
+              )
+              .join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section mission-section mission-section-navy">
+        <div class="container mission-final-grid">
+          <article class="detail-card">
+            <h2>${escapeHtml(detail.skillsTitle)}</h2>
+            ${tags(detail.skills)}
+          </article>
+          <article class="detail-card">
+            <h2>${escapeHtml(detail.resultTitle)}</h2>
+            ${paragraphs(detail.resultParagraphs)}
+          </article>
+        </div>
+      </section>
+
+      <section class="mission-detail-actions">
+        <div class="container">
+          <a class="button secondary" href="${escapeHtml(detail.backHref)}">${escapeHtml(detail.backLabel)}</a>
+        </div>
+      </section>
+    </article>
+    ${renderFooter(content, lang)}
+  `;
+}
+
 function renderProjectDetail(lang, slug) {
   const content = DATA[lang];
   const project = content.projects.items.find((item) => item.slug === slug);
   if (!project) return renderNotFound(lang);
   if (project.detailType === "mission-sophie") return renderMissionSophieProjectDetail(content, lang, project);
+  if (project.detailType === "structured-placeholder") return renderStructuredPlaceholderProjectDetail(content, lang, project);
 
   main.innerHTML = `
     <article class="detail-shell">

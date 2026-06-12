@@ -689,7 +689,7 @@ window.PORTFOLIO_DATA = {
       "Technical contribution to the preparation of a radio setup and several mechanical prototypes as part of the Mission Sophie project.",
     tools: ["Fusion 360", "3D printing", "Cabling", "Technical assembly"],
     status: "Completed",
-    subtitle: "Technical contribution to an educational and scientific project around a radio contact with the ISS.",
+    subtitle: "",
     detailType: "mission-sophie",
     details: {
       context:
@@ -713,7 +713,7 @@ window.PORTFOLIO_DATA = {
       summary:
         "Mission Sophie is an educational and scientific project led by the GEII department of IUT de Bordeaux and the University of Bordeaux. The project aims to introduce students to science, electronics, radio communications and space exploration, including a radio contact component within the ARISS program.",
       meta: [
-        { label: "Role", value: "Technical team member" },
+        { label: "Role", value: "Team member" },
         { label: "Period", value: "January 2026 — April 2026" },
         { label: "Location", value: "Bordeaux, France" },
         { label: "Context", value: "GEII Department, IUT de Bordeaux" },
@@ -750,8 +750,8 @@ window.PORTFOLIO_DATA = {
           paragraphs: [
             "As an enthusiast, I wanted to help move this project forward as much as possible.",
             "At the beginning, I started with the assembly of the two directional antennas.",
-            "Then, I prepared the coaxial cables: connector installation, cable routing and participation in the outdoor installation.",
-            "In this technical part, I applied my manual skills.",
+            "Then, I participated in the preparation of the coaxial cables: connector installation, cable routing and installation of the antenna assembly outdoors.",
+            "In this technical part, I applied my ability to work manually.",
           ],
           images: ["Photo 06", "Photo 07", "Photo 08", "Photo 09", "Photo 10"],
         },
@@ -766,6 +766,7 @@ window.PORTFOLIO_DATA = {
           title: "Audio channel router enclosure",
           paragraphs: [
             "Another element produced as part of the project is an enclosure for audio channel routing. The goal was to provide a cleaner integration of the connections and make the audio wiring easier to organize.",
+            "This enclosure was designed in Fusion 360 and then 3D printed.",
           ],
           images: ["Photo 12", "Photo 13"],
         },
@@ -926,7 +927,7 @@ window.PORTFOLIO_DATA = {
       "Contribution technique à la préparation d’un dispositif radio et de plusieurs prototypes mécaniques dans le cadre du projet Mission Sophie.",
     tools: ["Fusion 360", "Impression 3D", "Câblage", "Assemblage technique"],
     status: "Réalisé",
-    subtitle: "Contribution technique à un projet pédagogique et scientifique autour d’un contact radio avec l’ISS.",
+    subtitle: "",
     detailType: "mission-sophie",
     details: {
       context:
@@ -950,7 +951,7 @@ window.PORTFOLIO_DATA = {
       summary:
         "Mission Sophie est un projet pédagogique et scientifique porté par le département GEII de l’IUT de Bordeaux et l’Université de Bordeaux. Le projet s’inscrit dans une démarche de découverte des sciences, de l’électronique, des communications radio et de l’exploration spatiale, avec un volet de contact radio dans le cadre du programme ARISS.",
       meta: [
-        { label: "Rôle", value: "Membre de l’équipe technique" },
+        { label: "Rôle", value: "Équipier" },
         { label: "Période", value: "Janvier 2026 — Avril 2026" },
         { label: "Lieu", value: "Bordeaux, France" },
         { label: "Contexte", value: "Département GEII, IUT de Bordeaux" },
@@ -987,8 +988,8 @@ window.PORTFOLIO_DATA = {
           paragraphs: [
             "En tant qu’enthousiaste, je voulais aider à faire avancer ce projet au maximum.",
             "Au départ, j’ai commencé par l’assemblage des deux antennes directives.",
-            "Ensuite, j’ai préparé les câbles coaxiaux : montage des connecteurs, cheminement des câbles et participation à l’installation extérieure.",
-            "Dans cette partie technique, j’ai appliqué mes compétences manuelles.",
+            "Ensuite, j’ai participé à la préparation des câbles coaxiaux : montage des connecteurs, cheminement des câbles et installation de l’ensemble des antennes à l’extérieur.",
+            "Dans cette partie technique, j’ai appliqué ma capacité à travailler manuellement.",
           ],
           images: ["Photo 06", "Photo 07", "Photo 08", "Photo 09", "Photo 10"],
         },
@@ -1003,6 +1004,7 @@ window.PORTFOLIO_DATA = {
           title: "Boîtier pour routeur de canaux audio",
           paragraphs: [
             "Un autre élément réalisé dans le cadre du projet est un boîtier pour le routage des canaux audio. L’objectif était de proposer une intégration plus propre des connexions et de faciliter l’organisation du câblage audio.",
+            "Ce boîtier a été conçu sous Fusion 360, puis imprimé en 3D.",
           ],
           images: ["Photo 12", "Photo 13"],
         },
@@ -1153,4 +1155,118 @@ window.PORTFOLIO_DATA = {
       backHref: "/fr/#experience",
     },
   };
+
+  const monSaeProjects = {
+    en: {
+      slug: "mon-sae",
+      title: "My SAE",
+      category: "CAD / Prototyping",
+      filter: "cad",
+      summary: "Technical project to be completed.",
+      tools: ["To be completed"],
+      status: "To be completed",
+      subtitle: "Technical project to be completed.",
+      detailType: "structured-placeholder",
+      details: {
+        context:
+          "This page uses the structure of a detailed project and will be completed with specific information about the My SAE project.",
+        objective: "To be completed.",
+        approach: "To be completed.",
+        result: "To be completed.",
+        skills: ["To be completed"],
+      },
+      structuredDetail: {
+        eyebrow: "TECHNICAL PROJECT",
+        meta: [
+          { label: "Status", value: "To be completed" },
+          { label: "Period", value: "To be completed" },
+          { label: "Location", value: "To be completed" },
+          { label: "Context", value: "To be completed" },
+        ],
+        overview: {
+          eyebrow: "PROJECT OVERVIEW",
+          title: "Project context",
+          paragraphs: [
+            "This page uses the structure of a detailed project and will be completed with specific information about the My SAE project.",
+          ],
+        },
+        contributionsEyebrow: "TECHNICAL CONTRIBUTION",
+        contributionsTitle: "Structured contributions",
+        visualPlaceholder: "Visuals to be completed",
+        contributions: [
+          { title: "Technical part 1 to be completed", paragraphs: ["To be completed."] },
+          { title: "Technical part 2 to be completed", paragraphs: ["To be completed."] },
+          { title: "Technical part 3 to be completed", paragraphs: ["To be completed."] },
+          { title: "Technical part 4 to be completed", paragraphs: ["To be completed."] },
+        ],
+        skillsTitle: "Tools and skills",
+        skills: ["To be completed"],
+        resultTitle: "Conclusion",
+        resultParagraphs: ["To be completed."],
+        backLabel: "Back to portfolio",
+        backHref: "/en/#projects",
+      },
+    },
+    fr: {
+      slug: "mon-sae",
+      title: "Mon SAE",
+      category: "CAO / Prototypage",
+      filter: "cad",
+      summary: "Projet technique à compléter.",
+      tools: ["À compléter"],
+      status: "À compléter",
+      subtitle: "Projet technique à compléter.",
+      detailType: "structured-placeholder",
+      details: {
+        context:
+          "Cette page reprend la structure d’un projet détaillé et sera complétée avec les informations spécifiques du projet Mon SAE.",
+        objective: "À compléter.",
+        approach: "À compléter.",
+        result: "À compléter.",
+        skills: ["À compléter"],
+      },
+      structuredDetail: {
+        eyebrow: "PROJET TECHNIQUE",
+        meta: [
+          { label: "Statut", value: "À compléter" },
+          { label: "Période", value: "À compléter" },
+          { label: "Lieu", value: "À compléter" },
+          { label: "Contexte", value: "À compléter" },
+        ],
+        overview: {
+          eyebrow: "CONTEXTE",
+          title: "Contexte du projet",
+          paragraphs: [
+            "Cette page reprend la structure d’un projet détaillé et sera complétée avec les informations spécifiques du projet Mon SAE.",
+          ],
+        },
+        contributionsEyebrow: "CONTRIBUTION TECHNIQUE",
+        contributionsTitle: "Contributions structurées",
+        visualPlaceholder: "Visuels à compléter",
+        contributions: [
+          { title: "Partie technique 1 à compléter", paragraphs: ["À compléter."] },
+          { title: "Partie technique 2 à compléter", paragraphs: ["À compléter."] },
+          { title: "Partie technique 3 à compléter", paragraphs: ["À compléter."] },
+          { title: "Partie technique 4 à compléter", paragraphs: ["À compléter."] },
+        ],
+        skillsTitle: "Outils et compétences",
+        skills: ["À compléter"],
+        resultTitle: "Conclusion",
+        resultParagraphs: ["À compléter."],
+        backLabel: "Retour au portfolio",
+        backHref: "/fr/#projects",
+      },
+    },
+  };
+
+  window.PORTFOLIO_DATA.en.projects.items = [
+    monSaeProjects.en,
+    window.PORTFOLIO_DATA.en.projects.items[0],
+    ...window.PORTFOLIO_DATA.en.projects.items.slice(1),
+  ];
+  window.PORTFOLIO_DATA.fr.projects.items = [
+    monSaeProjects.fr,
+    window.PORTFOLIO_DATA.fr.projects.items[0],
+    ...window.PORTFOLIO_DATA.fr.projects.items.slice(1),
+  ];
 })();
