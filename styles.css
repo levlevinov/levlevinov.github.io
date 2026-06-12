@@ -62,9 +62,13 @@ New variables added by the adjustment:
   --navy-deep: #041f35;
   --navy: var(--navy-main);
   --light-card: var(--card-bg);
-  --chip-bg-light: var(--inner-card-bg);
+  --chip-bg-light: var(--chip-bg);
   --chip-text-light: #062b49;
-  --chip-bg-light-hover: #dde7ef;
+  --chip-bg-light-hover: var(--chip-bg-hover);
+  --chip-bg: #e1eaf1;
+  --chip-bg-strong: #d7e3ec;
+  --chip-bg-hover: #cbd9e4;
+  --chip-border: rgba(6, 43, 73, 0.1);
   --chip-bg-dark: rgba(255, 255, 255, 0.12);
   --chip-text-dark: #f8fafc;
   --chip-bg-dark-hover: rgba(255, 255, 255, 0.18);
@@ -86,6 +90,10 @@ New variables added by the adjustment:
   --gold-accent: #b88a44;
   --eyebrow-color: #B88A44;
   --eyebrow-color-soft: #C99B55;
+  --button-soft-bg: #dce8f1;
+  --button-soft-bg-hover: #cadae7;
+  --button-soft-border: rgba(6, 43, 73, 0.14);
+  --button-soft-text: #062b49;
 
   /*
   Palette 2 - Warm professional
@@ -632,6 +640,27 @@ h3 {
   transform: translateY(-1px);
 }
 
+.details-button,
+.view-details-button,
+.card-actions .button,
+.experience-card-actions .button,
+.project-card-actions .button {
+  border: 1px solid var(--button-soft-border);
+  background: var(--button-soft-bg);
+  color: var(--button-soft-text);
+  box-shadow: 0 8px 18px rgba(6, 43, 73, 0.08);
+}
+
+.details-button:hover,
+.view-details-button:hover,
+.card-actions .button:hover,
+.experience-card-actions .button:hover,
+.project-card-actions .button:hover {
+  border-color: var(--button-soft-border);
+  background: var(--button-soft-bg-hover);
+  color: var(--button-soft-text);
+}
+
 .hero .button.secondary,
 .detail-shell .button.secondary,
 .mission-hero .button.secondary {
@@ -661,8 +690,8 @@ h3 {
   border: none;
   outline: none;
   box-shadow: none;
-  background: var(--chip-bg-dark-hover);
-  color: var(--chip-text-dark);
+  background: var(--chip-bg-hover);
+  color: var(--navy-main);
 }
 
 .filter-button.is-active {
@@ -710,20 +739,30 @@ h3 {
 
 .hero-panel {
   padding: 0;
+  border: 0;
+  background: transparent;
   box-shadow: none;
-  overflow: hidden;
+  overflow: visible;
 }
 
+.info-cards-grid,
 .hero-info-card {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
-  padding: 28px 36px;
-  border-radius: 32px;
+  padding: 0;
+}
+
+.info-card {
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  background: var(--card-bg);
+  color: var(--text-dark);
+  box-shadow: var(--card-shadow-soft);
+  padding: 28px;
 }
 
 .hero-info-item {
@@ -954,12 +993,12 @@ h3 {
   min-height: 34px;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 1px solid var(--chip-border);
   outline: none;
   box-shadow: none;
   border-radius: 999px;
-  background: var(--chip-bg-light);
-  color: var(--chip-text-light);
+  background: var(--chip-bg);
+  color: var(--navy-main);
   padding: 7px 14px;
   font-size: 14px;
   font-weight: 500;
@@ -971,10 +1010,10 @@ h3 {
 
 .quality-list li:hover,
 .tag-list li:hover {
-  border: none;
+  border: 1px solid var(--chip-border);
   outline: none;
   box-shadow: none;
-  background: var(--chip-bg-light-hover);
+  background: var(--chip-bg);
 }
 
 #profile .quality-list li,
@@ -1072,13 +1111,14 @@ h3 {
 
 .skill-main-item {
   display: inline-flex;
-  width: fit-content;
+  width: 190px;
   max-width: 100%;
-  min-height: 38px;
+  min-height: 40px;
   align-items: center;
   justify-content: flex-start;
+  border: 1px solid var(--chip-border);
   border-radius: 999px;
-  background: rgba(6, 43, 73, 0.075);
+  background: var(--chip-bg-strong);
   color: var(--text-dark);
   padding: 9px 16px;
   font-size: 15px;
@@ -1125,8 +1165,9 @@ h3 {
   min-height: 30px;
   align-items: center;
   justify-content: flex-start;
+  border: 1px solid var(--chip-border);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--chip-bg);
   color: var(--text-dark);
   padding: 7px 12px;
   font-size: 14px;
@@ -1146,6 +1187,11 @@ h3 {
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+#experience .card {
   display: flex;
   flex-direction: column;
 }
@@ -1194,6 +1240,23 @@ h3 {
   align-self: flex-start;
   margin-top: auto;
   padding-top: 24px;
+}
+
+.card-actions,
+.experience-card-actions,
+.project-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.card-actions .button,
+.experience-card-actions .button,
+.project-card-actions .button,
+.details-button,
+.view-details-button {
+  align-self: flex-start;
 }
 
 .education-grid {
@@ -1299,12 +1362,12 @@ h3 {
   min-height: 46px;
   align-items: flex-start;
   gap: 12px;
-  border: none;
+  border: 1px solid var(--chip-border);
   outline: none;
   box-shadow: none;
   border-radius: 20px;
-  background: var(--chip-bg-light);
-  color: var(--chip-text-light);
+  background: var(--chip-bg);
+  color: var(--navy-main);
   padding: 10px 16px;
   font-size: 15px;
   line-height: 1.35;
@@ -1313,10 +1376,10 @@ h3 {
 
 .compact-list li:hover,
 .detail-list li:hover {
-  border: none;
+  border: 1px solid var(--chip-border);
   outline: none;
   box-shadow: none;
-  background: var(--chip-bg-light-hover);
+  background: var(--chip-bg);
 }
 
 .compact-list li.with-icon {
@@ -1374,12 +1437,12 @@ h3 {
   min-height: 34px;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 1px solid var(--chip-border);
   outline: none;
   box-shadow: none;
   border-radius: 999px;
-  background: var(--chip-bg-light);
-  color: var(--chip-text-light);
+  background: var(--chip-bg);
+  color: var(--navy-main);
   padding: 7px 14px;
   font-size: 14px;
   font-weight: 500;
@@ -1391,10 +1454,10 @@ h3 {
 
 .project-status:hover,
 .category-pill:hover {
-  border: none;
+  border: 1px solid var(--chip-border);
   outline: none;
   box-shadow: none;
-  background: var(--chip-bg-light-hover);
+  background: var(--chip-bg);
 }
 
 .category-pill {
@@ -2115,10 +2178,10 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 1px solid var(--chip-border);
   border-radius: 999px;
-  background: rgba(6, 43, 73, 0.08);
-  color: #062B49;
+  background: var(--chip-bg);
+  color: var(--navy-main);
   box-shadow: none;
   padding: 8px 14px;
   font-size: 14px;
@@ -2282,7 +2345,7 @@ h3 {
   .hero-info-card {
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 24px;
+    padding: 0;
   }
 
   .hero-map-link {
@@ -2432,6 +2495,16 @@ h3 {
 
   .skill-subcard-title {
     font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-main-item {
+    width: 100%;
+  }
+
+  .info-card {
+    padding: 24px;
   }
 }
 

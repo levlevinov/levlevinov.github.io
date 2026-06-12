@@ -172,8 +172,8 @@ function renderHero(content) {
           ${photoMarkup}
         </figure>
         <aside class="hero-panel" aria-label="${escapeHtml(content.translations.current)}">
-          <div class="hero-info-card">
-            <div class="hero-info-item">
+          <div class="info-cards-grid hero-info-card">
+            <div class="info-card hero-info-item">
               <span class="hero-info-label">${escapeHtml(content.hero.locationLabel)}</span>
               <strong class="hero-info-value">${escapeHtml(content.hero.location)}</strong>
               <a class="hero-map-link" href="https://www.google.com/maps/search/?api=1&query=Bordeaux%2C%20France" target="_blank" rel="noopener noreferrer" aria-label="Open Bordeaux, France in Google Maps">
@@ -187,13 +187,9 @@ function renderHero(content) {
                 ></iframe>
               </a>
             </div>
-            <div class="hero-info-item">
-              <span class="hero-info-label">${escapeHtml(content.hero.availabilityLabel)}</span>
-              <strong class="hero-info-value">${escapeHtml(content.hero.availability)}</strong>
-            </div>
-            <div class="hero-info-item">
-              <span class="hero-info-label">${escapeHtml(content.translations.current)}</span>
-              <strong class="hero-info-value">${escapeHtml(content.currentPosition.status)}</strong>
+            <div class="info-card hero-info-item">
+              <span class="hero-info-label">${escapeHtml(content.hero.currentSituationLabel)}</span>
+              <strong class="hero-info-value">${escapeHtml(content.hero.currentSituation)}</strong>
             </div>
           </div>
         </aside>
@@ -346,8 +342,8 @@ function renderExperience(content, lang) {
                   ${list(item.responsibilities)}
                   <p class="meta-label">${escapeHtml(content.translations.skillsUsed)}</p>
                   ${tags(item.skills)}
-                  <div class="button-row">
-                    <a class="button secondary" href="${escapeHtml(item.detailHref || routeFor(lang, `experience/${item.slug}`))}" target="_blank" rel="noopener noreferrer">
+                  <div class="button-row card-actions experience-card-actions">
+                    <a class="button secondary details-button view-details-button" href="${escapeHtml(item.detailHref || routeFor(lang, `experience/${item.slug}`))}" target="_blank" rel="noopener noreferrer">
                       ${escapeHtml(content.translations.viewDetails)}
                     </a>
                   </div>
@@ -397,8 +393,8 @@ function renderProjects(content, lang) {
                     <p class="meta-label project-card-label">${escapeHtml(content.translations.status)}</p>
                     ${tags([project.status], "tag-list project-card-chip-group")}
                   </div>
-                  <div class="button-row project-card-button">
-                    <a class="button secondary" href="${routeFor(lang, `projects/${project.slug}`)}" target="_blank" rel="noopener noreferrer">
+                  <div class="button-row project-card-button card-actions project-card-actions">
+                    <a class="button secondary details-button view-details-button" href="${routeFor(lang, `projects/${project.slug}`)}" target="_blank" rel="noopener noreferrer">
                       ${escapeHtml(content.translations.learnMore)}
                     </a>
                   </div>

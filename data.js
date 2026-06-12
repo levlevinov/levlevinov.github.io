@@ -54,6 +54,9 @@ window.PORTFOLIO_DATA = {
       ],
       locationLabel: "Location",
       location: "France — Bordeaux",
+      currentSituationLabel: "Current situation",
+      currentSituation:
+        "I am currently a student in the GEII department at IUT de Bordeaux. I remain available to participate in projects and collaborations.",
       availabilityLabel: "Availability",
       availability: "Available for technical projects and collaborations.",
       cvHref: "#",
@@ -379,6 +382,9 @@ window.PORTFOLIO_DATA = {
       ],
       locationLabel: "Localisation",
       location: "France — Bordeaux",
+      currentSituationLabel: "Situation actuelle",
+      currentSituation:
+        "Actuellement, je suis étudiant dans le département GEII de l’IUT de Bordeaux. Je reste disponible pour participer à des projets et collaborations.",
       availabilityLabel: "Disponibilité",
       availability: "Disponible pour des projets techniques et des collaborations.",
       cvHref: "#",
