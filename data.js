@@ -127,11 +127,11 @@ window.PORTFOLIO_DATA = {
           slug: "technical-experience-placeholder",
           title: "Technical team member",
           projectTitle: "Mission Sophie — university and scientific project",
-          company: "Mission Sophie — university and scientific project",
+          company: "University project — hardware preparation and prototyping",
           period: "January 2026 — April 2026",
           location: "Bordeaux, France",
           summary:
-            "Technical contribution to the hardware and mechanical preparation of the project, including participation in cabling, assembly and prototyping tasks.",
+            "This project focused on the hardware and mechanical preparation of an experimental setup. The work included cabling, assembly, prototyping and verification of the installation.",
           role: "Technical team member",
           responsibilities: [
             "Cable routing, organization and fixing",
@@ -455,11 +455,11 @@ window.PORTFOLIO_DATA = {
           slug: "technical-experience-placeholder",
           title: "Membre de l’équipe technique",
           projectTitle: "Mission Sophie — projet universitaire et scientifique",
-          company: "Mission Sophie — projet universitaire et scientifique",
+          company: "Projet universitaire — préparation matérielle et prototypage",
           period: "Janvier 2026 — Avril 2026",
           location: "Bordeaux, France",
           summary:
-            "Contribution technique à la préparation matérielle et mécanique du projet, avec participation aux tâches de câblage, d’assemblage et de prototypage.",
+            "Ce projet portait sur la préparation matérielle et mécanique d’un dispositif expérimental. Le travail comprenait des opérations de câblage, d’assemblage, de prototypage et de vérification du montage.",
           role: "Équipier technique",
           responsibilities: [
             "Cheminement, organisation et fixation de câbles",
@@ -692,7 +692,7 @@ window.PORTFOLIO_DATA = {
     category: "Electronics / Radio / Prototyping",
     filter: "electronics",
     summary:
-      "Technical contribution to the preparation of a radio setup and several mechanical prototypes as part of the Mission Sophie project.",
+      "Hardware and mechanical preparation of a radio setup and several mechanical prototypes as part of the Mission Sophie project.",
     tools: ["Fusion 360", "3D printing", "Cabling", "Technical assembly"],
     status: "Completed",
     subtitle: "",
@@ -737,10 +737,10 @@ window.PORTFOLIO_DATA = {
         title: "Project context",
         paragraphs: [
           "Being invited and interested in participating, I joined the project’s technical team to contribute to the preparation of the radio setup, mechanical assembly and prototyping of functional parts.",
-          "My role was to provide a technical contribution on specific elements: antenna rotor fixation, preparation of 3D printed supports, participation in cabling, assembly of antenna elements and design of small equipment intended for radio operators.",
+          "The work focused on specific elements: antenna rotor fixation, preparation of 3D printed supports, participation in cabling, assembly of antenna elements and design of small equipment intended for radio operators.",
         ],
       },
-      contributionsEyebrow: "TECHNICAL CONTRIBUTION",
+      contributionsEyebrow: "TECHNICAL WORK",
       contributionsTitle: "Contribution summary",
       contributions: [
         {
@@ -930,7 +930,7 @@ window.PORTFOLIO_DATA = {
     category: "Électronique / Radio / Prototypage",
     filter: "electronics",
     summary:
-      "Contribution technique à la préparation d’un dispositif radio et de plusieurs prototypes mécaniques dans le cadre du projet Mission Sophie.",
+      "Préparation matérielle et mécanique d’un dispositif radio et de plusieurs prototypes mécaniques dans le cadre du projet Mission Sophie.",
     tools: ["Fusion 360", "Impression 3D", "Câblage", "Assemblage technique"],
     status: "Réalisé",
     subtitle: "",
@@ -975,10 +975,10 @@ window.PORTFOLIO_DATA = {
         title: "Contexte du projet",
         paragraphs: [
           "Étant invité et intéressé à participer, j’ai rejoint l’équipe technique du projet pour contribuer à la préparation du dispositif radio, à l’assemblage mécanique et au prototypage de pièces fonctionnelles.",
-          "Mon rôle était d’apporter une contribution technique sur des éléments précis : fixation du rotor d’antenne, préparation de supports imprimés en 3D, participation au câblage, assemblage d’éléments d’antenne et conception de petits équipements destinés aux opérateurs radio.",
+          "Le travail portait sur des éléments précis : fixation du rotor d’antenne, préparation de supports imprimés en 3D, participation au câblage, assemblage d’éléments d’antenne et conception de petits équipements destinés aux opérateurs radio.",
         ],
       },
-      contributionsEyebrow: "CONTRIBUTION TECHNIQUE",
+      contributionsEyebrow: "TRAVAIL TECHNIQUE",
       contributionsTitle: "Synthèse des contributions",
       contributions: [
         {
@@ -1203,7 +1203,7 @@ window.PORTFOLIO_DATA = {
             "My work focused on documented design and verification tasks from the DDC and DDV, particularly on the receiver section, signal processing, PWM control and functional validation through testing.",
           ],
         },
-        contributionsEyebrow: "TECHNICAL CONTRIBUTION",
+        contributionsEyebrow: "TECHNICAL WORK",
         contributionsTitle: "Structured contributions",
         visualPlaceholder: "Visuals to be completed",
         heroImage: {
@@ -1351,7 +1351,7 @@ window.PORTFOLIO_DATA = {
             "Mon travail s’est concentré sur des parties de conception et de vérification documentées dans le DDC et le DDV, en particulier sur la partie récepteur, le traitement des signaux, le pilotage PWM et la validation du fonctionnement par essais.",
           ],
         },
-        contributionsEyebrow: "CONTRIBUTION TECHNIQUE",
+        contributionsEyebrow: "TRAVAIL TECHNIQUE",
         contributionsTitle: "Contributions structurées",
         visualPlaceholder: "Visuels à compléter",
         heroImage: {
@@ -1465,14 +1465,14 @@ window.PORTFOLIO_DATA = {
     en: {
       slug: "mon-sae",
       title: "My SAE — Remote-controlled propeller kart",
-      projectTitle: "My SAE — Remote-controlled propeller kart",
-      context: "GEII SAE project — technical design and verification",
-      company: "GEII SAE project — technical design and verification",
+      projectTitle: "My SAE (Learning and Assessment Situation) — Remote-controlled propeller kart",
+      context: "GEII SAE project — technical design and validation",
+      company: "GEII SAE project — technical design and validation",
       period: "January 2026 — June 2026",
       location: "Bordeaux, France",
       summary:
-        "Technical contribution to the design and verification of a remote-controlled propeller kart, with work on the receiver section, signal processing, PWM control and compliance documentation.",
-      role: "Technical contributor",
+        "This project focused on the design and technical verification of a remote-controlled propeller kart. The system included a receiver section, signal processing, PWM control and compliance documentation.",
+      role: "Developer",
       responsibilities: [
         "Analysis of technical project requirements",
         "Contribution to the design documentation",
@@ -1496,14 +1496,14 @@ window.PORTFOLIO_DATA = {
     fr: {
       slug: "mon-sae",
       title: "Mon SAE — Kart à Hélice télécommandé",
-      projectTitle: "Mon SAE — Kart à Hélice télécommandé",
-      context: "Projet SAE GEII — conception et vérification technique",
-      company: "Projet SAE GEII — conception et vérification technique",
+      projectTitle: "Mon SAE (Situation d’Apprentissage et d’Évaluation) — Kart à hélice télécommandé",
+      context: "Projet SAE GEII — conception et validation technique",
+      company: "Projet SAE GEII — conception et validation technique",
       period: "Janvier 2026 — Juin 2026",
       location: "Bordeaux, France",
       summary:
-        "Contribution technique à la conception et à la vérification d’un kart à hélice télécommandé, avec travail sur la partie récepteur, le traitement des signaux, le pilotage PWM et la documentation de conformité.",
-      role: "Contributeur technique",
+        "Ce projet portait sur la conception et la vérification technique d’un kart à hélice télécommandé. Le système intégrait une partie récepteur, le traitement des signaux, le pilotage PWM et la documentation de conformité.",
+      role: "Développeur",
       responsibilities: [
         "Analyse des exigences techniques du projet",
         "Contribution au dossier de conception",
