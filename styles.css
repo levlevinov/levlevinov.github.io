@@ -1083,6 +1083,11 @@ h3 {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.experience-grid {
+  gap: 32px;
+  align-items: stretch;
+}
+
 .skill-card {
   display: flex;
   flex-direction: column;
