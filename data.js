@@ -1131,7 +1131,7 @@ window.PORTFOLIO_DATA = {
       structuredDetail: {
         eyebrow: "TECHNICAL PROJECT",
         meta: [
-          { label: "Project", value: "GEII SAE" },
+          { label: "Project", value: "SAE project (Learning and Assessment Situation)" },
           { label: "Role", value: "Technical contributor" },
           { label: "Period", value: "January 2026 — June 2026" },
           { label: "Location", value: "Bordeaux, France" },
@@ -1279,7 +1279,7 @@ window.PORTFOLIO_DATA = {
       structuredDetail: {
         eyebrow: "PROJET TECHNIQUE",
         meta: [
-          { label: "Projet", value: "SAE GEII" },
+          { label: "Projet", value: "Projet SAE (Situation d’Apprentissage et d’Évaluation)" },
           { label: "Rôle", value: "Contributeur technique" },
           { label: "Période", value: "Janvier 2026 — Juin 2026" },
           { label: "Localisation", value: "Bordeaux, France" },
@@ -1408,8 +1408,8 @@ window.PORTFOLIO_DATA = {
       slug: "mon-sae",
       title: "My SAE — Remote-controlled propeller kart",
       projectTitle: "My SAE (Learning and Assessment Situation) — Remote-controlled propeller kart",
-      context: "GEII SAE project — technical design and validation",
-      company: "GEII SAE project — technical design and validation",
+      context: "SAE project (Learning and Assessment Situation)",
+      company: "SAE project (Learning and Assessment Situation)",
       period: "January 2026 — June 2026",
       location: "Bordeaux, France",
       summary:
@@ -1439,8 +1439,8 @@ window.PORTFOLIO_DATA = {
       slug: "mon-sae",
       title: "Mon SAE — Kart à Hélice télécommandé",
       projectTitle: "Mon SAE (Situation d’Apprentissage et d’Évaluation) — Kart à hélice télécommandé",
-      context: "Projet SAE GEII — conception et validation technique",
-      company: "Projet SAE GEII — conception et validation technique",
+      context: "Projet SAE (Situation d’Apprentissage et d’Évaluation)",
+      company: "Projet SAE (Situation d’Apprentissage et d’Évaluation)",
       period: "Janvier 2026 — Juin 2026",
       location: "Bordeaux, France",
       summary:
