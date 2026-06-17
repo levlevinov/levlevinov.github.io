@@ -1208,17 +1208,11 @@ window.PORTFOLIO_DATA = {
         visualPlaceholder: "Visuals to be completed",
         contributions: [
           {
-            title: "Functional design and system architecture",
+            title: "Functional design and receiver section",
             paragraphs: [
-              "I participated in structuring the project technically based on the requirements from the specifications document. The work consisted of transforming functional needs into usable technical choices for the next stages of the design.",
-              "This part included feasibility analysis, organization of the main system functions and preparation of clear documentation for design and verification.",
-            ],
-          },
-          {
-            title: "Receiver section design",
-            paragraphs: [
-              "I worked on several functions related to the kart receiver: infrared reception, motor safety, motor control, steering control, indicator lights and horn function.",
-              "The objective was to propose a solution consistent with the requirements, taking into account signal processing, PWM control and component integration into the system.",
+              "The contribution focused on the technical structuring of the project based on the specifications document, with particular attention to the functional design and the kart receiver section.",
+              "The work involved analyzing the requirements, organizing the main system functions, defining usable technical choices and preparing clear documentation for the design and verification phases.",
+              "The receiver section was addressed through several technical functions: infrared reception, motor safety, motor control, steering control, indicator lights and horn function. The objective was to build a solution consistent with the requirements, while taking into account signal processing, PWM control and component integration within the system.",
             ],
           },
           {
@@ -1303,17 +1297,11 @@ window.PORTFOLIO_DATA = {
         visualPlaceholder: "Visuels à compléter",
         contributions: [
           {
-            title: "Conception fonctionnelle et architecture du système",
+            title: "Conception fonctionnelle et partie récepteur",
             paragraphs: [
-              "J’ai participé à la structuration technique du projet à partir des exigences du cahier des charges. Le travail consistait à transformer les besoins fonctionnels en choix techniques exploitables pour la suite de la conception.",
-              "Cette partie comprenait l’analyse de la faisabilité, l’organisation des fonctions principales du système et la préparation d’une documentation claire pour la conception et la vérification.",
-            ],
-          },
-          {
-            title: "Conception de la partie récepteur",
-            paragraphs: [
-              "J’ai travaillé sur plusieurs fonctions liées au récepteur du kart : réception infrarouge, sécurité moteur, commande du moteur, commande de direction, indicateurs lumineux et fonction klaxon.",
-              "L’objectif était de proposer une solution cohérente avec les exigences, en tenant compte du traitement des signaux, du pilotage par PWM et de l’intégration des composants dans le système.",
+              "La contribution a porté sur la structuration technique du projet à partir des exigences du cahier des charges, avec une attention particulière portée à la conception fonctionnelle et à la partie récepteur du kart.",
+              "Le travail a consisté à analyser les besoins, organiser les fonctions principales du système, définir des choix techniques exploitables et préparer une documentation claire pour les phases de conception et de vérification.",
+              "La partie récepteur a été abordée à travers plusieurs fonctions techniques : réception infrarouge, sécurité moteur, commande du moteur, commande de direction, indicateurs lumineux et fonction klaxon. L’objectif était de construire une solution cohérente avec les exigences, en tenant compte du traitement des signaux, du pilotage PWM et de l’intégration des composants dans le système.",
             ],
           },
           {
