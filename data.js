@@ -1206,6 +1206,11 @@ window.PORTFOLIO_DATA = {
         contributionsEyebrow: "TECHNICAL CONTRIBUTION",
         contributionsTitle: "Structured contributions",
         visualPlaceholder: "Visuals to be completed",
+        heroImage: {
+          src: "/images/mon-sae/mon-sae-main-kart-render.png",
+          alt: "CAD render of the remote-controlled propeller kart",
+          caption: "CAD view of the remote-controlled propeller kart",
+        },
         contributions: [
           {
             title: "Functional design and receiver section",
@@ -1214,6 +1219,20 @@ window.PORTFOLIO_DATA = {
               "The work involved analyzing the requirements, organizing the main system functions, defining usable technical choices and preparing clear documentation for the design and verification phases.",
               "The receiver section was addressed through several technical functions: infrared reception, motor safety, motor control, steering control, indicator lights and horn function. The objective was to build a solution consistent with the requirements, while taking into account signal processing, PWM control and component integration within the system.",
             ],
+            images: [
+              {
+                number: "Photo 01",
+                caption: "Electronic schematic of the receiver section",
+                src: "/images/mon-sae/mon-sae-p1-electronic-schematic.png",
+                alt: "Electronic schematic of the receiver section",
+              },
+              {
+                number: "Photo 02",
+                caption: "Functional organization: acquisition, processing and actions",
+                src: "/images/mon-sae/mon-sae-p1-functional-blocks.png",
+                alt: "Functional blocks for acquisition, processing and actions",
+              },
+            ],
           },
           {
             title: "Data processing and NEC protocol",
@@ -1221,12 +1240,52 @@ window.PORTFOLIO_DATA = {
               "I participated in defining the data processing logic for the transmitter and the receiver. The system had to acquire user inputs, convert them, build a frame compliant with the NEC protocol and transmit the useful data to the kart.",
               "The work also covered frame handling, transmission repetition and safety logic in case of missing or invalid signal.",
             ],
+            images: [
+              {
+                number: "Photo 01",
+                caption: "Processing and NEC frame transmission logic",
+                src: "/images/mon-sae/mon-sae-p2-nec-flowchart.png",
+                alt: "Flowchart for processing and NEC frame transmission logic",
+              },
+              {
+                number: "Photo 02",
+                caption: "Address, data and payload construction",
+                src: "/images/mon-sae/mon-sae-p2-nec-code-payload.png",
+                alt: "Code screenshot showing address, data and payload construction",
+              },
+              {
+                number: "Photo 03",
+                caption: "Main loop for reading, comparison and transmission",
+                src: "/images/mon-sae/mon-sae-p2-nec-code-loop.png",
+                alt: "Code screenshot showing main loop for reading, comparison and transmission",
+              },
+            ],
           },
           {
             title: "Verification and compliance testing",
             paragraphs: [
               "I participated in preparing and documenting several verification tests. These tests were used to compare the actual behavior of the prototype with the requirements defined in the specifications document.",
               "The verifications covered dimensions, power supply, user interfaces, infrared transmission, control signals and several receiver functions.",
+            ],
+            images: [
+              {
+                number: "Photo 01",
+                caption: "Electrical measurement during testing",
+                src: "/images/mon-sae/mon-sae-p3-multimeter-test.png",
+                alt: "Electrical measurement during testing with a multimeter",
+              },
+              {
+                number: "Photo 02",
+                caption: "Signal observation on the oscilloscope",
+                src: "/images/mon-sae/mon-sae-p3-oscilloscope-signal.png",
+                alt: "Oscilloscope screen showing a measured signal",
+              },
+              {
+                number: "Photo 03",
+                caption: "Measurement principle using a shunt resistor",
+                src: "/images/mon-sae/mon-sae-p3-shunt-measurement.png",
+                alt: "Diagram of measurement principle using a shunt resistor",
+              },
             ],
           },
         ],
@@ -1295,6 +1354,11 @@ window.PORTFOLIO_DATA = {
         contributionsEyebrow: "CONTRIBUTION TECHNIQUE",
         contributionsTitle: "Contributions structurées",
         visualPlaceholder: "Visuels à compléter",
+        heroImage: {
+          src: "/images/mon-sae/mon-sae-main-kart-render.png",
+          alt: "Vue CAO du kart à hélice télécommandé",
+          caption: "Vue CAO du kart à hélice télécommandé",
+        },
         contributions: [
           {
             title: "Conception fonctionnelle et partie récepteur",
@@ -1303,6 +1367,20 @@ window.PORTFOLIO_DATA = {
               "Le travail a consisté à analyser les besoins, organiser les fonctions principales du système, définir des choix techniques exploitables et préparer une documentation claire pour les phases de conception et de vérification.",
               "La partie récepteur a été abordée à travers plusieurs fonctions techniques : réception infrarouge, sécurité moteur, commande du moteur, commande de direction, indicateurs lumineux et fonction klaxon. L’objectif était de construire une solution cohérente avec les exigences, en tenant compte du traitement des signaux, du pilotage PWM et de l’intégration des composants dans le système.",
             ],
+            images: [
+              {
+                number: "Photo 01",
+                caption: "Schéma électronique de la partie récepteur",
+                src: "/images/mon-sae/mon-sae-p1-electronic-schematic.png",
+                alt: "Schéma électronique de la partie récepteur",
+              },
+              {
+                number: "Photo 02",
+                caption: "Organisation fonctionnelle : acquisition, traitement et actions",
+                src: "/images/mon-sae/mon-sae-p1-functional-blocks.png",
+                alt: "Organisation fonctionnelle avec acquisition, traitement et actions",
+              },
+            ],
           },
           {
             title: "Traitement des données et protocole NEC",
@@ -1310,12 +1388,52 @@ window.PORTFOLIO_DATA = {
               "J’ai participé à la définition de la logique de traitement des données pour l’émetteur et le récepteur. Le système devait acquérir les informations utilisateur, les convertir, former une trame conforme au protocole NEC et transmettre les données utiles au kart.",
               "Le travail portait aussi sur la gestion des trames, la répétitivité d’émission et la logique de sécurité en cas de signal absent ou invalide.",
             ],
+            images: [
+              {
+                number: "Photo 01",
+                caption: "Logique de traitement et d’émission de la trame NEC",
+                src: "/images/mon-sae/mon-sae-p2-nec-flowchart.png",
+                alt: "Logique de traitement et d’émission de la trame NEC",
+              },
+              {
+                number: "Photo 02",
+                caption: "Construction de l’adresse, des données et du payload",
+                src: "/images/mon-sae/mon-sae-p2-nec-code-payload.png",
+                alt: "Code de construction de l’adresse, des données et du payload",
+              },
+              {
+                number: "Photo 03",
+                caption: "Boucle principale de lecture, comparaison et émission",
+                src: "/images/mon-sae/mon-sae-p2-nec-code-loop.png",
+                alt: "Code de la boucle principale de lecture, comparaison et émission",
+              },
+            ],
           },
           {
             title: "Vérification et essais de conformité",
             paragraphs: [
               "J’ai participé à la préparation et à la documentation de plusieurs essais de vérification. Ces essais servaient à comparer le fonctionnement réel du prototype avec les exigences prévues dans le cahier des charges.",
               "Les vérifications concernaient notamment les dimensions, l’alimentation, les interfaces utilisateur, la transmission infrarouge, les signaux de commande et certaines fonctions du récepteur.",
+            ],
+            images: [
+              {
+                number: "Photo 01",
+                caption: "Mesure électrique lors des essais",
+                src: "/images/mon-sae/mon-sae-p3-multimeter-test.png",
+                alt: "Mesure électrique lors des essais avec un multimètre",
+              },
+              {
+                number: "Photo 02",
+                caption: "Observation du signal à l’oscilloscope",
+                src: "/images/mon-sae/mon-sae-p3-oscilloscope-signal.png",
+                alt: "Écran d’oscilloscope avec signal mesuré",
+              },
+              {
+                number: "Photo 03",
+                caption: "Principe de mesure avec résistance shunt",
+                src: "/images/mon-sae/mon-sae-p3-shunt-measurement.png",
+                alt: "Schéma de principe de mesure avec résistance shunt",
+              },
             ],
           },
         ],

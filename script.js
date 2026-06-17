@@ -622,7 +622,7 @@ function renderMissionCarousel(lang, title, images, carouselIndex) {
   const previousLabel = lang === "fr" ? "Photo précédente" : "Previous photo";
   const nextLabel = lang === "fr" ? "Photo suivante" : "Next photo";
   const carouselLabel = `${title} ${lang === "fr" ? "photos" : "photos"}`;
-  const firstCaption = images[0] ? missionCarouselCaption(lang, images[0]) : "";
+  const firstCaption = images[0] ? images[0].caption : "";
 
   return `
     <div class="mission-carousel" data-mission-carousel tabindex="0" aria-label="${escapeHtml(carouselLabel)}" data-carousel-index="${carouselIndex}">
@@ -783,6 +783,7 @@ function renderMissionSophieProjectDetail(content, lang, project) {
 
 function renderStructuredPlaceholderProjectDetail(content, lang, project) {
   const detail = project.structuredDetail;
+  const hasContributionImages = detail.contributions.some((contribution) => contribution.images?.length);
 
   main.innerHTML = `
     <article class="mission-detail-shell structured-project-detail">
@@ -798,9 +799,20 @@ function renderStructuredPlaceholderProjectDetail(content, lang, project) {
             </div>
             <p>${escapeHtml(project.subtitle)}</p>
           </div>
-          <div class="detail-card structured-project-visual" aria-label="${escapeHtml(detail.visualPlaceholder)}">
-            <span>${escapeHtml(detail.visualPlaceholder)}</span>
-          </div>
+          ${
+            detail.heroImage
+              ? `
+                <figure class="mission-hero-image structured-project-hero-image">
+                  <img src="${escapeHtml(detail.heroImage.src)}" alt="${escapeHtml(detail.heroImage.alt)}" />
+                  <figcaption class="structured-project-hero-caption">${escapeHtml(detail.heroImage.caption)}</figcaption>
+                </figure>
+              `
+              : `
+                <div class="detail-card structured-project-visual" aria-label="${escapeHtml(detail.visualPlaceholder)}">
+                  <span>${escapeHtml(detail.visualPlaceholder)}</span>
+                </div>
+              `
+          }
         </div>
       </section>
 
@@ -823,15 +835,25 @@ function renderStructuredPlaceholderProjectDetail(content, lang, project) {
           <div class="project-contribution-section">
             ${detail.contributions
               .map(
-                (contribution) => `
+                (contribution, index) => `
                   <article class="project-contribution-row">
                     <div class="detail-card mission-contribution-card structured-placeholder-card">
                       <h3>${escapeHtml(contribution.title)}</h3>
                       ${paragraphs(contribution.paragraphs)}
                     </div>
-                    <div class="detail-card mission-carousel-card project-carousel-card structured-placeholder-media">
-                      <span>${escapeHtml(detail.visualPlaceholder)}</span>
-                    </div>
+                    ${
+                      contribution.images?.length
+                        ? `
+                          <div class="detail-card mission-carousel-card project-carousel-card">
+                            ${renderMissionCarousel(lang, contribution.title, contribution.images, index)}
+                          </div>
+                        `
+                        : `
+                          <div class="detail-card mission-carousel-card project-carousel-card structured-placeholder-media">
+                            <span>${escapeHtml(detail.visualPlaceholder)}</span>
+                          </div>
+                        `
+                    }
                   </article>
                 `,
               )
@@ -861,6 +883,8 @@ function renderStructuredPlaceholderProjectDetail(content, lang, project) {
     </article>
     ${renderFooter(content, lang)}
   `;
+
+  if (hasContributionImages) bindMissionCarousel();
 }
 
 function renderProjectDetail(lang, slug) {
